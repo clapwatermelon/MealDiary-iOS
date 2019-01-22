@@ -13,5 +13,5 @@ class MainCardHeaderView: UITableViewHeaderFooterView {
     
     class func instanceFromNib() -> MainCardHeaderView? {
         return UINib(nibName: identifier, bundle: nil).instantiate(withOwner: nil, options: nil)[0] as? MainCardHeaderView
-    }
+    }    
 }

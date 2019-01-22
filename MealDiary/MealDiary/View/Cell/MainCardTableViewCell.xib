@@ -12,11 +12,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MainCardTableViewCell" rowHeight="433" id="KGk-i7-Jjw" customClass="MainCardTableViewCell" customModule="MealDiary" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="362" height="433"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MainCardTableViewCell" rowHeight="596" id="KGk-i7-Jjw" customClass="MainCardTableViewCell" customModule="MealDiary" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="362" height="596"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="362" height="432.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="362" height="595.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="njq-Ws-Hcf">
@@ -46,6 +46,9 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="udc-OX-2aA">
                         <rect key="frame" x="20" y="335.5" width="322" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="17" id="YNA-aY-PGu"/>
+                        </constraints>
                         <attributedString key="attributedText">
                             <fragment content="서울">
                                 <attributes>
@@ -123,13 +126,37 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="IFv-7k-uX4">
-                        <rect key="frame" x="162" y="225" width="39" height="37"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </pageControl>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xa9-iF-e1e">
-                        <rect key="frame" x="20" y="362.5" width="322" height="50"/>
+                        <rect key="frame" x="20" y="362.5" width="322" height="213"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cMi-vS-oJu">
+                                <rect key="frame" x="252" y="173" width="50" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="ys2-Om-EC2"/>
+                                    <constraint firstAttribute="height" constant="20" id="zk6-n4-4yn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="17"/>
+                                <state key="normal" title="더보기">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QnP-N8-cTr">
+                                <rect key="frame" x="8" y="8" width="306" height="142.5"/>
+                                <string key="text">@David You wouldn't be "replacing" anything, but it really depends on the desired behavior... If you want to use estimated rows height and just reload the indexes below the current visible portion of the table, you can do that like I said using reloadRowsAtIndexPaths</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="QnP-N8-cTr" secondAttribute="trailing" constant="8" id="J1g-eQ-imW"/>
+                            <constraint firstItem="QnP-N8-cTr" firstAttribute="top" secondItem="xa9-iF-e1e" secondAttribute="top" constant="8" id="QEg-TH-Fuz"/>
+                            <constraint firstItem="cMi-vS-oJu" firstAttribute="top" secondItem="QnP-N8-cTr" secondAttribute="bottom" constant="22.5" id="V10-oz-fBk"/>
+                            <constraint firstItem="QnP-N8-cTr" firstAttribute="leading" secondItem="xa9-iF-e1e" secondAttribute="leading" constant="8" id="nIe-Rd-cx4"/>
+                            <constraint firstAttribute="trailing" secondItem="cMi-vS-oJu" secondAttribute="trailing" constant="20" id="wGD-Ub-jOQ"/>
+                            <constraint firstAttribute="bottom" secondItem="cMi-vS-oJu" secondAttribute="bottom" constant="20" id="zzA-0X-qAB"/>
+                        </constraints>
                     </view>
                 </subviews>
                 <constraints>
@@ -157,10 +184,14 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="addressLabel" destination="udc-OX-2aA" id="guz-hA-prc"/>
                 <outlet property="cardNumberLabel" destination="dzj-Y5-cOi" id="dcT-t6-OLU"/>
+                <outlet property="pointLabel" destination="oAP-QH-skh" id="BUC-mZ-k46"/>
+                <outlet property="restaurantNameLabel" destination="0pa-ZK-1nw" id="nF3-KB-AzO"/>
+                <outlet property="showHideButton" destination="cMi-vS-oJu" id="JVW-dB-f2s"/>
                 <outlet property="threeDotsButton" destination="njq-Ws-Hcf" id="jWY-Po-tPL"/>
             </connections>
-            <point key="canvasLocation" x="174.40000000000001" y="89.505247376311857"/>
+            <point key="canvasLocation" x="174.40000000000001" y="161.91904047976013"/>
         </tableViewCell>
     </objects>
     <resources>
