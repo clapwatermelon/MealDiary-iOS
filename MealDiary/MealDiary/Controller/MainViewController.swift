@@ -69,6 +69,28 @@ class MainViewController: UIViewController {
             }
         }
     }
+    
+    @objc func tabThreeDotsButton(sender: UIButton){
+//        let buttonTag = sender.tag
+        
+        let actionSheetController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let cancelActionButton = UIAlertAction(title: "취소", style: .cancel) { action -> Void in
+            print("Cancel")
+        }
+        actionSheetController.addAction(cancelActionButton)
+        
+        let modifyActionButton = UIAlertAction(title: "수정", style: .default) { action -> Void in
+            print("수정")
+        }
+        actionSheetController.addAction(modifyActionButton)
+        
+        let deleteActionButton = UIAlertAction(title: "삭제", style: .destructive) { action -> Void in
+            print("삭제")
+        }
+        actionSheetController.addAction(deleteActionButton)
+        self.present(actionSheetController, animated: true, completion: nil)
+    }
 }
 
 extension MainViewController {
@@ -88,6 +110,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MainCardTableViewCell.identifier) as! MainCardTableViewCell
         cell.setUp()
+        cell.threeDotsButton.addTarget(self, action: #selector(tabThreeDotsButton), for: .touchUpInside)
         return cell
     }
     

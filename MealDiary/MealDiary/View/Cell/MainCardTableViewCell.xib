@@ -127,10 +127,15 @@
                         <rect key="frame" x="162" y="225" width="39" height="37"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </pageControl>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xa9-iF-e1e">
+                        <rect key="frame" x="20" y="362.5" width="322" height="50"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="dzj-Y5-cOi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="38f-Xd-xFs"/>
                     <constraint firstItem="urh-b1-YuP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="52u-9k-tHJ"/>
+                    <constraint firstItem="xa9-iF-e1e" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="9Wp-LO-2xH"/>
                     <constraint firstItem="0pa-ZK-1nw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="B3X-Ia-YBS"/>
                     <constraint firstItem="udc-OX-2aA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="ElJ-FS-ygw"/>
                     <constraint firstAttribute="trailing" secondItem="udc-OX-2aA" secondAttribute="trailing" constant="20" id="Jxv-cM-od6"/>
@@ -141,15 +146,19 @@
                     <constraint firstItem="oAP-QH-skh" firstAttribute="top" secondItem="urh-b1-YuP" secondAttribute="bottom" constant="15" id="R42-TF-NxG"/>
                     <constraint firstItem="0pa-ZK-1nw" firstAttribute="top" secondItem="njq-Ws-Hcf" secondAttribute="bottom" id="Sow-8a-ygQ"/>
                     <constraint firstItem="oAP-QH-skh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="Wa4-0z-7L3"/>
+                    <constraint firstAttribute="bottom" secondItem="xa9-iF-e1e" secondAttribute="bottom" constant="20" id="XgN-Cl-F7A"/>
                     <constraint firstItem="njq-Ws-Hcf" firstAttribute="top" secondItem="urh-b1-YuP" secondAttribute="bottom" constant="20" id="ZY2-fQ-V1H"/>
                     <constraint firstItem="udc-OX-2aA" firstAttribute="top" secondItem="0pa-ZK-1nw" secondAttribute="bottom" constant="5" id="bi4-NR-BKz"/>
+                    <constraint firstAttribute="trailing" secondItem="xa9-iF-e1e" secondAttribute="trailing" constant="20" id="dag-OZ-fYq"/>
                     <constraint firstItem="njq-Ws-Hcf" firstAttribute="leading" secondItem="oAP-QH-skh" secondAttribute="trailing" constant="50" id="jf9-BA-fLY"/>
+                    <constraint firstItem="xa9-iF-e1e" firstAttribute="top" secondItem="udc-OX-2aA" secondAttribute="bottom" constant="10" id="mkU-lC-vaV"/>
                     <constraint firstItem="urh-b1-YuP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="y4M-p4-HgZ"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="cardNumberLabel" destination="dzj-Y5-cOi" id="dcT-t6-OLU"/>
+                <outlet property="threeDotsButton" destination="njq-Ws-Hcf" id="jWY-Po-tPL"/>
             </connections>
             <point key="canvasLocation" x="174.40000000000001" y="89.505247376311857"/>
         </tableViewCell>

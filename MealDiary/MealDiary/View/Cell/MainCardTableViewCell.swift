@@ -11,6 +11,7 @@ import UIKit
 class MainCardTableViewCell: UITableViewCell {
 
     @IBOutlet weak var cardNumberLabel: UILabel!
+    @IBOutlet weak var threeDotsButton: UIButton!
     
     static let identifier = "MainCardTableViewCell"
     
