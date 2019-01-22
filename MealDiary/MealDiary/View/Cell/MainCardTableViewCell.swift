@@ -17,7 +17,6 @@ class MainCardTableViewCell: UITableViewCell {
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var showHideButton: UIButton!
     
-    
     static let identifier = "MainCardTableViewCell"
     let underlineAttributes : [NSAttributedString.Key: Any] = [
         NSAttributedString.Key.foregroundColor : UIColor.gray,
@@ -31,6 +30,6 @@ class MainCardTableViewCell: UITableViewCell {
         cardNumberLabel.clipsToBounds = true
         cardNumberLabel.layer.cornerRadius = 10
         addressLabel.attributedText = NSAttributedString(string: addressLabel.text ?? "", attributes: underlineAttributes)
-        showHideButton.setAttributedTitle(NSAttributedString(string: showHideButton.titleLabel?.text ?? "", attributes: underlineAttributes), for: .normal)
+        showHideButton.setAttributedTitle(NSAttributedString(string: "더보기", attributes: underlineAttributes), for: .normal)
     }
 }

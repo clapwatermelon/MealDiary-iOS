@@ -108,10 +108,16 @@ class MainViewController: UIViewController {
     
     @objc func tabShowHideButton(sender: UIButton) {
         let buttonTag = sender.tag
+        let underlineAttributes : [NSAttributedString.Key: Any] = [
+            NSAttributedString.Key.foregroundColor : UIColor.gray,
+            NSAttributedString.Key.underlineStyle : NSUnderlineStyle.single.rawValue]
+        
         if selectedIndex.contains(buttonTag) {
             selectedIndex.remove(buttonTag)
+            sender.setAttributedTitle(NSAttributedString(string: "더보기", attributes: underlineAttributes), for: .normal)
         } else {
             selectedIndex.insert(buttonTag)
+            sender.setAttributedTitle(NSAttributedString(string: "접기", attributes: underlineAttributes), for: .normal)
         }
         tableView.reloadWithoutAnimation()
     }
@@ -140,6 +146,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         cell.threeDotsButton.tag = indexPath.item
         cell.showHideButton.tag = indexPath.item
         cell.pointLabel.text = indexPath.item.description + "점"
+        
         return cell
     }
     
