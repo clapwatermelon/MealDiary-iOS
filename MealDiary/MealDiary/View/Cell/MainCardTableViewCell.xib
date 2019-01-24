@@ -102,7 +102,7 @@
                         </attributedString>
                         <nil key="highlightedColor"/>
                     </label>
-                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="urh-b1-YuP">
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="urh-b1-YuP">
                         <rect key="frame" x="0.0" y="0.0" width="362" height="261.5"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -186,6 +186,8 @@
             <connections>
                 <outlet property="addressLabel" destination="udc-OX-2aA" id="guz-hA-prc"/>
                 <outlet property="cardNumberLabel" destination="dzj-Y5-cOi" id="dcT-t6-OLU"/>
+                <outlet property="collectionView" destination="urh-b1-YuP" id="pGD-Hu-8L7"/>
+                <outlet property="detailLabel" destination="QnP-N8-cTr" id="bj2-Cq-5cr"/>
                 <outlet property="pointLabel" destination="oAP-QH-skh" id="BUC-mZ-k46"/>
                 <outlet property="restaurantNameLabel" destination="0pa-ZK-1nw" id="nF3-KB-AzO"/>
                 <outlet property="showHideButton" destination="cMi-vS-oJu" id="JVW-dB-f2s"/>

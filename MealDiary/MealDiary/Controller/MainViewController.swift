@@ -13,7 +13,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var headerView: MainHeaderView?
     var filterView: MainCardHeaderView?
-    var cards: [Card] = []
+    var cards: [Card] = sample.cards
     var selectedIndex: Set<Int> = []
     var tableFrame: CGRect?
     var filterFrame: CGRect?
@@ -134,18 +134,16 @@ extension MainViewController {
 
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return cards.count
-        return 10
+        return cards.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MainCardTableViewCell.identifier) as! MainCardTableViewCell
-        cell.setUp()
+        cell.setUp(with: cards[indexPath.item])
         cell.threeDotsButton.addTarget(self, action: #selector(tabThreeDotsButton), for: .touchUpInside)
         cell.showHideButton.addTarget(self, action: #selector(tabShowHideButton), for: .touchUpInside)
         cell.threeDotsButton.tag = indexPath.item
         cell.showHideButton.tag = indexPath.item
-        cell.pointLabel.text = indexPath.item.description + "점"
         
         return cell
     }
