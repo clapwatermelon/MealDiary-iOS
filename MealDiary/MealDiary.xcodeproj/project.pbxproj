@@ -21,6 +21,14 @@
 		CE15BAC321F6073100FD69F7 /* MainCardHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE15BAC221F6073100FD69F7 /* MainCardHeaderView.xib */; };
 		CE443D0F21F76FBE00CB52B0 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE443D0D21F76FBE00CB52B0 /* PhotoCollectionViewCell.swift */; };
 		CE443D1021F76FBE00CB52B0 /* PhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE443D0E21F76FBE00CB52B0 /* PhotoCollectionViewCell.xib */; };
+		CE443DB421FA025500CB52B0 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE443DB321FA025500CB52B0 /* OpenGLES.framework */; };
+		CE443DB621FA026200CB52B0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE443DB521FA026200CB52B0 /* SystemConfiguration.framework */; };
+		CE443DB821FA026A00CB52B0 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE443DB721FA026A00CB52B0 /* CoreLocation.framework */; };
+		CE443DBA21FA027100CB52B0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE443DB921FA027100CB52B0 /* QuartzCore.framework */; };
+		CE443DBC21FA02A100CB52B0 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CE443DBB21FA02A100CB52B0 /* libxml2.tbd */; };
+		CE443DBE21FA02B400CB52B0 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CE443DBD21FA02B400CB52B0 /* libsqlite3.tbd */; };
+		CE443DC021FA02D400CB52B0 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CE443DBF21FA02D400CB52B0 /* libc++.tbd */; };
+		CE443DD121FA031300CB52B0 /* DaumMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE443DD021FA031300CB52B0 /* DaumMap.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +48,23 @@
 		CE15BAC221F6073100FD69F7 /* MainCardHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainCardHeaderView.xib; sourceTree = "<group>"; };
 		CE443D0D21F76FBE00CB52B0 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		CE443D0E21F76FBE00CB52B0 /* PhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCollectionViewCell.xib; sourceTree = "<group>"; };
+		CE443DB321FA025500CB52B0 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		CE443DB521FA026200CB52B0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		CE443DB721FA026A00CB52B0 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		CE443DB921FA027100CB52B0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		CE443DBB21FA02A100CB52B0 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		CE443DBD21FA02B400CB52B0 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		CE443DBF21FA02D400CB52B0 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		CE443DC821FA031300CB52B0 /* MTMapPOIItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMapPOIItem.h; sourceTree = "<group>"; };
+		CE443DC921FA031300CB52B0 /* MTMapCameraUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMapCameraUpdate.h; sourceTree = "<group>"; };
+		CE443DCA21FA031300CB52B0 /* MTMapReverseGeoCoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMapReverseGeoCoder.h; sourceTree = "<group>"; };
+		CE443DCB21FA031300CB52B0 /* MTMapPolyline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMapPolyline.h; sourceTree = "<group>"; };
+		CE443DCC21FA031300CB52B0 /* MTMapLocationMarkerItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMapLocationMarkerItem.h; sourceTree = "<group>"; };
+		CE443DCD21FA031300CB52B0 /* MTMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMapView.h; sourceTree = "<group>"; };
+		CE443DCE21FA031300CB52B0 /* MTMapGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMapGeometry.h; sourceTree = "<group>"; };
+		CE443DCF21FA031300CB52B0 /* MTMapCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMapCircle.h; sourceTree = "<group>"; };
+		CE443DD021FA031300CB52B0 /* DaumMap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DaumMap.framework; sourceTree = "<group>"; };
+		CE443DD321FA06AF00CB52B0 /* DaumMap-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DaumMap-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +72,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE443DC021FA02D400CB52B0 /* libc++.tbd in Frameworks */,
+				CE443DBE21FA02B400CB52B0 /* libsqlite3.tbd in Frameworks */,
+				CE443DD121FA031300CB52B0 /* DaumMap.framework in Frameworks */,
+				CE443DBC21FA02A100CB52B0 /* libxml2.tbd in Frameworks */,
+				CE443DBA21FA027100CB52B0 /* QuartzCore.framework in Frameworks */,
+				CE443DB821FA026A00CB52B0 /* CoreLocation.framework in Frameworks */,
+				CE443DB621FA026200CB52B0 /* SystemConfiguration.framework in Frameworks */,
+				CE443DB421FA025500CB52B0 /* OpenGLES.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +91,7 @@
 			children = (
 				CE15BA9721F5EB0B00FD69F7 /* MealDiary */,
 				CE15BA9621F5EB0B00FD69F7 /* Products */,
+				CE443DB221FA025400CB52B0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,6 +113,7 @@
 				CE15BAAD21F5EBBC00FD69F7 /* Model */,
 				CE15BAAA21F5EB1600FD69F7 /* Etc. */,
 				CE15BAA421F5EB0F00FD69F7 /* Info.plist */,
+				CE443DD321FA06AF00CB52B0 /* DaumMap-Bridging-Header.h */,
 			);
 			path = MealDiary;
 			sourceTree = "<group>";
@@ -153,6 +188,53 @@
 				CE443D0E21F76FBE00CB52B0 /* PhotoCollectionViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		CE443DB221FA025400CB52B0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CE443DC521FA031300CB52B0 /* DaumMap.embeddedframework */,
+				CE443DBF21FA02D400CB52B0 /* libc++.tbd */,
+				CE443DBD21FA02B400CB52B0 /* libsqlite3.tbd */,
+				CE443DBB21FA02A100CB52B0 /* libxml2.tbd */,
+				CE443DB921FA027100CB52B0 /* QuartzCore.framework */,
+				CE443DB721FA026A00CB52B0 /* CoreLocation.framework */,
+				CE443DB521FA026200CB52B0 /* SystemConfiguration.framework */,
+				CE443DB321FA025500CB52B0 /* OpenGLES.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CE443DC521FA031300CB52B0 /* DaumMap.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				CE443DC621FA031300CB52B0 /* Resources */,
+				CE443DD021FA031300CB52B0 /* DaumMap.framework */,
+			);
+			path = DaumMap.embeddedframework;
+			sourceTree = "<group>";
+		};
+		CE443DC621FA031300CB52B0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CE443DC721FA031300CB52B0 /* Headers */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CE443DC721FA031300CB52B0 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				CE443DC821FA031300CB52B0 /* MTMapPOIItem.h */,
+				CE443DC921FA031300CB52B0 /* MTMapCameraUpdate.h */,
+				CE443DCA21FA031300CB52B0 /* MTMapReverseGeoCoder.h */,
+				CE443DCB21FA031300CB52B0 /* MTMapPolyline.h */,
+				CE443DCC21FA031300CB52B0 /* MTMapLocationMarkerItem.h */,
+				CE443DCD21FA031300CB52B0 /* MTMapView.h */,
+				CE443DCE21FA031300CB52B0 /* MTMapGeometry.h */,
+				CE443DCF21FA031300CB52B0 /* MTMapCircle.h */,
+			);
+			path = Headers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -313,7 +395,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -368,7 +450,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -383,6 +465,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B6ZBD6VFGD;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DaumMap.embeddedframework",
+				);
 				INFOPLIST_FILE = MealDiary/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -391,6 +478,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = bobbyWhite.MealDiary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MealDiary/DaumMap-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -401,6 +489,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B6ZBD6VFGD;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DaumMap.embeddedframework",
+				);
 				INFOPLIST_FILE = MealDiary/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -409,6 +502,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = bobbyWhite.MealDiary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MealDiary/DaumMap-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
