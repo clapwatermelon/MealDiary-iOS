@@ -23,10 +23,4 @@ class MainHeaderView: UIView {
         writeButton.clipsToBounds = true
         writeButton.layer.cornerRadius = writeButton.frame.height / 2
     }
-    
-    @IBAction func tabWriteButton(_ sender: Any) {
-    
-    
-    }
-    
 }

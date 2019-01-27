@@ -7,6 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04821F9721FBF953002001B9 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04821F9621FBF953002001B9 /* String+Ext.swift */; };
+		04821F9921FBFDEF002001B9 /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04821F9821FBFDEF002001B9 /* Color+Ext.swift */; };
+		04821FA421FC040B002001B9 /* NotoSansMonoCJKkr-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 04821F9B21FC0403002001B9 /* NotoSansMonoCJKkr-Regular.otf */; };
+		04821FA521FC040B002001B9 /* NotoSansCJKkr-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 04821F9C21FC0404002001B9 /* NotoSansCJKkr-Thin.otf */; };
+		04821FA621FC040B002001B9 /* NotoSansCJKkr-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 04821F9D21FC0405002001B9 /* NotoSansCJKkr-Medium.otf */; };
+		04821FA721FC040B002001B9 /* NotoSansCJKkr-DemiLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 04821F9E21FC0406002001B9 /* NotoSansCJKkr-DemiLight.otf */; };
+		04821FA821FC040B002001B9 /* NotoSansCJKkr-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 04821F9F21FC0407002001B9 /* NotoSansCJKkr-Light.otf */; };
+		04821FA921FC040B002001B9 /* NotoSansCJKkr-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 04821FA021FC0408002001B9 /* NotoSansCJKkr-Black.otf */; };
+		04821FAA21FC040B002001B9 /* NotoSansMonoCJKkr-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 04821FA121FC0409002001B9 /* NotoSansMonoCJKkr-Bold.otf */; };
+		04821FAB21FC040B002001B9 /* NotoSansCJKkr-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 04821FA221FC040A002001B9 /* NotoSansCJKkr-Regular.otf */; };
+		04821FAC21FC040B002001B9 /* NotoSansCJKkr-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 04821FA321FC040B002001B9 /* NotoSansCJKkr-Bold.otf */; };
+		04821FAE21FC04DD002001B9 /* SelectPhoto.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04821FAD21FC04DD002001B9 /* SelectPhoto.storyboard */; };
+		04821FB121FC2087002001B9 /* SelectPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04821FAF21FC2087002001B9 /* SelectPhotoCollectionViewCell.swift */; };
+		04821FB221FC2087002001B9 /* SelectPhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04821FB021FC2087002001B9 /* SelectPhotoCollectionViewCell.xib */; };
+		04821FB421FC23A4002001B9 /* SelectPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04821FB321FC23A4002001B9 /* SelectPhotoViewController.swift */; };
+		04821FB721FC268C002001B9 /* AssetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04821FB621FC268C002001B9 /* AssetManager.swift */; };
+		04821FB921FC27F8002001B9 /* Image+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04821FB821FC27F8002001B9 /* Image+Ext.swift */; };
+		6D026A0B20BDC27574ACFFCA /* Pods_MealDiary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCFB69D9552636CD9D743323 /* Pods_MealDiary.framework */; };
 		CE15BA9921F5EB0B00FD69F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15BA9821F5EB0B00FD69F7 /* AppDelegate.swift */; };
 		CE15BA9B21F5EB0B00FD69F7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15BA9A21F5EB0B00FD69F7 /* MainViewController.swift */; };
 		CE15BA9E21F5EB0B00FD69F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE15BA9C21F5EB0B00FD69F7 /* Main.storyboard */; };
@@ -17,8 +35,8 @@
 		CE15BABC21F5FC2D00FD69F7 /* MainCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15BABA21F5FC2D00FD69F7 /* MainCardTableViewCell.swift */; };
 		CE15BABD21F5FC2D00FD69F7 /* MainCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE15BABB21F5FC2D00FD69F7 /* MainCardTableViewCell.xib */; };
 		CE15BABF21F5FFC100FD69F7 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15BABE21F5FFC100FD69F7 /* Card.swift */; };
-		CE15BAC121F6070000FD69F7 /* MainCardHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15BAC021F6070000FD69F7 /* MainCardHeaderView.swift */; };
-		CE15BAC321F6073100FD69F7 /* MainCardHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE15BAC221F6073100FD69F7 /* MainCardHeaderView.xib */; };
+		CE15BAC121F6070000FD69F7 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15BAC021F6070000FD69F7 /* FilterView.swift */; };
+		CE15BAC321F6073100FD69F7 /* FilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE15BAC221F6073100FD69F7 /* FilterView.xib */; };
 		CE443D0F21F76FBE00CB52B0 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE443D0D21F76FBE00CB52B0 /* PhotoCollectionViewCell.swift */; };
 		CE443D1021F76FBE00CB52B0 /* PhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE443D0E21F76FBE00CB52B0 /* PhotoCollectionViewCell.xib */; };
 		CE443DB421FA025500CB52B0 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE443DB321FA025500CB52B0 /* OpenGLES.framework */; };
@@ -32,6 +50,26 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04821F9621FBF953002001B9 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		04821F9821FBFDEF002001B9 /* Color+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
+		04821F9B21FC0403002001B9 /* NotoSansMonoCJKkr-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansMonoCJKkr-Regular.otf"; sourceTree = "<group>"; };
+		04821F9C21FC0404002001B9 /* NotoSansCJKkr-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Thin.otf"; sourceTree = "<group>"; };
+		04821F9D21FC0405002001B9 /* NotoSansCJKkr-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Medium.otf"; sourceTree = "<group>"; };
+		04821F9E21FC0406002001B9 /* NotoSansCJKkr-DemiLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-DemiLight.otf"; sourceTree = "<group>"; };
+		04821F9F21FC0407002001B9 /* NotoSansCJKkr-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Light.otf"; sourceTree = "<group>"; };
+		04821FA021FC0408002001B9 /* NotoSansCJKkr-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Black.otf"; sourceTree = "<group>"; };
+		04821FA121FC0409002001B9 /* NotoSansMonoCJKkr-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansMonoCJKkr-Bold.otf"; sourceTree = "<group>"; };
+		04821FA221FC040A002001B9 /* NotoSansCJKkr-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Regular.otf"; sourceTree = "<group>"; };
+		04821FA321FC040B002001B9 /* NotoSansCJKkr-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Bold.otf"; sourceTree = "<group>"; };
+		04821FAD21FC04DD002001B9 /* SelectPhoto.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectPhoto.storyboard; sourceTree = "<group>"; };
+		04821FAF21FC2087002001B9 /* SelectPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		04821FB021FC2087002001B9 /* SelectPhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectPhotoCollectionViewCell.xib; sourceTree = "<group>"; };
+		04821FB321FC23A4002001B9 /* SelectPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPhotoViewController.swift; sourceTree = "<group>"; };
+		04821FB621FC268C002001B9 /* AssetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetManager.swift; sourceTree = "<group>"; };
+		04821FB821FC27F8002001B9 /* Image+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Ext.swift"; sourceTree = "<group>"; };
+		38679EB5624B80F2BB6818CD /* Pods-MealDiary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealDiary.release.xcconfig"; path = "Pods/Target Support Files/Pods-MealDiary/Pods-MealDiary.release.xcconfig"; sourceTree = "<group>"; };
+		4558CCC9DA378A8DBF81E8CB /* Pods-MealDiary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealDiary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MealDiary/Pods-MealDiary.debug.xcconfig"; sourceTree = "<group>"; };
+		BCFB69D9552636CD9D743323 /* Pods_MealDiary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MealDiary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE15BA9521F5EB0B00FD69F7 /* MealDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MealDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE15BA9821F5EB0B00FD69F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE15BA9A21F5EB0B00FD69F7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -44,8 +82,8 @@
 		CE15BABA21F5FC2D00FD69F7 /* MainCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCardTableViewCell.swift; sourceTree = "<group>"; };
 		CE15BABB21F5FC2D00FD69F7 /* MainCardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainCardTableViewCell.xib; sourceTree = "<group>"; };
 		CE15BABE21F5FFC100FD69F7 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
-		CE15BAC021F6070000FD69F7 /* MainCardHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCardHeaderView.swift; sourceTree = "<group>"; };
-		CE15BAC221F6073100FD69F7 /* MainCardHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainCardHeaderView.xib; sourceTree = "<group>"; };
+		CE15BAC021F6070000FD69F7 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
+		CE15BAC221F6073100FD69F7 /* FilterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterView.xib; sourceTree = "<group>"; };
 		CE443D0D21F76FBE00CB52B0 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		CE443D0E21F76FBE00CB52B0 /* PhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCollectionViewCell.xib; sourceTree = "<group>"; };
 		CE443DB321FA025500CB52B0 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -80,18 +118,63 @@
 				CE443DB821FA026A00CB52B0 /* CoreLocation.framework in Frameworks */,
 				CE443DB621FA026200CB52B0 /* SystemConfiguration.framework in Frameworks */,
 				CE443DB421FA025500CB52B0 /* OpenGLES.framework in Frameworks */,
+				6D026A0B20BDC27574ACFFCA /* Pods_MealDiary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04821F9521FBF945002001B9 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				04821F9621FBF953002001B9 /* String+Ext.swift */,
+				04821F9821FBFDEF002001B9 /* Color+Ext.swift */,
+				04821FB821FC27F8002001B9 /* Image+Ext.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		04821F9A21FC03F4002001B9 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				04821FA021FC0408002001B9 /* NotoSansCJKkr-Black.otf */,
+				04821FA321FC040B002001B9 /* NotoSansCJKkr-Bold.otf */,
+				04821F9E21FC0406002001B9 /* NotoSansCJKkr-DemiLight.otf */,
+				04821F9F21FC0407002001B9 /* NotoSansCJKkr-Light.otf */,
+				04821F9D21FC0405002001B9 /* NotoSansCJKkr-Medium.otf */,
+				04821FA221FC040A002001B9 /* NotoSansCJKkr-Regular.otf */,
+				04821F9C21FC0404002001B9 /* NotoSansCJKkr-Thin.otf */,
+				04821FA121FC0409002001B9 /* NotoSansMonoCJKkr-Bold.otf */,
+				04821F9B21FC0403002001B9 /* NotoSansMonoCJKkr-Regular.otf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		04821FB521FC267E002001B9 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				04821FB621FC268C002001B9 /* AssetManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		3F35808C6608E9C3C8927523 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4558CCC9DA378A8DBF81E8CB /* Pods-MealDiary.debug.xcconfig */,
+				38679EB5624B80F2BB6818CD /* Pods-MealDiary.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		CE15BA8C21F5EB0B00FD69F7 = {
 			isa = PBXGroup;
 			children = (
 				CE15BA9721F5EB0B00FD69F7 /* MealDiary */,
 				CE15BA9621F5EB0B00FD69F7 /* Products */,
 				CE443DB221FA025400CB52B0 /* Frameworks */,
+				3F35808C6608E9C3C8927523 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,7 +189,8 @@
 		CE15BA9721F5EB0B00FD69F7 /* MealDiary */ = {
 			isa = PBXGroup;
 			children = (
-				CE15BAB621F5F00300FD69F7 /* Extension */,
+				04821FB521FC267E002001B9 /* Manager */,
+				04821F9521FBF945002001B9 /* Extension */,
 				CE15BAB021F5EC0100FD69F7 /* Storyboard */,
 				CE15BAAF21F5EBCA00FD69F7 /* Controller */,
 				CE15BAAE21F5EBC300FD69F7 /* View */,
@@ -121,6 +205,7 @@
 		CE15BAAA21F5EB1600FD69F7 /* Etc. */ = {
 			isa = PBXGroup;
 			children = (
+				04821F9A21FC03F4002001B9 /* Font */,
 				CE15BA9821F5EB0B00FD69F7 /* AppDelegate.swift */,
 				CE15BA9F21F5EB0F00FD69F7 /* Assets.xcassets */,
 			);
@@ -140,7 +225,7 @@
 			children = (
 				CE15BAB921F5FB7C00FD69F7 /* Cell */,
 				CE15BAB421F5EFCA00FD69F7 /* MainHeaderView.swift */,
-				CE15BAC021F6070000FD69F7 /* MainCardHeaderView.swift */,
+				CE15BAC021F6070000FD69F7 /* FilterView.swift */,
 				CE15BAB121F5EE9400FD69F7 /* xib */,
 			);
 			path = View;
@@ -150,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				CE15BA9A21F5EB0B00FD69F7 /* MainViewController.swift */,
+				04821FB321FC23A4002001B9 /* SelectPhotoViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -157,8 +243,9 @@
 		CE15BAB021F5EC0100FD69F7 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				CE15BA9C21F5EB0B00FD69F7 /* Main.storyboard */,
 				CE15BAA121F5EB0F00FD69F7 /* LaunchScreen.storyboard */,
+				CE15BA9C21F5EB0B00FD69F7 /* Main.storyboard */,
+				04821FAD21FC04DD002001B9 /* SelectPhoto.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -167,16 +254,9 @@
 			isa = PBXGroup;
 			children = (
 				CE15BAB221F5EEAF00FD69F7 /* MainHeaderView.xib */,
-				CE15BAC221F6073100FD69F7 /* MainCardHeaderView.xib */,
+				CE15BAC221F6073100FD69F7 /* FilterView.xib */,
 			);
 			path = xib;
-			sourceTree = "<group>";
-		};
-		CE15BAB621F5F00300FD69F7 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extension;
 			sourceTree = "<group>";
 		};
 		CE15BAB921F5FB7C00FD69F7 /* Cell */ = {
@@ -186,6 +266,8 @@
 				CE15BABB21F5FC2D00FD69F7 /* MainCardTableViewCell.xib */,
 				CE443D0D21F76FBE00CB52B0 /* PhotoCollectionViewCell.swift */,
 				CE443D0E21F76FBE00CB52B0 /* PhotoCollectionViewCell.xib */,
+				04821FAF21FC2087002001B9 /* SelectPhotoCollectionViewCell.swift */,
+				04821FB021FC2087002001B9 /* SelectPhotoCollectionViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -201,6 +283,7 @@
 				CE443DB721FA026A00CB52B0 /* CoreLocation.framework */,
 				CE443DB521FA026200CB52B0 /* SystemConfiguration.framework */,
 				CE443DB321FA025500CB52B0 /* OpenGLES.framework */,
+				BCFB69D9552636CD9D743323 /* Pods_MealDiary.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -244,9 +327,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE15BAA721F5EB0F00FD69F7 /* Build configuration list for PBXNativeTarget "MealDiary" */;
 			buildPhases = (
+				704999F457A6A8047459A777 /* [CP] Check Pods Manifest.lock */,
 				CE15BA9121F5EB0B00FD69F7 /* Sources */,
 				CE15BA9221F5EB0B00FD69F7 /* Frameworks */,
 				CE15BA9321F5EB0B00FD69F7 /* Resources */,
+				F58BE3E15C826289735CD520 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -296,16 +381,70 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE15BAB321F5EEAF00FD69F7 /* MainHeaderView.xib in Resources */,
+				04821FA821FC040B002001B9 /* NotoSansCJKkr-Light.otf in Resources */,
 				CE15BAA321F5EB0F00FD69F7 /* LaunchScreen.storyboard in Resources */,
-				CE15BAC321F6073100FD69F7 /* MainCardHeaderView.xib in Resources */,
+				CE15BAC321F6073100FD69F7 /* FilterView.xib in Resources */,
+				04821FA521FC040B002001B9 /* NotoSansCJKkr-Thin.otf in Resources */,
+				04821FAC21FC040B002001B9 /* NotoSansCJKkr-Bold.otf in Resources */,
 				CE15BAA021F5EB0F00FD69F7 /* Assets.xcassets in Resources */,
+				04821FA721FC040B002001B9 /* NotoSansCJKkr-DemiLight.otf in Resources */,
 				CE443D1021F76FBE00CB52B0 /* PhotoCollectionViewCell.xib in Resources */,
+				04821FAE21FC04DD002001B9 /* SelectPhoto.storyboard in Resources */,
+				04821FAA21FC040B002001B9 /* NotoSansMonoCJKkr-Bold.otf in Resources */,
 				CE15BABD21F5FC2D00FD69F7 /* MainCardTableViewCell.xib in Resources */,
+				04821FAB21FC040B002001B9 /* NotoSansCJKkr-Regular.otf in Resources */,
+				04821FB221FC2087002001B9 /* SelectPhotoCollectionViewCell.xib in Resources */,
+				04821FA921FC040B002001B9 /* NotoSansCJKkr-Black.otf in Resources */,
+				04821FA421FC040B002001B9 /* NotoSansMonoCJKkr-Regular.otf in Resources */,
 				CE15BA9E21F5EB0B00FD69F7 /* Main.storyboard in Resources */,
+				04821FA621FC040B002001B9 /* NotoSansCJKkr-Medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		704999F457A6A8047459A777 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MealDiary-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F58BE3E15C826289735CD520 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MealDiary/Pods-MealDiary-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MealDiary/Pods-MealDiary-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CE15BA9121F5EB0B00FD69F7 /* Sources */ = {
@@ -314,10 +453,16 @@
 			files = (
 				CE15BABC21F5FC2D00FD69F7 /* MainCardTableViewCell.swift in Sources */,
 				CE15BA9B21F5EB0B00FD69F7 /* MainViewController.swift in Sources */,
-				CE15BAC121F6070000FD69F7 /* MainCardHeaderView.swift in Sources */,
+				04821F9921FBFDEF002001B9 /* Color+Ext.swift in Sources */,
+				CE15BAC121F6070000FD69F7 /* FilterView.swift in Sources */,
+				04821FB721FC268C002001B9 /* AssetManager.swift in Sources */,
+				04821FB921FC27F8002001B9 /* Image+Ext.swift in Sources */,
 				CE15BABF21F5FFC100FD69F7 /* Card.swift in Sources */,
 				CE443D0F21F76FBE00CB52B0 /* PhotoCollectionViewCell.swift in Sources */,
 				CE15BAB521F5EFCA00FD69F7 /* MainHeaderView.swift in Sources */,
+				04821FB121FC2087002001B9 /* SelectPhotoCollectionViewCell.swift in Sources */,
+				04821FB421FC23A4002001B9 /* SelectPhotoViewController.swift in Sources */,
+				04821F9721FBF953002001B9 /* String+Ext.swift in Sources */,
 				CE15BA9921F5EB0B00FD69F7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -462,6 +607,7 @@
 		};
 		CE15BAA821F5EB0F00FD69F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4558CCC9DA378A8DBF81E8CB /* Pods-MealDiary.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -486,6 +632,7 @@
 		};
 		CE15BAA921F5EB0F00FD69F7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 38679EB5624B80F2BB6818CD /* Pods-MealDiary.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

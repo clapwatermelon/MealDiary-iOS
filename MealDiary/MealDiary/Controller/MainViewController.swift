@@ -12,7 +12,7 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     var headerView: MainHeaderView?
-    var filterView: MainCardHeaderView?
+    var filterView: FilterView?
     var cards: [Card] = sample.cards
     var selectedIndex: Set<Int> = []
     var tableFrame: CGRect?
@@ -20,7 +20,7 @@ class MainViewController: UIViewController {
     let headerViewHeight: CGFloat = 84
     
     func setFilterView() {
-        guard let filterView = MainCardHeaderView.instanceFromNib() else { return }
+        guard let filterView = FilterView.instanceFromNib() else { return }
         self.filterView = filterView
         
         let statusBarHeight = UIApplication.shared.statusBarFrame.height
@@ -35,6 +35,7 @@ class MainViewController: UIViewController {
         guard let headerView = MainHeaderView.instanceFromNib() else { return }
         self.headerView = headerView
         
+        headerView.writeButton.addTarget(self, action: #selector(tabWriteButton), for: .touchUpInside)
         let statusBarHeight = UIApplication.shared.statusBarFrame.height
         let origin = CGPoint(x: 0, y: statusBarHeight + 50)
         let headerFrame = CGRect(origin: origin, size: CGSize(width: self.view.frame.width, height: headerViewHeight))
@@ -84,7 +85,13 @@ class MainViewController: UIViewController {
         }
     }
     
-    @objc func tabThreeDotsButton(sender: UIButton){
+    @objc func tabWriteButton(sender: UIButton) {
+        let storyBoard = UIStoryboard(name: "SelectPhoto", bundle: nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "SelectPhotoViewController") as! SelectPhotoViewController
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    @objc func tabThreeDotsButton(sender: UIButton) {
 //        let buttonTag = sender.tag
         
         let actionSheetController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
