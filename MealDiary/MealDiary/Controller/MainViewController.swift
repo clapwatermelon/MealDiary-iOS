@@ -7,41 +7,46 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class MainViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     var headerView: MainHeaderView = MainHeaderView()
     var filterView: FilterView = FilterView()
-    var cards: [Card] = sample.cards
+    var cards: BehaviorRelay<[Card]> = BehaviorRelay<[Card]>(value: sample.cards)
     var selectedIndex: Set<Int> = []
     var tableFrame: CGRect?
     var filterFrame: CGRect?
-    let headerViewHeight: CGFloat = 84
     
     var scrollViewStartOffsetY: CGFloat = 0
     var beforeOffsetY: CGFloat = 0
+    var height: CGFloat = 0
+    let disposeBag = DisposeBag()
     
     func setFilterView() {
         guard let filterView = FilterView.instanceFromNib() else { return }
         self.filterView = filterView
+      
+        let origin = CGPoint(x: 0, y: height + headerView.frame.height)
+        let filterFrame = CGRect(origin: origin, size: CGSize(width: self.view.frame.width, height: 55))
+        filterView.setUp(frame: filterFrame)
         
-        let statusBarHeight = UIApplication.shared.statusBarFrame.height
-        let origin = CGPoint(x: 0, y: statusBarHeight + 50 + headerViewHeight)
-        filterFrame = CGRect(origin: origin, size: CGSize(width: self.view.frame.width, height: 55))
-        filterView.frame = filterFrame ?? CGRect(origin: .zero, size: .zero)
-        
+        self.filterFrame = filterFrame
         self.view.addSubview(filterView)
     }
     
     func setInitialView() {
         guard let headerView = MainHeaderView.instanceFromNib() else { return }
+        guard let `navigationController` = navigationController else { return }
+        
+        height = UIApplication.shared.statusBarFrame.height + navigationController.navigationBar.frame.height
         self.headerView = headerView
         
         headerView.writeButton.addTarget(self, action: #selector(tabWriteButton), for: .touchUpInside)
-        let statusBarHeight = UIApplication.shared.statusBarFrame.height
-        let origin = CGPoint(x: 0, y: statusBarHeight + 50)
-        let headerFrame = CGRect(origin: origin, size: CGSize(width: self.view.frame.width, height: headerViewHeight))
+        let origin = CGPoint(x: 0, y: height)
+        let headerFrame = CGRect(origin: origin, size: CGSize(width: self.view.frame.width, height: 94))
         headerView.setUp(frame: headerFrame)
         
         self.view.addSubview(headerView)
@@ -50,17 +55,18 @@ class MainViewController: UIViewController {
     }
     
     func setTableView() {
-        guard let headerView = MainHeaderView.instanceFromNib() else { return }
-        
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(UINib(nibName: MainCardTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: MainCardTableViewCell.identifier)
-        
-        let statusBarHeight = UIApplication.shared.statusBarFrame.height
-        let origin = CGPoint(x: 0, y: statusBarHeight + 105 + headerView.frame.height)
+        tableView.register(UINib(nibName: HomeCardTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: HomeCardTableViewCell.identifier)
+        let origin = CGPoint(x: 0, y: filterView.frame.origin.y + filterView.frame.height)
         let size = CGSize(width: self.view.frame.width, height: self.view.frame.height - origin.y)
         tableFrame = CGRect(origin: origin, size: size)
         tableView.frame = tableFrame ?? CGRect(origin: .zero, size: .zero)
+        tableView.rx.setDelegate(self).disposed(by: disposeBag)
+        cards.asObservable().bind(to: tableView.rx.items(cellIdentifier: HomeCardTableViewCell.identifier, cellType: HomeCardTableViewCell.self)){
+            (row, card, cell) in
+            
+            cell.setUp(with: card)
+            
+        }.disposed(by: disposeBag)
     }
     
     func setNavigationBar() {
@@ -88,43 +94,25 @@ class MainViewController: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    @objc func tabThreeDotsButton(sender: UIButton) {
-//        let buttonTag = sender.tag
-        
-        let actionSheetController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        
-        let cancelActionButton = UIAlertAction(title: "취소", style: .cancel) { action -> Void in
-            print("Cancel")
-        }
-        actionSheetController.addAction(cancelActionButton)
-        
-        let modifyActionButton = UIAlertAction(title: "수정", style: .default) { action -> Void in
-            print("수정")
-        }
-        actionSheetController.addAction(modifyActionButton)
-        
-        let deleteActionButton = UIAlertAction(title: "삭제", style: .destructive) { action -> Void in
-            print("삭제")
-        }
-        actionSheetController.addAction(deleteActionButton)
-        self.present(actionSheetController, animated: true, completion: nil)
-    }
-    
-    @objc func tabShowHideButton(sender: UIButton) {
-        let buttonTag = sender.tag
-        let underlineAttributes : [NSAttributedString.Key: Any] = [
-            NSAttributedString.Key.foregroundColor : UIColor.gray,
-            NSAttributedString.Key.underlineStyle : NSUnderlineStyle.single.rawValue]
-        
-        if selectedIndex.contains(buttonTag) {
-            selectedIndex.remove(buttonTag)
-            sender.setAttributedTitle(NSAttributedString(string: "더보기", attributes: underlineAttributes), for: .normal)
-        } else {
-            selectedIndex.insert(buttonTag)
-            sender.setAttributedTitle(NSAttributedString(string: "접기", attributes: underlineAttributes), for: .normal)
-        }
-        tableView.reloadWithoutAnimation()
-    }
+//    @objc func tabThreeDotsButton(sender: UIButton) {
+//        let actionSheetController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+//
+//        let cancelActionButton = UIAlertAction(title: "취소", style: .cancel) { action -> Void in
+//            print("Cancel")
+//        }
+//        actionSheetController.addAction(cancelActionButton)
+//
+//        let modifyActionButton = UIAlertAction(title: "수정", style: .default) { action -> Void in
+//            print("수정")
+//        }
+//        actionSheetController.addAction(modifyActionButton)
+//
+//        let deleteActionButton = UIAlertAction(title: "삭제", style: .destructive) { action -> Void in
+//            print("삭제")
+//        }
+//        actionSheetController.addAction(deleteActionButton)
+//        self.present(actionSheetController, animated: true, completion: nil)
+//    }
 }
 
 extension MainViewController {
@@ -194,40 +182,10 @@ extension MainViewController: UIScrollViewDelegate {
         }
         beforeOffsetY = offsetY
     }
-   
 }
 
-extension MainViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cards.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: MainCardTableViewCell.identifier) as! MainCardTableViewCell
-        cell.setUp(with: cards[indexPath.item])
-        cell.threeDotsButton.addTarget(self, action: #selector(tabThreeDotsButton), for: .touchUpInside)
-        cell.showHideButton.addTarget(self, action: #selector(tabShowHideButton), for: .touchUpInside)
-        cell.threeDotsButton.tag = indexPath.item
-        cell.showHideButton.tag = indexPath.item
-        
-        return cell
-    }
-    
+extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if selectedIndex.contains(indexPath.item) {
-            return 800
-        } else {
-            return 500
-        }
-    }
-}
-
-extension UITableView {
-    func reloadWithoutAnimation() {
-        let lastScrollOffset = contentOffset
-        beginUpdates()
-        endUpdates()
-        layer.removeAllAnimations()
-        setContentOffset(lastScrollOffset, animated: false)
+        return 387
     }
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainCardTableViewCell: UITableViewCell {
+class DetailCardTableViewCell: UITableViewCell {
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var cardNumberLabel: UILabel!
@@ -20,7 +20,7 @@ class MainCardTableViewCell: UITableViewCell {
     @IBOutlet weak var detailLabel: UILabel!
     var card: Card?
     
-    static let identifier = "MainCardTableViewCell"
+    static let identifier = "DetailCardTableViewCell"
     let underlineAttributes : [NSAttributedString.Key: Any] = [
         NSAttributedString.Key.foregroundColor : UIColor.gray,
         NSAttributedString.Key.underlineStyle : NSUnderlineStyle.single.rawValue]
@@ -46,7 +46,7 @@ class MainCardTableViewCell: UITableViewCell {
     }
 }
 
-extension MainCardTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
+extension DetailCardTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return card?.photos.count ?? 0
     }
@@ -58,7 +58,7 @@ extension MainCardTableViewCell: UICollectionViewDelegate, UICollectionViewDataS
     }
 }
 
-extension MainCardTableViewCell: UICollectionViewDelegateFlowLayout {
+extension DetailCardTableViewCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         return collectionView.frame.size

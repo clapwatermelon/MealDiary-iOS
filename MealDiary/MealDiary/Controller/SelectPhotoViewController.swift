@@ -12,6 +12,7 @@ import RxSwift
 import RxCocoa
 
 class SelectPhotoViewController: UIViewController {
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     var photos: BehaviorRelay<[PHAsset]> = BehaviorRelay<[PHAsset]>(value: [])
     var selectedIndexPaths: BehaviorRelay<[IndexPath]> = BehaviorRelay<[IndexPath]>(value: [])
@@ -101,8 +102,10 @@ class SelectPhotoViewController: UIViewController {
 extension SelectPhotoViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        let height = navigationController!.navigationBar.frame.height
         setCollectionView()
         setNavigationBar()
+        titleLabel.setOrangeUnderLineView(yConst: height)
         PHPhotoLibrary.requestAuthorization({
             (newStatus) in
             if newStatus ==  PHAuthorizationStatus.authorized {

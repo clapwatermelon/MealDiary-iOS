@@ -29,17 +29,11 @@ extension UIImageView {
             
             self.image = image
         })
-        
-//        PHImageManager.default().requestImage(for: asset, targetSize: targetSize, contentMode: contentMode, options: options) { image, _ in
-//            guard let image = image else { return }
-//            switch contentMode {
-//            case .aspectFill:
-//                self.contentMode = .scaleAspectFill
-//            case .aspectFit:
-//                self.contentMode = .scaleAspectFit
-//            }
-//            self.image = image
-//        }
-        
+    }
+    
+    func setDimmedView(alpha: CGFloat = 0.6) {
+        let dimmedView = UIView(frame: CGRect(origin: .zero, size: self.frame.size))
+        dimmedView.backgroundColor = UIColor.black.withAlphaComponent(alpha)
+        self.addSubview(dimmedView)
     }
 }
