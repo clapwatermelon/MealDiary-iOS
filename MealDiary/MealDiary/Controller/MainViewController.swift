@@ -11,13 +11,16 @@ import UIKit
 class MainViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    var headerView: MainHeaderView?
-    var filterView: FilterView?
+    var headerView: MainHeaderView = MainHeaderView()
+    var filterView: FilterView = FilterView()
     var cards: [Card] = sample.cards
     var selectedIndex: Set<Int> = []
     var tableFrame: CGRect?
     var filterFrame: CGRect?
     let headerViewHeight: CGFloat = 84
+    
+    var scrollViewStartOffsetY: CGFloat = 0
+    var beforeOffsetY: CGFloat = 0
     
     func setFilterView() {
         guard let filterView = FilterView.instanceFromNib() else { return }
@@ -25,13 +28,13 @@ class MainViewController: UIViewController {
         
         let statusBarHeight = UIApplication.shared.statusBarFrame.height
         let origin = CGPoint(x: 0, y: statusBarHeight + 50 + headerViewHeight)
-        filterFrame = CGRect(origin: origin, size: CGSize(width: self.view.frame.width, height: 45))
+        filterFrame = CGRect(origin: origin, size: CGSize(width: self.view.frame.width, height: 55))
         filterView.frame = filterFrame ?? CGRect(origin: .zero, size: .zero)
         
         self.view.addSubview(filterView)
     }
     
-    func setUpInitialView() {
+    func setInitialView() {
         guard let headerView = MainHeaderView.instanceFromNib() else { return }
         self.headerView = headerView
         
@@ -42,9 +45,11 @@ class MainViewController: UIViewController {
         headerView.setUp(frame: headerFrame)
         
         self.view.addSubview(headerView)
+        self.view.sendSubviewToBack(headerView)
+        self.view.bringSubviewToFront(tableView)
     }
     
-    func setUpTableView() {
+    func setTableView() {
         guard let headerView = MainHeaderView.instanceFromNib() else { return }
         
         tableView.delegate = self
@@ -58,37 +63,29 @@ class MainViewController: UIViewController {
         tableView.frame = tableFrame ?? CGRect(origin: .zero, size: .zero)
     }
     
-    func scrollViewWillEndDragging(_ scrollView: UIScrollView,
-                                            withVelocity velocity: CGPoint,
-                                            targetContentOffset: UnsafeMutablePointer<CGPoint>){
-        if velocity.y > 0 {
-            // scroll down
-            UIView.animate(withDuration: 0.2) {
-                guard let tableFrame = self.tableFrame else { return }
-                guard let filterFrame = self.filterFrame else { return }
-                
-                self.headerView?.alpha = 0
-                self.filterView?.frame = CGRect(x: 0, y: filterFrame.origin.y - self.headerViewHeight, width: filterFrame.size.width, height: filterFrame.size.height)
-                self.tableView.frame = CGRect(x: 0, y: tableFrame.origin.y - self.headerViewHeight, width: tableFrame.size.width, height: tableFrame.size.height + self.headerViewHeight)
-            }
-            
-        } else if velocity.y < 0 {
-            // scroll up
-            UIView.animate(withDuration: 0.2) {
-                guard let tableFrame = self.tableFrame else { return }
-                guard let filterFrame = self.filterFrame else { return }
-                
-                self.headerView?.alpha = 1
-                self.filterView?.frame = CGRect(x: 0, y: filterFrame.origin.y, width: filterFrame.size.width, height: filterFrame.size.height)
-                self.tableView.frame = CGRect(x: 0, y: tableFrame.origin.y, width: tableFrame.size.width, height: tableFrame.size.height)
-            }
-        }
+    func setNavigationBar() {
+        let size = navigationController!.navigationBar.frame.height
+    
+        let searchButton = UIButton(type: .system)
+        searchButton.setImage(UIImage(named: "iconIcSearchDefault")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        searchButton.imageView?.contentMode = .scaleAspectFit
+        searchButton.addTarget(self, action: #selector(goSearchView), for: .touchUpInside)
+        
+        let widthConstraint = searchButton.widthAnchor.constraint(equalToConstant: size)
+        let heightConstraint = searchButton.heightAnchor.constraint(equalToConstant: size)
+        widthConstraint.isActive = true
+        heightConstraint.isActive = true
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: searchButton)
+    }
+    
+    @objc func goSearchView() {
+        
     }
     
     @objc func tabWriteButton(sender: UIButton) {
         let storyBoard = UIStoryboard(name: "SelectPhoto", bundle: nil)
         let vc = storyBoard.instantiateViewController(withIdentifier: "SelectPhotoViewController") as! SelectPhotoViewController
-        self.present(vc, animated: true, completion: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func tabThreeDotsButton(sender: UIButton) {
@@ -133,10 +130,71 @@ class MainViewController: UIViewController {
 extension MainViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpInitialView()
+        setInitialView()
         setFilterView()
-        setUpTableView()
+        setTableView()
+        setNavigationBar()
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+    }
+}
+
+extension MainViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY: CGFloat = {
+            let firstOffset = scrollViewStartOffsetY < 0 ? scrollViewStartOffsetY * -1 : scrollViewStartOffsetY
+            return scrollView.contentOffset.y + firstOffset
+        }()
+        
+        guard let tableFrame = self.tableFrame else { return }
+        guard let filterFrame = self.filterFrame else { return }
+        
+        let difference = offsetY - beforeOffsetY
+        let height = UIApplication.shared.statusBarFrame.height + navigationController!.navigationBar.frame.height
+        
+        if offsetY <= 0 {
+            headerView.alpha = 1
+            filterView.frame = filterFrame
+            tableView.frame = tableFrame
+        } else if offsetY >= (scrollView.contentSize.height - tableView.frame.height) {
+            headerView.alpha = 0
+        } else {
+            if difference > 0 {
+                if headerView.alpha > 0.0 {
+                    headerView.alpha -= (difference / 80)
+                }
+                
+                if tableView.frame.origin.y > height {
+                    filterView.frame.origin.y -= difference
+                    tableView.frame = CGRect(x: 0, y: tableView.frame.origin.y - difference, width: tableFrame.width, height: tableView.frame.size.height + difference)
+                } else {
+                    headerView.alpha = 0
+                    filterView.frame = CGRect(x: 0, y: height - filterFrame.height, width: filterFrame.width, height: filterFrame.height)
+                    tableView.frame = CGRect(x: 0, y: height, width: tableFrame.width, height: self.view.frame.height - height)
+                }
+                
+            } else {
+                if headerView.alpha < 1.0 {
+                    headerView.alpha -= (difference / 150)
+                }
+                
+                if filterView.frame.origin.y < filterFrame.origin.y {
+                    filterView.frame.origin.y -= difference
+                    tableView.frame = CGRect(x: 0, y: tableView.frame.origin.y - difference, width: tableFrame.width, height: tableView.frame.size.height + difference)
+                } else {
+                    headerView.alpha = 1
+                    filterView.frame = filterFrame
+                    tableView.frame = tableFrame
+                }
+                
+            }
+        }
+        beforeOffsetY = offsetY
+    }
+   
 }
 
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {

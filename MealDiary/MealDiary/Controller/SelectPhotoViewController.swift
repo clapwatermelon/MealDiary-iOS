@@ -13,11 +13,10 @@ import RxCocoa
 
 class SelectPhotoViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
-    let assetManager = AssetManager()
     var photos: BehaviorRelay<[PHAsset]> = BehaviorRelay<[PHAsset]>(value: [])
     var selectedIndexPaths: BehaviorRelay<[IndexPath]> = BehaviorRelay<[IndexPath]>(value: [])
     var dictionary: [Int: Int] = [:]
-    var a = Set<[PHAsset]>()
+    let nextButton = UIButton(type: .system)
     let disposeBag = DisposeBag()
     
     func setCollectionView() {
@@ -43,6 +42,10 @@ class SelectPhotoViewController: UIViewController {
                 selectedIndexPaths.append(indexPath)
                 self.selectedIndexPaths.accept(selectedIndexPaths)
                 
+                if selectedIndexPaths.count != 0 {
+                    self.nextButton.isEnabled = true
+                }
+                
             }).disposed(by: disposeBag)
         
         collectionView.rx.itemDeselected
@@ -55,6 +58,10 @@ class SelectPhotoViewController: UIViewController {
                 selectedIndexPaths.remove(at: index)
                 self.selectedIndexPaths.accept(selectedIndexPaths)
                 
+                if selectedIndexPaths.count == 0 {
+                    self.nextButton.isEnabled = false
+                }
+                
                 cell.unchecked()
                 
             }).disposed(by: disposeBag)
@@ -65,16 +72,29 @@ class SelectPhotoViewController: UIViewController {
                 guard let index = indexPaths.firstIndex(of: indexPath) else { return }
                 guard let cell = self.collectionView.cellForItem(at: indexPath) as? SelectPhotoCollectionViewCell else { return }
                 
-                self.dictionary[indexPath.item] = index
-                cell.checked(index: index)
-                
+                self.dictionary[indexPath.item] = index + 1
+                cell.checked(index: index + 1)
             })
         }).disposed(by: disposeBag)
     }
     
     func getImages (){
         PHPhotoLibrary.shared().register(self)
-        photos.accept(assetManager.fetchImages(by: nil))
+        photos.accept(AssetManager.fetchImages(by: nil))
+    }
+    
+    func setNavigationBar() {
+        nextButton.setTitle("다음", for: .normal)
+        if let font = UIFont(name: "Helvetica", size: 18.0) {
+            nextButton.titleLabel?.font = font
+        }
+        nextButton.addTarget(self, action: #selector(completeSelect), for: .touchUpInside)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: nextButton)
+        nextButton.isEnabled = false
+    }
+    
+    @objc func completeSelect() {
+        
     }
 }
 
@@ -82,6 +102,7 @@ extension SelectPhotoViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setCollectionView()
+        setNavigationBar()
         PHPhotoLibrary.requestAuthorization({
             (newStatus) in
             if newStatus ==  PHAuthorizationStatus.authorized {

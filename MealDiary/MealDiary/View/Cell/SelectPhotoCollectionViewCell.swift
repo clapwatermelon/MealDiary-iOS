@@ -38,7 +38,7 @@ class SelectPhotoCollectionViewCell: UICollectionViewCell {
         view.layer.borderWidth = 3
         checkedNumberLabel.layer.borderWidth = 0
         checkedNumberLabel.backgroundColor = UIColor.primaryOrange
-        checkedNumberLabel.text = (index + 1).description
+        checkedNumberLabel.text = (index).description
     }
     
     func unchecked() {

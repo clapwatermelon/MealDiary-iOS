@@ -10,9 +10,9 @@
 import Foundation
 import Photos
 
-class AssetManager {
+struct AssetManager {
     // MARK: - Method
-    func fetchImages(by identifiers: [String]?) -> [PHAsset] {
+    static func fetchImages(by identifiers: [String]?) -> [PHAsset] {
         let fetchResult: PHFetchResult<PHAsset>
         let fetchOptions = PHFetchOptions()
         
@@ -31,7 +31,7 @@ class AssetManager {
         return fetchResult.objects(at: indexSet)
     }
     
-    func getAsset(in dictionary: [String: [String]]) -> [String: [PHAsset]]{
+    static func getAsset(in dictionary: [String: [String]]) -> [String: [PHAsset]]{
         var returnDict: [String: [PHAsset]] = [:]
         
         for key in dictionary.keys {
@@ -46,7 +46,7 @@ class AssetManager {
         return returnDict
     }
     
-    func getArrayData(for key: String) -> [String] {
+    static func getArrayData(for key: String) -> [String] {
         if let data = UserDefaults.standard.object(forKey: key) as? Data {
             if let stringArray = NSKeyedUnarchiver.unarchiveObject(with: data) as? [String] {
                 return stringArray
@@ -56,7 +56,7 @@ class AssetManager {
         return []
     }
     
-    func getDictionaryData(for key: String) -> [String: [String]] {
+    static func getDictionaryData(for key: String) -> [String: [String]] {
         if let data = UserDefaults.standard.object(forKey: key) as? Data {
             if let dictionary = NSKeyedUnarchiver.unarchiveObject(with: data) as? [String: [String]] {
                 return dictionary
@@ -66,7 +66,7 @@ class AssetManager {
         return [:]
     }
     
-    func save(data:Any, for key: String) {
+    static func save(data:Any, for key: String) {
         let userDefaults = UserDefaults.standard
         let encodedData: Data = NSKeyedArchiver.archivedData(withRootObject: data)
         userDefaults.set(encodedData, forKey: key)
