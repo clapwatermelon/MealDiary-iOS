@@ -61,12 +61,22 @@ class MainViewController: UIViewController {
         tableFrame = CGRect(origin: origin, size: size)
         tableView.frame = tableFrame ?? CGRect(origin: .zero, size: .zero)
         tableView.rx.setDelegate(self).disposed(by: disposeBag)
+        
         cards.asObservable().bind(to: tableView.rx.items(cellIdentifier: HomeCardTableViewCell.identifier, cellType: HomeCardTableViewCell.self)){
             (row, card, cell) in
-            
             cell.setUp(with: card)
-            
         }.disposed(by: disposeBag)
+        
+        tableView.rx.itemSelected.subscribe( onNext: { [weak self] (indexPath) in
+            guard let `self` = self else { return }
+            let card = self.cards.value[indexPath.item]
+            
+            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyBoard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+            self.navigationController?.pushViewController(vc, animated: true)
+            vc.setUp(with: card)
+            
+        }).disposed(by: disposeBag)
     }
     
     func setNavigationBar() {
@@ -93,26 +103,6 @@ class MainViewController: UIViewController {
         let vc = storyBoard.instantiateViewController(withIdentifier: "SelectPhotoViewController") as! SelectPhotoViewController
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    
-//    @objc func tabThreeDotsButton(sender: UIButton) {
-//        let actionSheetController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-//
-//        let cancelActionButton = UIAlertAction(title: "취소", style: .cancel) { action -> Void in
-//            print("Cancel")
-//        }
-//        actionSheetController.addAction(cancelActionButton)
-//
-//        let modifyActionButton = UIAlertAction(title: "수정", style: .default) { action -> Void in
-//            print("수정")
-//        }
-//        actionSheetController.addAction(modifyActionButton)
-//
-//        let deleteActionButton = UIAlertAction(title: "삭제", style: .destructive) { action -> Void in
-//            print("삭제")
-//        }
-//        actionSheetController.addAction(deleteActionButton)
-//        self.present(actionSheetController, animated: true, completion: nil)
-//    }
 }
 
 extension MainViewController {

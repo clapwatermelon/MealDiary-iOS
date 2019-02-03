@@ -27,6 +27,7 @@
 		04821FBB2205E338002001B9 /* Label+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04821FBA2205E338002001B9 /* Label+Ext.swift */; };
 		04821FC02205F0E1002001B9 /* HomeCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04821FBE2205F0E1002001B9 /* HomeCardTableViewCell.swift */; };
 		04821FC12205F0E1002001B9 /* HomeCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04821FBF2205F0E1002001B9 /* HomeCardTableViewCell.xib */; };
+		04821FC32206A1FE002001B9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04821FC22206A1FE002001B9 /* DetailViewController.swift */; };
 		6D026A0B20BDC27574ACFFCA /* Pods_MealDiary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCFB69D9552636CD9D743323 /* Pods_MealDiary.framework */; };
 		CE15BA9921F5EB0B00FD69F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15BA9821F5EB0B00FD69F7 /* AppDelegate.swift */; };
 		CE15BA9B21F5EB0B00FD69F7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15BA9A21F5EB0B00FD69F7 /* MainViewController.swift */; };
@@ -73,6 +74,7 @@
 		04821FBA2205E338002001B9 /* Label+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Label+Ext.swift"; sourceTree = "<group>"; };
 		04821FBE2205F0E1002001B9 /* HomeCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCardTableViewCell.swift; sourceTree = "<group>"; };
 		04821FBF2205F0E1002001B9 /* HomeCardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCardTableViewCell.xib; sourceTree = "<group>"; };
+		04821FC22206A1FE002001B9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		38679EB5624B80F2BB6818CD /* Pods-MealDiary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealDiary.release.xcconfig"; path = "Pods/Target Support Files/Pods-MealDiary/Pods-MealDiary.release.xcconfig"; sourceTree = "<group>"; };
 		4558CCC9DA378A8DBF81E8CB /* Pods-MealDiary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealDiary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MealDiary/Pods-MealDiary.debug.xcconfig"; sourceTree = "<group>"; };
 		BCFB69D9552636CD9D743323 /* Pods_MealDiary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MealDiary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -242,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				CE15BA9A21F5EB0B00FD69F7 /* MainViewController.swift */,
+				04821FC22206A1FE002001B9 /* DetailViewController.swift */,
 				04821FB321FC23A4002001B9 /* SelectPhotoViewController.swift */,
 			);
 			path = Controller;
@@ -468,6 +471,7 @@
 				CE15BAC121F6070000FD69F7 /* FilterView.swift in Sources */,
 				04821FC02205F0E1002001B9 /* HomeCardTableViewCell.swift in Sources */,
 				04821FB721FC268C002001B9 /* AssetManager.swift in Sources */,
+				04821FC32206A1FE002001B9 /* DetailViewController.swift in Sources */,
 				04821FB921FC27F8002001B9 /* Image+Ext.swift in Sources */,
 				CE15BABF21F5FFC100FD69F7 /* Card.swift in Sources */,
 				CE443D0F21F76FBE00CB52B0 /* PhotoCollectionViewCell.swift in Sources */,

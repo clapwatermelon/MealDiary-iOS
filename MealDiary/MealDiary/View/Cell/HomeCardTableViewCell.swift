@@ -33,5 +33,4 @@ class HomeCardTableViewCell: UITableViewCell {
         underLineView.frame = CGRect(x: 40, y: 55, width: width + 10, height: 19)
         self.selectionStyle = .none
     }
-    
 }
