@@ -141,8 +141,13 @@ class MainViewController: UIViewController {
     }
     
     @objc func tabWriteButton(sender: UIButton) {
-        let storyBoard = UIStoryboard(name: "Rate", bundle: nil)
-        let vc = storyBoard.instantiateViewController(withIdentifier: "SelectPhotoViewController") as! SelectPhotoViewController
+//        let storyBoard = UIStoryboard(name: "Rate", bundle: nil)
+//        let vc = storyBoard.instantiateViewController(withIdentifier: "RateViewController") as! RateViewController
+        let storyBoard = UIStoryboard(name: "Write", bundle: nil)
+        guard let vc = storyBoard.instantiateViewController(withIdentifier: "WriteViewController") as? WriteViewController else {
+            return
+        }
+        
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

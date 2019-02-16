@@ -1,0 +1,15 @@
+//
+//  TagTableViewCell.swift
+//  MealDiary
+//
+//  Created by 박수현 on 16/02/2019.
+//  Copyright © 2019 clap. All rights reserved.
+//
+
+import UIKit
+
+class TagTableViewCell: UITableViewCell {
+
+    @IBOutlet weak var tagTextField: UITextField!
+    static let identifier = "TagTableViewCell"
+}

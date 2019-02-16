@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Spoqa Han Sans Bold.ttf">
+            <string>SpoqaHanSans-Bold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Write View Controller-->
+        <scene sceneID="Rm2-2Y-Ntq">
+            <objects>
+                <viewController storyboardIdentifier="WriteViewController" id="pRx-Lx-zJY" customClass="WriteViewController" customModule="MealDiary" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ulj-mo-QZU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="적는 게 남는 거야" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZW-K6-4Cy">
+                                <rect key="frame" x="20" y="40" width="335" height="36"/>
+                                <fontDescription key="fontDescription" name="SpoqaHanSans-Bold" family="SpoqaHanSans" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3n9-qH-1sB">
+                                <rect key="frame" x="0.0" y="111" width="375" height="556"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="pRx-Lx-zJY" id="AQN-Tk-xYR"/>
+                                    <outlet property="delegate" destination="pRx-Lx-zJY" id="4Iw-aL-hlm"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="JdB-qF-UYu" firstAttribute="bottom" secondItem="3n9-qH-1sB" secondAttribute="bottom" id="Bs1-pg-Wrc"/>
+                            <constraint firstItem="JdB-qF-UYu" firstAttribute="trailing" secondItem="3n9-qH-1sB" secondAttribute="trailing" id="HgZ-tz-uPJ"/>
+                            <constraint firstItem="WZW-K6-4Cy" firstAttribute="leading" secondItem="JdB-qF-UYu" secondAttribute="leading" constant="20" id="cZq-C0-h2e"/>
+                            <constraint firstItem="3n9-qH-1sB" firstAttribute="leading" secondItem="JdB-qF-UYu" secondAttribute="leading" id="d4U-C1-1Mn"/>
+                            <constraint firstItem="WZW-K6-4Cy" firstAttribute="top" secondItem="JdB-qF-UYu" secondAttribute="top" constant="20" id="dXq-op-v8u"/>
+                            <constraint firstItem="JdB-qF-UYu" firstAttribute="trailing" secondItem="WZW-K6-4Cy" secondAttribute="trailing" constant="20" id="nVD-N7-uRh"/>
+                            <constraint firstItem="3n9-qH-1sB" firstAttribute="top" secondItem="WZW-K6-4Cy" secondAttribute="bottom" constant="35" id="tFM-gD-9cg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="JdB-qF-UYu"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="3n9-qH-1sB" id="Tlu-3K-Z9V"/>
+                        <outlet property="titleLabel" destination="WZW-K6-4Cy" id="F8W-dR-TwT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dzy-mT-GAA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-103.2" y="100.29985007496252"/>
+        </scene>
+    </scenes>
+</document>
