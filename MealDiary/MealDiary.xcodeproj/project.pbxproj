@@ -22,13 +22,20 @@
 		04821FC52206C043002001B9 /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04821FC42206C043002001B9 /* MapManager.swift */; };
 		04821FC72206CD6A002001B9 /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04821FC62206CD6A002001B9 /* View+Ext.swift */; };
 		04821FCB220847B1002001B9 /* RateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04821FCA220847B1002001B9 /* RateViewController.swift */; };
-		04821FD122084C2F002001B9 /* rate4.gif in Resources */ = {isa = PBXBuildFile; fileRef = 04821FCD22084C2E002001B9 /* rate4.gif */; };
-		04821FD222084C30002001B9 /* rate0.gif in Resources */ = {isa = PBXBuildFile; fileRef = 04821FCE22084C2E002001B9 /* rate0.gif */; };
-		04821FD322084C30002001B9 /* rate1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 04821FCF22084C2F002001B9 /* rate1.gif */; };
-		04821FD422084C30002001B9 /* rate3.gif in Resources */ = {isa = PBXBuildFile; fileRef = 04821FD022084C2F002001B9 /* rate3.gif */; };
 		04821FD7220857E2002001B9 /* RateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04821FD5220857E2002001B9 /* RateCollectionViewCell.swift */; };
 		04821FD8220857E2002001B9 /* RateCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04821FD6220857E2002001B9 /* RateCollectionViewCell.xib */; };
 		04CE88CC220AF91B009CDAD9 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04CE88CB220AF91B009CDAD9 /* Splash.storyboard */; };
+		04CE88E22218000A009CDAD9 /* 4.gif in Resources */ = {isa = PBXBuildFile; fileRef = 04CE88DC22180009009CDAD9 /* 4.gif */; };
+		04CE88E32218000A009CDAD9 /* 0.gif in Resources */ = {isa = PBXBuildFile; fileRef = 04CE88DD22180009009CDAD9 /* 0.gif */; };
+		04CE88E42218000A009CDAD9 /* 5.gif in Resources */ = {isa = PBXBuildFile; fileRef = 04CE88DE2218000A009CDAD9 /* 5.gif */; };
+		04CE88E52218000A009CDAD9 /* 1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 04CE88DF2218000A009CDAD9 /* 1.gif */; };
+		04CE88E62218000A009CDAD9 /* 2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 04CE88E02218000A009CDAD9 /* 2.gif */; };
+		04CE88E72218000A009CDAD9 /* 3.gif in Resources */ = {isa = PBXBuildFile; fileRef = 04CE88E12218000A009CDAD9 /* 3.gif */; };
+		04CE88EA22180286009CDAD9 /* SplashViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE88E922180286009CDAD9 /* SplashViewController1.swift */; };
+		04CE88EC22180299009CDAD9 /* SplashViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE88EB22180299009CDAD9 /* SplashViewController2.swift */; };
+		04CE88EE221802BD009CDAD9 /* SplashViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE88ED221802BD009CDAD9 /* SplashViewController3.swift */; };
+		04CE88F022180402009CDAD9 /* SplashViewController0.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE88EF22180401009CDAD9 /* SplashViewController0.swift */; };
+		04CE88F22218059A009CDAD9 /* SplashNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE88F12218059A009CDAD9 /* SplashNavigation.swift */; };
 		6D026A0B20BDC27574ACFFCA /* Pods_MealDiary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCFB69D9552636CD9D743323 /* Pods_MealDiary.framework */; };
 		CE15BA9921F5EB0B00FD69F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15BA9821F5EB0B00FD69F7 /* AppDelegate.swift */; };
 		CE15BA9B21F5EB0B00FD69F7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15BA9A21F5EB0B00FD69F7 /* MainViewController.swift */; };
@@ -70,13 +77,20 @@
 		04821FC42206C043002001B9 /* MapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
 		04821FC62206CD6A002001B9 /* View+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Ext.swift"; sourceTree = "<group>"; };
 		04821FCA220847B1002001B9 /* RateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateViewController.swift; sourceTree = "<group>"; };
-		04821FCD22084C2E002001B9 /* rate4.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = rate4.gif; sourceTree = "<group>"; };
-		04821FCE22084C2E002001B9 /* rate0.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = rate0.gif; sourceTree = "<group>"; };
-		04821FCF22084C2F002001B9 /* rate1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = rate1.gif; sourceTree = "<group>"; };
-		04821FD022084C2F002001B9 /* rate3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = rate3.gif; sourceTree = "<group>"; };
 		04821FD5220857E2002001B9 /* RateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateCollectionViewCell.swift; sourceTree = "<group>"; };
 		04821FD6220857E2002001B9 /* RateCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RateCollectionViewCell.xib; sourceTree = "<group>"; };
 		04CE88CB220AF91B009CDAD9 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
+		04CE88DC22180009009CDAD9 /* 4.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 4.gif; sourceTree = "<group>"; };
+		04CE88DD22180009009CDAD9 /* 0.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 0.gif; sourceTree = "<group>"; };
+		04CE88DE2218000A009CDAD9 /* 5.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 5.gif; sourceTree = "<group>"; };
+		04CE88DF2218000A009CDAD9 /* 1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 1.gif; sourceTree = "<group>"; };
+		04CE88E02218000A009CDAD9 /* 2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 2.gif; sourceTree = "<group>"; };
+		04CE88E12218000A009CDAD9 /* 3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 3.gif; sourceTree = "<group>"; };
+		04CE88E922180286009CDAD9 /* SplashViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController1.swift; sourceTree = "<group>"; };
+		04CE88EB22180299009CDAD9 /* SplashViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController2.swift; sourceTree = "<group>"; };
+		04CE88ED221802BD009CDAD9 /* SplashViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController3.swift; sourceTree = "<group>"; };
+		04CE88EF22180401009CDAD9 /* SplashViewController0.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController0.swift; sourceTree = "<group>"; };
+		04CE88F12218059A009CDAD9 /* SplashNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashNavigation.swift; sourceTree = "<group>"; };
 		38679EB5624B80F2BB6818CD /* Pods-MealDiary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealDiary.release.xcconfig"; path = "Pods/Target Support Files/Pods-MealDiary/Pods-MealDiary.release.xcconfig"; sourceTree = "<group>"; };
 		4558CCC9DA378A8DBF81E8CB /* Pods-MealDiary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealDiary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MealDiary/Pods-MealDiary.debug.xcconfig"; sourceTree = "<group>"; };
 		BCFB69D9552636CD9D743323 /* Pods_MealDiary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MealDiary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,13 +161,6 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		04821F9A21FC03F4002001B9 /* Font */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Font;
-			sourceTree = "<group>";
-		};
 		04821FB521FC267E002001B9 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
@@ -166,12 +173,27 @@
 		04821FCC22084B62002001B9 /* Gif */ = {
 			isa = PBXGroup;
 			children = (
-				04821FCE22084C2E002001B9 /* rate0.gif */,
-				04821FCF22084C2F002001B9 /* rate1.gif */,
-				04821FD022084C2F002001B9 /* rate3.gif */,
-				04821FCD22084C2E002001B9 /* rate4.gif */,
+				04CE88DD22180009009CDAD9 /* 0.gif */,
+				04CE88DF2218000A009CDAD9 /* 1.gif */,
+				04CE88E02218000A009CDAD9 /* 2.gif */,
+				04CE88E12218000A009CDAD9 /* 3.gif */,
+				04CE88DC22180009009CDAD9 /* 4.gif */,
+				04CE88DE2218000A009CDAD9 /* 5.gif */,
 			);
 			path = Gif;
+			sourceTree = "<group>";
+		};
+		04CE88E822180204009CDAD9 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				04CE88CB220AF91B009CDAD9 /* Splash.storyboard */,
+				04CE88F12218059A009CDAD9 /* SplashNavigation.swift */,
+				04CE88EF22180401009CDAD9 /* SplashViewController0.swift */,
+				04CE88E922180286009CDAD9 /* SplashViewController1.swift */,
+				04CE88EB22180299009CDAD9 /* SplashViewController2.swift */,
+				04CE88ED221802BD009CDAD9 /* SplashViewController3.swift */,
+			);
+			path = Splash;
 			sourceTree = "<group>";
 		};
 		3F35808C6608E9C3C8927523 /* Pods */ = {
@@ -204,6 +226,7 @@
 		CE15BA9721F5EB0B00FD69F7 /* MealDiary */ = {
 			isa = PBXGroup;
 			children = (
+				04CE88E822180204009CDAD9 /* Splash */,
 				04821FB521FC267E002001B9 /* Manager */,
 				04821F9521FBF945002001B9 /* Extension */,
 				CE15BAB021F5EC0100FD69F7 /* Storyboard */,
@@ -220,7 +243,6 @@
 		CE15BAAA21F5EB1600FD69F7 /* Etc. */ = {
 			isa = PBXGroup;
 			children = (
-				04821F9A21FC03F4002001B9 /* Font */,
 				CE15BA9821F5EB0B00FD69F7 /* AppDelegate.swift */,
 				CE15BA9F21F5EB0F00FD69F7 /* Assets.xcassets */,
 				04821FCC22084B62002001B9 /* Gif */,
@@ -264,7 +286,6 @@
 				CE15BAA121F5EB0F00FD69F7 /* LaunchScreen.storyboard */,
 				CE15BA9C21F5EB0B00FD69F7 /* Main.storyboard */,
 				04821FAD21FC04DD002001B9 /* Rate.storyboard */,
-				04CE88CB220AF91B009CDAD9 /* Splash.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -403,22 +424,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04CE88E72218000A009CDAD9 /* 3.gif in Resources */,
+				04CE88E62218000A009CDAD9 /* 2.gif in Resources */,
+				04CE88E22218000A009CDAD9 /* 4.gif in Resources */,
 				CE15BAB321F5EEAF00FD69F7 /* MainHeaderView.xib in Resources */,
 				CE15BAA321F5EB0F00FD69F7 /* LaunchScreen.storyboard in Resources */,
-				04821FD422084C30002001B9 /* rate3.gif in Resources */,
 				CE15BAC321F6073100FD69F7 /* FilterView.xib in Resources */,
 				CE15BAA021F5EB0F00FD69F7 /* Assets.xcassets in Resources */,
 				CE443D1021F76FBE00CB52B0 /* PhotoCollectionViewCell.xib in Resources */,
+				04CE88E42218000A009CDAD9 /* 5.gif in Resources */,
 				04821FAE21FC04DD002001B9 /* Rate.storyboard in Resources */,
 				04821FC12205F0E1002001B9 /* HomeCardTableViewCell.xib in Resources */,
+				04CE88E32218000A009CDAD9 /* 0.gif in Resources */,
 				04CE88CC220AF91B009CDAD9 /* Splash.storyboard in Resources */,
 				CE15BABD21F5FC2D00FD69F7 /* DetailCardTableViewCell.xib in Resources */,
 				04821FD8220857E2002001B9 /* RateCollectionViewCell.xib in Resources */,
-				04821FD222084C30002001B9 /* rate0.gif in Resources */,
-				04821FD122084C2F002001B9 /* rate4.gif in Resources */,
 				04821FB221FC2087002001B9 /* SelectPhotoCollectionViewCell.xib in Resources */,
 				CE15BA9E21F5EB0B00FD69F7 /* Main.storyboard in Resources */,
-				04821FD322084C30002001B9 /* rate1.gif in Resources */,
+				04CE88E52218000A009CDAD9 /* 1.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,11 +504,14 @@
 				04821FC72206CD6A002001B9 /* View+Ext.swift in Sources */,
 				CE15BABC21F5FC2D00FD69F7 /* DetailCardTableViewCell.swift in Sources */,
 				CE15BA9B21F5EB0B00FD69F7 /* MainViewController.swift in Sources */,
+				04CE88EA22180286009CDAD9 /* SplashViewController1.swift in Sources */,
 				04821F9921FBFDEF002001B9 /* Color+Ext.swift in Sources */,
 				CE15BAC121F6070000FD69F7 /* FilterView.swift in Sources */,
+				04CE88F022180402009CDAD9 /* SplashViewController0.swift in Sources */,
 				04821FC02205F0E1002001B9 /* HomeCardTableViewCell.swift in Sources */,
 				04821FB721FC268C002001B9 /* AssetManager.swift in Sources */,
 				04821FC32206A1FE002001B9 /* DetailViewController.swift in Sources */,
+				04CE88EE221802BD009CDAD9 /* SplashViewController3.swift in Sources */,
 				04821FB921FC27F8002001B9 /* Image+Ext.swift in Sources */,
 				CE15BABF21F5FFC100FD69F7 /* Card.swift in Sources */,
 				CE443D0F21F76FBE00CB52B0 /* PhotoCollectionViewCell.swift in Sources */,
@@ -493,8 +519,10 @@
 				04821FB121FC2087002001B9 /* SelectPhotoCollectionViewCell.swift in Sources */,
 				04821FCB220847B1002001B9 /* RateViewController.swift in Sources */,
 				04821FB421FC23A4002001B9 /* SelectPhotoViewController.swift in Sources */,
+				04CE88F22218059A009CDAD9 /* SplashNavigation.swift in Sources */,
 				04821F9721FBF953002001B9 /* String+Ext.swift in Sources */,
 				04821FD7220857E2002001B9 /* RateCollectionViewCell.swift in Sources */,
+				04CE88EC22180299009CDAD9 /* SplashViewController2.swift in Sources */,
 				CE15BA9921F5EB0B00FD69F7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

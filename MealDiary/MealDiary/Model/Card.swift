@@ -31,17 +31,27 @@ class sample {
     static let card2 = Card(photos: [UIImage(named: "sample2")!, UIImage(named: "sample3")!, UIImage(named: "sample1")!], restaurantName: "배네딕트 맛집👍🏻👍🏻", point: 20, address: "서울 강남구 역삼동 819-1 3층", hashtagList: ["한식", "감자탕", "회식", "저렴한"], detailText: "안녕", date: "2019.01.27")
     
     static let cards: [Card] = [card, card2, card, card2, card, card, card, card]
+}
+
+struct Rate {
+    static let gif0 = UIImage(gifName: "0")
+    static let gif1 = UIImage(gifName: "1")
+    static let gif2 = UIImage(gifName: "2")
+    static let gif3 = UIImage(gifName: "3")
+    static let gif4 = UIImage(gifName: "4")
+    static let gif5 = UIImage(gifName: "5")
     
+    static let rate0 = RateCard(rateImage: gif0, rateNum: 0, rateText: "다시는 안갈거야!!")
+    static let rate1 = RateCard(rateImage: gif0, rateNum: 10, rateText: "다시는 안갈거야!!")
+    static let rate2 = RateCard(rateImage: gif1, rateNum: 20, rateText: "언젠가 인연이 되면 또 가겠지..")
+    static let rate3 = RateCard(rateImage: gif1, rateNum: 30, rateText: "언젠가 인연이 되면 또 가겠지..")
+    static let rate4 = RateCard(rateImage: gif2, rateNum: 40, rateText: "먹을만..했다..")
+    static let rate5 = RateCard(rateImage: gif2, rateNum: 50, rateText: "먹을만..했다..")
+    static let rate6 = RateCard(rateImage: gif3, rateNum: 60, rateText: "보람찬 한 끼였다.")
+    static let rate7 = RateCard(rateImage: gif3, rateNum: 70, rateText: "보람찬 한 끼였다.")
+    static let rate8 = RateCard(rateImage: gif4, rateNum: 80, rateText: "뿌듯한 한 끼였다.")
+    static let rate9 = RateCard(rateImage: gif4, rateNum: 90, rateText: "뿌듯한 한 끼였다.")
+    static let rate10 = RateCard(rateImage: gif5, rateNum: 100, rateText: "드디어 인생 맛집을 찾았다!")
     
-    static let gif0 = UIImage(gifName: "rate0")
-    static let gif1 = UIImage(gifName: "rate1")
-    static let gif3 = UIImage(gifName: "rate3")
-    static let gif4 = UIImage(gifName: "rate4")
-    
-    static let rate0 = RateCard(rateImage: gif0, rateNum: 10, rateText: "다시는 안갈거야!!")
-    static let rate1 = RateCard(rateImage: gif1, rateNum: 40, rateText: "언젠가 인연이 되면 또 가겠지..")
-    static let rate3 = RateCard(rateImage: gif3, rateNum: 60, rateText: "먹을만..했다..")
-    static let rate4 = RateCard(rateImage: gif4, rateNum: 100, rateText: "드디어 인생 맛집을 찾았다!")
-    
-    static let rates: [RateCard] = [rate0, rate1, rate3, rate4]
+    static let rates: [RateCard] = [rate0, rate1, rate2, rate3, rate4, rate5, rate6, rate7, rate8, rate9, rate10]
 }

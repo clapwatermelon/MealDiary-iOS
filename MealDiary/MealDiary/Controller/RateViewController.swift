@@ -29,7 +29,7 @@ class RateViewController: UIViewController {
         }
     }
     
-    let rates = sample.rates
+    let rates = Rate.rates
     var currentPage = 0
     
     func scrollPage(to page: Int){
@@ -69,14 +69,20 @@ class RateViewController: UIViewController {
         let currentX = scrollView.contentOffset.x
         var degree = (currentX.truncatingRemainder(dividingBy: base)) / base * 90
         if degree == 0 { degree = 90 }
-        
+    
         if collectionView.visibleCells.count == 2 {
-            if Int(currentX / base) % 2 == 1 {
-                collectionView.visibleCells.first?.contentView.layer.rotateY(degree: degree)
-                collectionView.visibleCells.last?.contentView.layer.rotateY(degree: (90 - degree) * -1)
+            guard let first = collectionView.visibleCells.first?.contentView else { return }
+            guard let last = collectionView.visibleCells.last?.contentView else { return }
+            
+            if (Int((currentX) / base) == 4) {
+                first.layer.rotateY(degree: degree)
+                last.layer.rotateY(degree: (90 - degree) * -1)
+            } else if (Int(currentX / base) % 2 == 1) && (Int((currentX) / base) / 3 % 2 == 0) {
+                first.layer.rotateY(degree: degree)
+                last.layer.rotateY(degree: (90 - degree) * -1)
             } else {
-                collectionView.visibleCells.first?.contentView.layer.rotateY(degree: (90 - degree) * -1)
-                collectionView.visibleCells.last?.contentView.layer.rotateY(degree: degree)
+                first.layer.rotateY(degree: (90 - degree) * -1)
+                last.layer.rotateY(degree: degree)
             }
         }
         

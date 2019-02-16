@@ -112,6 +112,10 @@ extension MainViewController {
         setFilterView()
         setTableView()
         setNavigationBar()
+        
+        let storyBoard = UIStoryboard(name: "Splash", bundle: nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "SplashNavigation") as! SplashNavigation
+        self.present(vc, animated: true, completion: nil)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
