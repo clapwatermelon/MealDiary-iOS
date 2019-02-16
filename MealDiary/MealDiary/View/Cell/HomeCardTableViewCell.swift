@@ -11,7 +11,7 @@ import UIKit
 class HomeCardTableViewCell: UITableViewCell {
     @IBOutlet weak var pointLabel: UILabel!
     @IBOutlet weak var dimmedView: UIView!
-    @IBOutlet weak var restaurantNameLabel: UILabel!
+    @IBOutlet weak var titleTextLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var hashTagLabel: UILabel!
     @IBOutlet weak var backgroundImage: UIImageView!
@@ -22,14 +22,14 @@ class HomeCardTableViewCell: UITableViewCell {
         backgroundImage.layer.cornerRadius = 10
         dimmedView.layer.cornerRadius = 10
         pointLabel.text = card.point.description
-        restaurantNameLabel.text = card.restaurantName
+        titleTextLabel.text = card.titleText
         backgroundImage.image = card.photos.first
         dateLabel.text = card.date
         var hashTag = ""
         card.hashtagList.forEach { hashTag += ("#" + $0 + " ") }
         hashTagLabel.text = hashTag
         
-        let width = restaurantNameLabel.intrinsicContentSize.width
+        let width = titleTextLabel.intrinsicContentSize.width
         underLineView.frame = CGRect(x: 40, y: 55, width: width + 10, height: 19)
         self.selectionStyle = .none
     }

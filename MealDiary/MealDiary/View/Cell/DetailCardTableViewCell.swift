@@ -44,7 +44,7 @@ class DetailCardTableViewCell: UITableViewCell {
         cardNumberLabel.layer.cornerRadius = 10
         cardNumberLabel.text = "1/" + card.photos.count.description
         pointLabel.text = card.point.description
-        restaurantNameLabel.text = card.restaurantName
+        restaurantNameLabel.text = card.titleText
         detailLabel.text = card.detailText
         dateLabel.text = card.date
         var hashTag = ""

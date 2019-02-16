@@ -36,6 +36,10 @@
 		04CE88EE221802BD009CDAD9 /* SplashViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE88ED221802BD009CDAD9 /* SplashViewController3.swift */; };
 		04CE88F022180402009CDAD9 /* SplashViewController0.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE88EF22180401009CDAD9 /* SplashViewController0.swift */; };
 		04CE88F22218059A009CDAD9 /* SplashNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE88F12218059A009CDAD9 /* SplashNavigation.swift */; };
+		04CE88F422180854009CDAD9 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04CE88F322180854009CDAD9 /* Search.storyboard */; };
+		04CE88F622180896009CDAD9 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE88F522180896009CDAD9 /* SearchViewController.swift */; };
+		04CE88F9221812FF009CDAD9 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE88F7221812FF009CDAD9 /* SearchTableViewCell.swift */; };
+		04CE88FA221812FF009CDAD9 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04CE88F8221812FF009CDAD9 /* SearchTableViewCell.xib */; };
 		6D026A0B20BDC27574ACFFCA /* Pods_MealDiary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCFB69D9552636CD9D743323 /* Pods_MealDiary.framework */; };
 		CE15BA9921F5EB0B00FD69F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15BA9821F5EB0B00FD69F7 /* AppDelegate.swift */; };
 		CE15BA9B21F5EB0B00FD69F7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15BA9A21F5EB0B00FD69F7 /* MainViewController.swift */; };
@@ -91,6 +95,10 @@
 		04CE88ED221802BD009CDAD9 /* SplashViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController3.swift; sourceTree = "<group>"; };
 		04CE88EF22180401009CDAD9 /* SplashViewController0.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController0.swift; sourceTree = "<group>"; };
 		04CE88F12218059A009CDAD9 /* SplashNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashNavigation.swift; sourceTree = "<group>"; };
+		04CE88F322180854009CDAD9 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		04CE88F522180896009CDAD9 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		04CE88F7221812FF009CDAD9 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		04CE88F8221812FF009CDAD9 /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
 		38679EB5624B80F2BB6818CD /* Pods-MealDiary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealDiary.release.xcconfig"; path = "Pods/Target Support Files/Pods-MealDiary/Pods-MealDiary.release.xcconfig"; sourceTree = "<group>"; };
 		4558CCC9DA378A8DBF81E8CB /* Pods-MealDiary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealDiary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MealDiary/Pods-MealDiary.debug.xcconfig"; sourceTree = "<group>"; };
 		BCFB69D9552636CD9D743323 /* Pods_MealDiary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MealDiary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -276,6 +284,7 @@
 				04821FC22206A1FE002001B9 /* DetailViewController.swift */,
 				04821FCA220847B1002001B9 /* RateViewController.swift */,
 				04821FB321FC23A4002001B9 /* SelectPhotoViewController.swift */,
+				04CE88F522180896009CDAD9 /* SearchViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -286,6 +295,7 @@
 				CE15BAA121F5EB0F00FD69F7 /* LaunchScreen.storyboard */,
 				CE15BA9C21F5EB0B00FD69F7 /* Main.storyboard */,
 				04821FAD21FC04DD002001B9 /* Rate.storyboard */,
+				04CE88F322180854009CDAD9 /* Search.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -312,6 +322,8 @@
 				04821FB021FC2087002001B9 /* SelectPhotoCollectionViewCell.xib */,
 				04821FD5220857E2002001B9 /* RateCollectionViewCell.swift */,
 				04821FD6220857E2002001B9 /* RateCollectionViewCell.xib */,
+				04CE88F7221812FF009CDAD9 /* SearchTableViewCell.swift */,
+				04CE88F8221812FF009CDAD9 /* SearchTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -432,6 +444,8 @@
 				CE15BAC321F6073100FD69F7 /* FilterView.xib in Resources */,
 				CE15BAA021F5EB0F00FD69F7 /* Assets.xcassets in Resources */,
 				CE443D1021F76FBE00CB52B0 /* PhotoCollectionViewCell.xib in Resources */,
+				04CE88F422180854009CDAD9 /* Search.storyboard in Resources */,
+				04CE88FA221812FF009CDAD9 /* SearchTableViewCell.xib in Resources */,
 				04CE88E42218000A009CDAD9 /* 5.gif in Resources */,
 				04821FAE21FC04DD002001B9 /* Rate.storyboard in Resources */,
 				04821FC12205F0E1002001B9 /* HomeCardTableViewCell.xib in Resources */,
@@ -507,6 +521,8 @@
 				04CE88EA22180286009CDAD9 /* SplashViewController1.swift in Sources */,
 				04821F9921FBFDEF002001B9 /* Color+Ext.swift in Sources */,
 				CE15BAC121F6070000FD69F7 /* FilterView.swift in Sources */,
+				04CE88F622180896009CDAD9 /* SearchViewController.swift in Sources */,
+				04CE88F9221812FF009CDAD9 /* SearchTableViewCell.swift in Sources */,
 				04CE88F022180402009CDAD9 /* SplashViewController0.swift in Sources */,
 				04821FC02205F0E1002001B9 /* HomeCardTableViewCell.swift in Sources */,
 				04821FB721FC268C002001B9 /* AssetManager.swift in Sources */,

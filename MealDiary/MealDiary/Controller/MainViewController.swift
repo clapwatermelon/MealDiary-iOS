@@ -95,13 +95,21 @@ class MainViewController: UIViewController {
     }
     
     @objc func goSearchView() {
-        
+        let storyBoard = UIStoryboard(name: "Search", bundle: nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "SearchViewController") as! SearchViewController
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func tabWriteButton(sender: UIButton) {
         let storyBoard = UIStoryboard(name: "Rate", bundle: nil)
         let vc = storyBoard.instantiateViewController(withIdentifier: "RateViewController") as! RateViewController
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func popUpSplash() {
+        let storyBoard = UIStoryboard(name: "Splash", bundle: nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "SplashNavigation") as! SplashNavigation
+        self.present(vc, animated: true, completion: nil)
     }
 }
 
@@ -112,10 +120,6 @@ extension MainViewController {
         setFilterView()
         setTableView()
         setNavigationBar()
-        
-        let storyBoard = UIStoryboard(name: "Splash", bundle: nil)
-        let vc = storyBoard.instantiateViewController(withIdentifier: "SplashNavigation") as! SplashNavigation
-        self.present(vc, animated: true, completion: nil)
     }
     
     override func viewWillDisappear(_ animated: Bool) {

@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -116,7 +112,7 @@
                 <outlet property="dimmedView" destination="I5Q-oK-o50" id="Ejd-KH-pZ1"/>
                 <outlet property="hashTagLabel" destination="7f0-aP-3GF" id="I41-Ou-05D"/>
                 <outlet property="pointLabel" destination="bjk-Ft-hnV" id="Fch-vF-i7p"/>
-                <outlet property="restaurantNameLabel" destination="MSo-X5-W7V" id="ktF-PZ-bL5"/>
+                <outlet property="titleTextLabel" destination="MSo-X5-W7V" id="ktF-PZ-bL5"/>
                 <outlet property="underLineView" destination="Zcb-QI-ecA" id="3Br-la-oHz"/>
             </connections>
             <point key="canvasLocation" x="137.59999999999999" y="258.17091454272867"/>
