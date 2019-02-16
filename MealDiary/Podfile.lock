@@ -14,7 +14,7 @@ DEPENDENCIES:
   - SwiftyGif
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - RxAtomic
     - RxCocoa
@@ -30,4 +30,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: a37875c8f12946a78603efaf63135e32de4b1ad0
 
-COCOAPODS: 1.6.0.rc.2
+COCOAPODS: 1.5.0

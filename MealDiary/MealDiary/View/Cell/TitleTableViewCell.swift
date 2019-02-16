@@ -9,16 +9,17 @@
 import UIKit
 
 class TitleTableViewCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+    @IBOutlet weak var titleTextField: UITextField!
+    static let identifier = "TitleTableViewCell"
     
+    func setUp() {
+        let attachment = NSTextAttachment()
+        attachment.image = UIImage(named: "iconStar")
+        attachment.bounds = CGRect(x: 6, y: 10, width: 6, height: 6)
+        let attachmentStr = NSAttributedString(attachment: attachment)
+        let placeHolder = NSMutableAttributedString(string: "제목")
+        placeHolder.append(attachmentStr)
+        
+        titleTextField.attributedPlaceholder = placeHolder
+    }
 }
