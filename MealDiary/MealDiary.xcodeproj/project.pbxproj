@@ -9,16 +9,7 @@
 /* Begin PBXBuildFile section */
 		04821F9721FBF953002001B9 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04821F9621FBF953002001B9 /* String+Ext.swift */; };
 		04821F9921FBFDEF002001B9 /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04821F9821FBFDEF002001B9 /* Color+Ext.swift */; };
-		04821FA421FC040B002001B9 /* NotoSansMonoCJKkr-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 04821F9B21FC0403002001B9 /* NotoSansMonoCJKkr-Regular.otf */; };
-		04821FA521FC040B002001B9 /* NotoSansCJKkr-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 04821F9C21FC0404002001B9 /* NotoSansCJKkr-Thin.otf */; };
-		04821FA621FC040B002001B9 /* NotoSansCJKkr-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 04821F9D21FC0405002001B9 /* NotoSansCJKkr-Medium.otf */; };
-		04821FA721FC040B002001B9 /* NotoSansCJKkr-DemiLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 04821F9E21FC0406002001B9 /* NotoSansCJKkr-DemiLight.otf */; };
-		04821FA821FC040B002001B9 /* NotoSansCJKkr-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 04821F9F21FC0407002001B9 /* NotoSansCJKkr-Light.otf */; };
-		04821FA921FC040B002001B9 /* NotoSansCJKkr-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 04821FA021FC0408002001B9 /* NotoSansCJKkr-Black.otf */; };
-		04821FAA21FC040B002001B9 /* NotoSansMonoCJKkr-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 04821FA121FC0409002001B9 /* NotoSansMonoCJKkr-Bold.otf */; };
-		04821FAB21FC040B002001B9 /* NotoSansCJKkr-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 04821FA221FC040A002001B9 /* NotoSansCJKkr-Regular.otf */; };
-		04821FAC21FC040B002001B9 /* NotoSansCJKkr-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 04821FA321FC040B002001B9 /* NotoSansCJKkr-Bold.otf */; };
-		04821FAE21FC04DD002001B9 /* SelectPhoto.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04821FAD21FC04DD002001B9 /* SelectPhoto.storyboard */; };
+		04821FAE21FC04DD002001B9 /* Rate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04821FAD21FC04DD002001B9 /* Rate.storyboard */; };
 		04821FB121FC2087002001B9 /* SelectPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04821FAF21FC2087002001B9 /* SelectPhotoCollectionViewCell.swift */; };
 		04821FB221FC2087002001B9 /* SelectPhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04821FB021FC2087002001B9 /* SelectPhotoCollectionViewCell.xib */; };
 		04821FB421FC23A4002001B9 /* SelectPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04821FB321FC23A4002001B9 /* SelectPhotoViewController.swift */; };
@@ -30,6 +21,14 @@
 		04821FC32206A1FE002001B9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04821FC22206A1FE002001B9 /* DetailViewController.swift */; };
 		04821FC52206C043002001B9 /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04821FC42206C043002001B9 /* MapManager.swift */; };
 		04821FC72206CD6A002001B9 /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04821FC62206CD6A002001B9 /* View+Ext.swift */; };
+		04821FCB220847B1002001B9 /* RateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04821FCA220847B1002001B9 /* RateViewController.swift */; };
+		04821FD122084C2F002001B9 /* rate4.gif in Resources */ = {isa = PBXBuildFile; fileRef = 04821FCD22084C2E002001B9 /* rate4.gif */; };
+		04821FD222084C30002001B9 /* rate0.gif in Resources */ = {isa = PBXBuildFile; fileRef = 04821FCE22084C2E002001B9 /* rate0.gif */; };
+		04821FD322084C30002001B9 /* rate1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 04821FCF22084C2F002001B9 /* rate1.gif */; };
+		04821FD422084C30002001B9 /* rate3.gif in Resources */ = {isa = PBXBuildFile; fileRef = 04821FD022084C2F002001B9 /* rate3.gif */; };
+		04821FD7220857E2002001B9 /* RateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04821FD5220857E2002001B9 /* RateCollectionViewCell.swift */; };
+		04821FD8220857E2002001B9 /* RateCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04821FD6220857E2002001B9 /* RateCollectionViewCell.xib */; };
+		04CE88CC220AF91B009CDAD9 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04CE88CB220AF91B009CDAD9 /* Splash.storyboard */; };
 		6D026A0B20BDC27574ACFFCA /* Pods_MealDiary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCFB69D9552636CD9D743323 /* Pods_MealDiary.framework */; };
 		CE15BA9921F5EB0B00FD69F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15BA9821F5EB0B00FD69F7 /* AppDelegate.swift */; };
 		CE15BA9B21F5EB0B00FD69F7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15BA9A21F5EB0B00FD69F7 /* MainViewController.swift */; };
@@ -58,16 +57,7 @@
 /* Begin PBXFileReference section */
 		04821F9621FBF953002001B9 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		04821F9821FBFDEF002001B9 /* Color+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
-		04821F9B21FC0403002001B9 /* NotoSansMonoCJKkr-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansMonoCJKkr-Regular.otf"; sourceTree = "<group>"; };
-		04821F9C21FC0404002001B9 /* NotoSansCJKkr-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Thin.otf"; sourceTree = "<group>"; };
-		04821F9D21FC0405002001B9 /* NotoSansCJKkr-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Medium.otf"; sourceTree = "<group>"; };
-		04821F9E21FC0406002001B9 /* NotoSansCJKkr-DemiLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-DemiLight.otf"; sourceTree = "<group>"; };
-		04821F9F21FC0407002001B9 /* NotoSansCJKkr-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Light.otf"; sourceTree = "<group>"; };
-		04821FA021FC0408002001B9 /* NotoSansCJKkr-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Black.otf"; sourceTree = "<group>"; };
-		04821FA121FC0409002001B9 /* NotoSansMonoCJKkr-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansMonoCJKkr-Bold.otf"; sourceTree = "<group>"; };
-		04821FA221FC040A002001B9 /* NotoSansCJKkr-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Regular.otf"; sourceTree = "<group>"; };
-		04821FA321FC040B002001B9 /* NotoSansCJKkr-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Bold.otf"; sourceTree = "<group>"; };
-		04821FAD21FC04DD002001B9 /* SelectPhoto.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectPhoto.storyboard; sourceTree = "<group>"; };
+		04821FAD21FC04DD002001B9 /* Rate.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Rate.storyboard; sourceTree = "<group>"; };
 		04821FAF21FC2087002001B9 /* SelectPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		04821FB021FC2087002001B9 /* SelectPhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectPhotoCollectionViewCell.xib; sourceTree = "<group>"; };
 		04821FB321FC23A4002001B9 /* SelectPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPhotoViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +69,14 @@
 		04821FC22206A1FE002001B9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		04821FC42206C043002001B9 /* MapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
 		04821FC62206CD6A002001B9 /* View+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Ext.swift"; sourceTree = "<group>"; };
+		04821FCA220847B1002001B9 /* RateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateViewController.swift; sourceTree = "<group>"; };
+		04821FCD22084C2E002001B9 /* rate4.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = rate4.gif; sourceTree = "<group>"; };
+		04821FCE22084C2E002001B9 /* rate0.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = rate0.gif; sourceTree = "<group>"; };
+		04821FCF22084C2F002001B9 /* rate1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = rate1.gif; sourceTree = "<group>"; };
+		04821FD022084C2F002001B9 /* rate3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = rate3.gif; sourceTree = "<group>"; };
+		04821FD5220857E2002001B9 /* RateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateCollectionViewCell.swift; sourceTree = "<group>"; };
+		04821FD6220857E2002001B9 /* RateCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RateCollectionViewCell.xib; sourceTree = "<group>"; };
+		04CE88CB220AF91B009CDAD9 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
 		38679EB5624B80F2BB6818CD /* Pods-MealDiary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealDiary.release.xcconfig"; path = "Pods/Target Support Files/Pods-MealDiary/Pods-MealDiary.release.xcconfig"; sourceTree = "<group>"; };
 		4558CCC9DA378A8DBF81E8CB /* Pods-MealDiary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealDiary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MealDiary/Pods-MealDiary.debug.xcconfig"; sourceTree = "<group>"; };
 		BCFB69D9552636CD9D743323 /* Pods_MealDiary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MealDiary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,15 +150,6 @@
 		04821F9A21FC03F4002001B9 /* Font */ = {
 			isa = PBXGroup;
 			children = (
-				04821FA021FC0408002001B9 /* NotoSansCJKkr-Black.otf */,
-				04821FA321FC040B002001B9 /* NotoSansCJKkr-Bold.otf */,
-				04821F9E21FC0406002001B9 /* NotoSansCJKkr-DemiLight.otf */,
-				04821F9F21FC0407002001B9 /* NotoSansCJKkr-Light.otf */,
-				04821F9D21FC0405002001B9 /* NotoSansCJKkr-Medium.otf */,
-				04821FA221FC040A002001B9 /* NotoSansCJKkr-Regular.otf */,
-				04821F9C21FC0404002001B9 /* NotoSansCJKkr-Thin.otf */,
-				04821FA121FC0409002001B9 /* NotoSansMonoCJKkr-Bold.otf */,
-				04821F9B21FC0403002001B9 /* NotoSansMonoCJKkr-Regular.otf */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -172,6 +161,17 @@
 				04821FC42206C043002001B9 /* MapManager.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		04821FCC22084B62002001B9 /* Gif */ = {
+			isa = PBXGroup;
+			children = (
+				04821FCE22084C2E002001B9 /* rate0.gif */,
+				04821FCF22084C2F002001B9 /* rate1.gif */,
+				04821FD022084C2F002001B9 /* rate3.gif */,
+				04821FCD22084C2E002001B9 /* rate4.gif */,
+			);
+			path = Gif;
 			sourceTree = "<group>";
 		};
 		3F35808C6608E9C3C8927523 /* Pods */ = {
@@ -223,6 +223,7 @@
 				04821F9A21FC03F4002001B9 /* Font */,
 				CE15BA9821F5EB0B00FD69F7 /* AppDelegate.swift */,
 				CE15BA9F21F5EB0F00FD69F7 /* Assets.xcassets */,
+				04821FCC22084B62002001B9 /* Gif */,
 			);
 			path = Etc.;
 			sourceTree = "<group>";
@@ -251,6 +252,7 @@
 			children = (
 				CE15BA9A21F5EB0B00FD69F7 /* MainViewController.swift */,
 				04821FC22206A1FE002001B9 /* DetailViewController.swift */,
+				04821FCA220847B1002001B9 /* RateViewController.swift */,
 				04821FB321FC23A4002001B9 /* SelectPhotoViewController.swift */,
 			);
 			path = Controller;
@@ -261,7 +263,8 @@
 			children = (
 				CE15BAA121F5EB0F00FD69F7 /* LaunchScreen.storyboard */,
 				CE15BA9C21F5EB0B00FD69F7 /* Main.storyboard */,
-				04821FAD21FC04DD002001B9 /* SelectPhoto.storyboard */,
+				04821FAD21FC04DD002001B9 /* Rate.storyboard */,
+				04CE88CB220AF91B009CDAD9 /* Splash.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -286,6 +289,8 @@
 				CE443D0E21F76FBE00CB52B0 /* PhotoCollectionViewCell.xib */,
 				04821FAF21FC2087002001B9 /* SelectPhotoCollectionViewCell.swift */,
 				04821FB021FC2087002001B9 /* SelectPhotoCollectionViewCell.xib */,
+				04821FD5220857E2002001B9 /* RateCollectionViewCell.swift */,
+				04821FD6220857E2002001B9 /* RateCollectionViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -399,24 +404,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE15BAB321F5EEAF00FD69F7 /* MainHeaderView.xib in Resources */,
-				04821FA821FC040B002001B9 /* NotoSansCJKkr-Light.otf in Resources */,
 				CE15BAA321F5EB0F00FD69F7 /* LaunchScreen.storyboard in Resources */,
+				04821FD422084C30002001B9 /* rate3.gif in Resources */,
 				CE15BAC321F6073100FD69F7 /* FilterView.xib in Resources */,
-				04821FA521FC040B002001B9 /* NotoSansCJKkr-Thin.otf in Resources */,
-				04821FAC21FC040B002001B9 /* NotoSansCJKkr-Bold.otf in Resources */,
 				CE15BAA021F5EB0F00FD69F7 /* Assets.xcassets in Resources */,
-				04821FA721FC040B002001B9 /* NotoSansCJKkr-DemiLight.otf in Resources */,
 				CE443D1021F76FBE00CB52B0 /* PhotoCollectionViewCell.xib in Resources */,
-				04821FAE21FC04DD002001B9 /* SelectPhoto.storyboard in Resources */,
+				04821FAE21FC04DD002001B9 /* Rate.storyboard in Resources */,
 				04821FC12205F0E1002001B9 /* HomeCardTableViewCell.xib in Resources */,
-				04821FAA21FC040B002001B9 /* NotoSansMonoCJKkr-Bold.otf in Resources */,
+				04CE88CC220AF91B009CDAD9 /* Splash.storyboard in Resources */,
 				CE15BABD21F5FC2D00FD69F7 /* DetailCardTableViewCell.xib in Resources */,
-				04821FAB21FC040B002001B9 /* NotoSansCJKkr-Regular.otf in Resources */,
+				04821FD8220857E2002001B9 /* RateCollectionViewCell.xib in Resources */,
+				04821FD222084C30002001B9 /* rate0.gif in Resources */,
+				04821FD122084C2F002001B9 /* rate4.gif in Resources */,
 				04821FB221FC2087002001B9 /* SelectPhotoCollectionViewCell.xib in Resources */,
-				04821FA921FC040B002001B9 /* NotoSansCJKkr-Black.otf in Resources */,
-				04821FA421FC040B002001B9 /* NotoSansMonoCJKkr-Regular.otf in Resources */,
 				CE15BA9E21F5EB0B00FD69F7 /* Main.storyboard in Resources */,
-				04821FA621FC040B002001B9 /* NotoSansCJKkr-Medium.otf in Resources */,
+				04821FD322084C30002001B9 /* rate1.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,20 +449,24 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-MealDiary/Pods-MealDiary-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-MealDiary/Pods-MealDiary-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyGif/SwiftyGif.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyGif.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MealDiary/Pods-MealDiary-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MealDiary/Pods-MealDiary-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -485,8 +491,10 @@
 				CE443D0F21F76FBE00CB52B0 /* PhotoCollectionViewCell.swift in Sources */,
 				CE15BAB521F5EFCA00FD69F7 /* MainHeaderView.swift in Sources */,
 				04821FB121FC2087002001B9 /* SelectPhotoCollectionViewCell.swift in Sources */,
+				04821FCB220847B1002001B9 /* RateViewController.swift in Sources */,
 				04821FB421FC23A4002001B9 /* SelectPhotoViewController.swift in Sources */,
 				04821F9721FBF953002001B9 /* String+Ext.swift in Sources */,
+				04821FD7220857E2002001B9 /* RateCollectionViewCell.swift in Sources */,
 				CE15BA9921F5EB0B00FD69F7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
