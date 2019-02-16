@@ -28,6 +28,15 @@ class WriteViewController: UIViewController {
         self.setNavigationBar()
         self.setTableView()
         self.completeButton.addTarget(self, action: #selector(tapCompleteButton), for: .touchUpInside)
+        tableView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
+    }
+    
+    @objc func handleTap(sender: UITapGestureRecognizer) {
+        dismissKeyboard()
+    }
+    
+    @objc private func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     func setTableView(){
@@ -82,12 +91,23 @@ extension WriteViewController: UITableViewDataSource {
                 fatalError("Misconfigured cell type!")
             }
             
+            diaryCell.setUp(with: CGSize(width: view.frame.width, height: cellHeight + 20))
             diaryCell.contentHeightObservable.distinctUntilChanged()
                 .subscribe( onNext: { [weak self] height in
                     self?.cellHeight = height + 20
+//                    diaryCell.textView.frame = CGRect(x: 20, y: 12, width: (self?.view.frame.width ?? 40) - 40, height: (self?.cellHeight ?? 50) - 24)
+//                    diaryCell.textView.isScrollEnabled = false
+                    let fixedWidth = diaryCell.textView.frame.size.width
+                    let newSize = diaryCell.textView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
+                    diaryCell.textView.frame.size = CGSize(width: max(newSize.width, fixedWidth), height: newSize.height)
+                    
+                    diaryCell.bottomView.frame = CGRect(x: 20, y: (self?.cellHeight ?? 1) - 1, width: (self?.view.frame.width ?? 40) - 40, height: 1)
                     self?.tableView.reloadWithoutAnimation()
+                    self?.view.layoutIfNeeded()
+                    
+
                 }).disposed(by: disposeBag)
-            diaryCell.setUp()
+            
             
             return diaryCell
         } else if indexPath.row == 2 {
