@@ -10,6 +10,12 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+public enum filterType: String {
+    case date = "최신순"
+    case distance = "거리순"
+    case score = "평점순"
+}
+
 class MainViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
@@ -35,6 +41,40 @@ class MainViewController: UIViewController {
         
         self.filterFrame = filterFrame
         self.view.addSubview(filterView)
+        
+        filterView.filterButton.rx.tap.bind{ [weak self] in
+            guard let `self` = self else { return }
+            self.tabFilterButton()
+        }.disposed(by: disposeBag)
+    }
+    
+    func tabFilterButton() {
+        let actionSheetController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let cancelActionButton = UIAlertAction(title: "취소", style: .cancel) { action -> Void in
+            print("Cancel")
+        }
+        actionSheetController.addAction(cancelActionButton)
+        
+        let dateActionButton = UIAlertAction(title: "최신순", style: .default) { [weak self] action -> Void in
+            guard let `self` = self else { return }
+            self.filterView.filterLabel.text = filterType.date.rawValue
+        }
+        actionSheetController.addAction(dateActionButton)
+        
+        let distanceActionButton = UIAlertAction(title: "거리순", style: .default) { [weak self] action -> Void in
+            guard let `self` = self else { return }
+            self.filterView.filterLabel.text = filterType.distance.rawValue
+        }
+        actionSheetController.addAction(distanceActionButton)
+        
+        let scoreActionButton = UIAlertAction(title: "평점순",style: .default) { [weak self] action -> Void in
+            guard let `self` = self else { return }
+            self.filterView.filterLabel.text = filterType.score.rawValue
+        }
+        actionSheetController.addAction(scoreActionButton)
+        
+        self.present(actionSheetController, animated: true, completion: nil)
     }
     
     func setInitialView() {

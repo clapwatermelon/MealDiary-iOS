@@ -14,15 +14,64 @@ class SearchViewController: UIViewController {
     lazy private var searchBar: UISearchBar = UISearchBar()
     let disposeBag = DisposeBag()
     @IBOutlet weak var searchTable: UITableView!
+    @IBOutlet weak var tagHistoryTable: UITableView!
     var cards: BehaviorRelay<[Card]> = BehaviorRelay<[Card]>(value: sample.cards)
+    var tagHistory: BehaviorRelay<[String]> = BehaviorRelay<[String]>(value: sample.tagHistory)
+    var currentFilter = filterType.date
+    
+    @IBOutlet weak var filterButton: UIButton!
+    @IBOutlet weak var headLabel: UILabel!
+    @IBAction func tabFilterButton(_ sender: Any) {
+        let actionSheetController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let cancelActionButton = UIAlertAction(title: "취소", style: .cancel) { action -> Void in
+            print("Cancel")
+        }
+        actionSheetController.addAction(cancelActionButton)
+        
+        let dateActionButton = UIAlertAction(title: "최신순", style: .default) { [weak self] action -> Void in
+            guard let `self` = self else { return }
+            self.currentFilter = filterType.date
+            self.headLabel.text = filterType.date.rawValue
+        }
+        actionSheetController.addAction(dateActionButton)
+        
+        let distanceActionButton = UIAlertAction(title: "거리순", style: .default) { [weak self] action -> Void in
+            guard let `self` = self else { return }
+            self.currentFilter = filterType.distance
+            self.headLabel.text = filterType.distance.rawValue
+        }
+        actionSheetController.addAction(distanceActionButton)
+        
+        let scoreActionButton = UIAlertAction(title: "평점순",style: .default) { [weak self] action -> Void in
+            guard let `self` = self else { return }
+            self.currentFilter = filterType.score
+            self.headLabel.text = filterType.score.rawValue
+        }
+        actionSheetController.addAction(scoreActionButton)
+        
+        self.present(actionSheetController, animated: true, completion: nil)
+    }
     
     private func setSearchTable() {
+        searchTable.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
         searchTable.register(UINib(nibName: SearchTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: SearchTableViewCell.identifier)
         searchTable.rx.setDelegate(self).disposed(by: disposeBag)
         
         cards.asObservable().bind(to: searchTable.rx.items(cellIdentifier: SearchTableViewCell.identifier, cellType: SearchTableViewCell.self)){
             (row, card, cell) in
             cell.setUp(with: card)
+            }.disposed(by: disposeBag)
+    }
+    
+    private func setHistoryTable() {
+        tagHistoryTable.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
+        tagHistoryTable.register(UINib(nibName: TagHistoryTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: TagHistoryTableViewCell.identifier)
+        tagHistoryTable.rx.setDelegate(self).disposed(by: disposeBag)
+        
+        tagHistory.asObservable().bind(to: tagHistoryTable.rx.items(cellIdentifier: TagHistoryTableViewCell.identifier, cellType: TagHistoryTableViewCell.self)){
+            (row, tag, cell) in
+            cell.tagLabel.text = tag
             }.disposed(by: disposeBag)
     }
     
@@ -39,12 +88,27 @@ class SearchViewController: UIViewController {
                 }
             }
         }
-        
         searchBar.rx.text.orEmpty // for not optional value
             .subscribe(onNext: { [weak self] query in
                 guard let `self` = self else { return }
-                
+                if query.isEmpty {
+                    self.searchTable.isHidden = true
+                    self.tagHistoryTable.isHidden = false
+                    self.filterButton.isHidden = true
+                    self.headLabel.font = UIFont.boldSystemFont(ofSize: 17.0)
+                    self.headLabel.text = "최근 검색 기록"
+                } else {
+                    self.searchTable.isHidden = false
+                    self.tagHistoryTable.isHidden = true
+                    self.filterButton.isHidden = false
+                    self.headLabel.font = UIFont.systemFont(ofSize: 17.0)
+                    self.headLabel.text = self.currentFilter.rawValue
+                }
             }).disposed(by: disposeBag)
+    }
+    
+    @objc func handleTap(sender: UITapGestureRecognizer) {
+        dismissKeyboard()
     }
     
     @objc private func dismissKeyboard() {
@@ -57,11 +121,17 @@ extension SearchViewController {
         super.viewDidLoad()
         setSearchBar()
         setSearchTable()
+        setHistoryTable()
     }
 }
 
 extension SearchViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 125
+        if tableView == self.searchTable {
+           return 125
+        } else {
+            return 45
+        }
+        
     }
 }

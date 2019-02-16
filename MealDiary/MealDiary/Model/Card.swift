@@ -31,6 +31,8 @@ class sample {
     static let card2 = Card(photos: [UIImage(named: "sample2")!, UIImage(named: "sample3")!, UIImage(named: "sample1")!], titleText: "배네딕트 맛집👍🏻👍🏻", point: 20, address: "서울 강남구 역삼동 819-1 3층", hashtagList: ["한식", "감자탕", "회식", "저렴한"], detailText: "안녕", date: "2019.01.27")
     
     static let cards: [Card] = [card, card2, card, card2, card, card, card, card]
+    
+    static let tagHistory: [String] = ["애그배내딕트", "#카이스트", "#회식", "꼬깔콘"]
 }
 
 struct Rate {
