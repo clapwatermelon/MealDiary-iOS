@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class WriteViewController: UIViewController {
 
@@ -14,7 +15,9 @@ class WriteViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     let completeButton = UIButton(type: .system)
-    
+    let disposeBag = DisposeBag()
+    var cellHeight: CGFloat = 50
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setUp()
@@ -54,7 +57,12 @@ class WriteViewController: UIViewController {
 }
 
 extension WriteViewController: UITableViewDelegate {
-
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.item == 1 {
+            return cellHeight
+        }
+        return 50
+    }
 }
 
 extension WriteViewController: UITableViewDataSource {
@@ -73,6 +81,12 @@ extension WriteViewController: UITableViewDataSource {
             guard let diaryCell = tableView.dequeueReusableCell(withIdentifier: "DiaryTableViewCell", for: indexPath) as? DiaryTableViewCell else {
                 fatalError("Misconfigured cell type!")
             }
+            
+            diaryCell.contentHeightObservable.distinctUntilChanged()
+                .subscribe( onNext: { [weak self] height in
+                    self?.cellHeight = height + 20
+                    self?.tableView.reloadWithoutAnimation()
+                }).disposed(by: disposeBag)
             diaryCell.setUp()
             
             return diaryCell
@@ -80,7 +94,6 @@ extension WriteViewController: UITableViewDataSource {
             guard let tagCell = tableView.dequeueReusableCell(withIdentifier: "TagTableViewCell", for: indexPath) as? TagTableViewCell else {
                 fatalError("Misconfigured cell type!")
             }
-            
             
             return tagCell
         } else {
@@ -92,5 +105,15 @@ extension WriteViewController: UITableViewDataSource {
             return placeNameCell
         }
         
+    }
+}
+
+extension UITableView {
+    func reloadWithoutAnimation() {
+        let lastScrollOffset = contentOffset
+        beginUpdates()
+        endUpdates()
+        layer.removeAllAnimations()
+        setContentOffset(lastScrollOffset, animated: false)
     }
 }

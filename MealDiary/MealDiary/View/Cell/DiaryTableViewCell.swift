@@ -7,14 +7,24 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class DiaryTableViewCell: UITableViewCell {
     @IBOutlet weak var textView: UITextView!
     static let identifier = "DiaryTableViewCell"
+    let disposeBag = DisposeBag()
+    let contentHeight: PublishSubject<CGFloat> = PublishSubject<CGFloat>()
+    var contentHeightObservable: Observable<CGFloat> {
+        return contentHeight.asObservable()
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         textView.delegate = self
+        textView.rx.text.subscribe( onNext: { [weak self] _ in
+            self?.contentHeight.onNext(self?.textView.contentSize.height ?? 0)
+        }).disposed(by: disposeBag)
     }
     
     func setUp() {

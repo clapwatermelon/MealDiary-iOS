@@ -23,7 +23,6 @@
 		04821FCB220847B1002001B9 /* RateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04821FCA220847B1002001B9 /* RateViewController.swift */; };
 		04821FD7220857E2002001B9 /* RateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04821FD5220857E2002001B9 /* RateCollectionViewCell.swift */; };
 		04821FD8220857E2002001B9 /* RateCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04821FD6220857E2002001B9 /* RateCollectionViewCell.xib */; };
-		04CE88CC220AF91B009CDAD9 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04CE88CB220AF91B009CDAD9 /* Splash.storyboard */; };
 		04CE88E22218000A009CDAD9 /* 4.gif in Resources */ = {isa = PBXBuildFile; fileRef = 04CE88DC22180009009CDAD9 /* 4.gif */; };
 		04CE88E32218000A009CDAD9 /* 0.gif in Resources */ = {isa = PBXBuildFile; fileRef = 04CE88DD22180009009CDAD9 /* 0.gif */; };
 		04CE88E42218000A009CDAD9 /* 5.gif in Resources */ = {isa = PBXBuildFile; fileRef = 04CE88DE2218000A009CDAD9 /* 5.gif */; };
@@ -41,6 +40,7 @@
 		04CE88FA221812FF009CDAD9 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04CE88F8221812FF009CDAD9 /* SearchTableViewCell.xib */; };
 		04CE88FD22182421009CDAD9 /* TagHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE88FB22182421009CDAD9 /* TagHistoryTableViewCell.swift */; };
 		04CE88FE22182421009CDAD9 /* TagHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04CE88FC22182421009CDAD9 /* TagHistoryTableViewCell.xib */; };
+		04CE890622184898009CDAD9 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04CE890522184898009CDAD9 /* Splash.storyboard */; };
 		6D026A0B20BDC27574ACFFCA /* Pods_MealDiary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCFB69D9552636CD9D743323 /* Pods_MealDiary.framework */; };
 		9E6BF15A2217D360002B8CD7 /* WriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6BF1592217D360002B8CD7 /* WriteViewController.swift */; };
 		9E6BF15C2217D375002B8CD7 /* Write.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E6BF15B2217D375002B8CD7 /* Write.storyboard */; };
@@ -93,7 +93,6 @@
 		04821FCA220847B1002001B9 /* RateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateViewController.swift; sourceTree = "<group>"; };
 		04821FD5220857E2002001B9 /* RateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateCollectionViewCell.swift; sourceTree = "<group>"; };
 		04821FD6220857E2002001B9 /* RateCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RateCollectionViewCell.xib; sourceTree = "<group>"; };
-		04CE88CB220AF91B009CDAD9 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
 		04CE88DC22180009009CDAD9 /* 4.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 4.gif; sourceTree = "<group>"; };
 		04CE88DD22180009009CDAD9 /* 0.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 0.gif; sourceTree = "<group>"; };
 		04CE88DE2218000A009CDAD9 /* 5.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 5.gif; sourceTree = "<group>"; };
@@ -111,6 +110,7 @@
 		04CE88F8221812FF009CDAD9 /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
 		04CE88FB22182421009CDAD9 /* TagHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		04CE88FC22182421009CDAD9 /* TagHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagHistoryTableViewCell.xib; sourceTree = "<group>"; };
+		04CE890522184898009CDAD9 /* Splash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Splash.storyboard; path = MealDiary/Splash/Splash.storyboard; sourceTree = SOURCE_ROOT; };
 		38679EB5624B80F2BB6818CD /* Pods-MealDiary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealDiary.release.xcconfig"; path = "Pods/Target Support Files/Pods-MealDiary/Pods-MealDiary.release.xcconfig"; sourceTree = "<group>"; };
 		4558CCC9DA378A8DBF81E8CB /* Pods-MealDiary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealDiary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MealDiary/Pods-MealDiary.debug.xcconfig"; sourceTree = "<group>"; };
 		9E6BF1592217D360002B8CD7 /* WriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteViewController.swift; sourceTree = "<group>"; };
@@ -219,7 +219,6 @@
 		04CE88E822180204009CDAD9 /* Splash */ = {
 			isa = PBXGroup;
 			children = (
-				04CE88CB220AF91B009CDAD9 /* Splash.storyboard */,
 				04CE88F12218059A009CDAD9 /* SplashNavigation.swift */,
 				04CE88EF22180401009CDAD9 /* SplashViewController0.swift */,
 				04CE88E922180286009CDAD9 /* SplashViewController1.swift */,
@@ -331,10 +330,10 @@
 			isa = PBXGroup;
 			children = (
 				CE15BAA121F5EB0F00FD69F7 /* LaunchScreen.storyboard */,
+				04CE890522184898009CDAD9 /* Splash.storyboard */,
 				CE15BA9C21F5EB0B00FD69F7 /* Main.storyboard */,
 				04821FAD21FC04DD002001B9 /* Rate.storyboard */,
 				04CE88F322180854009CDAD9 /* Search.storyboard */,
-				04CE88CB220AF91B009CDAD9 /* Splash.storyboard */,
 				9E6BF15B2217D375002B8CD7 /* Write.storyboard */,
 			);
 			path = Storyboard;
@@ -504,7 +503,6 @@
 				04821FAE21FC04DD002001B9 /* Rate.storyboard in Resources */,
 				04821FC12205F0E1002001B9 /* HomeCardTableViewCell.xib in Resources */,
 				04CE88E32218000A009CDAD9 /* 0.gif in Resources */,
-				04CE88CC220AF91B009CDAD9 /* Splash.storyboard in Resources */,
 				9E6BF1682217EB4A002B8CD7 /* DiaryTableViewCell.xib in Resources */,
 				9E6BF16C2217ECEE002B8CD7 /* TagTableViewCell.xib in Resources */,
 				CE15BABD21F5FC2D00FD69F7 /* DetailCardTableViewCell.xib in Resources */,
@@ -512,6 +510,7 @@
 				04821FB221FC2087002001B9 /* SelectPhotoCollectionViewCell.xib in Resources */,
 				CE15BA9E21F5EB0B00FD69F7 /* Main.storyboard in Resources */,
 				04CE88E52218000A009CDAD9 /* 1.gif in Resources */,
+				04CE890622184898009CDAD9 /* Splash.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
