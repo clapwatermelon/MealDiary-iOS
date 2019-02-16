@@ -9,6 +9,40 @@
 import UIKit
 import Photos
 
+struct ContentCard {
+    var id: String
+    var photoDatas: [Data?]
+    var titleText: String
+    var detailText: String
+    var hashTagList: [String]
+    var restaurantName: String
+    var restaurantLocation: String
+    var restaurantLatitude: Double
+    var restaurantLongitude: Double
+    var score: Int
+    
+    func getDict() -> [String: Any] {
+        var dict: [String: Any] = [:]
+        var contentDict: [String: Any] = [:]
+        contentDict["photoDatas"] = photoDatas
+        contentDict["titleText"] = titleText
+        contentDict["detailText"] = detailText
+        contentDict["hashTagList"] = hashTagList
+        contentDict["restaurantName"] = restaurantName
+        contentDict["restaurantLocation"] = restaurantLocation
+        contentDict["restaurantLatitude"] = restaurantLatitude
+        contentDict["restaurantLongitude"] = restaurantLongitude
+        contentDict["score"] = score
+        dict[id] = contentDict
+        return dict
+    }
+}
+
+struct HashTag {
+    var value: String
+    var cardList: [String]
+}
+
 struct Card {
     var photos: [UIImage]
 //    var photos: [PHAsset]

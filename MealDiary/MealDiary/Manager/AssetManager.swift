@@ -31,34 +31,9 @@ struct AssetManager {
         return fetchResult.objects(at: indexSet)
     }
     
-    static func getAsset(in dictionary: [String: [String]]) -> [String: [PHAsset]]{
-        var returnDict: [String: [PHAsset]] = [:]
-        
-        for key in dictionary.keys {
-            if let array = dictionary[key] {
-                let images = fetchImages(by: array)
-                if images.count != 0 {
-                    returnDict[key] = fetchImages(by: array)
-                }
-            }
-        }
-        
-        return returnDict
-    }
-    
-    static func getArrayData(for key: String) -> [String] {
+    static func getDictData(for key: String) -> [String: Any] {
         if let data = UserDefaults.standard.object(forKey: key) as? Data {
-            if let stringArray = NSKeyedUnarchiver.unarchiveObject(with: data) as? [String] {
-                return stringArray
-            }
-        }
-        
-        return []
-    }
-    
-    static func getDictionaryData(for key: String) -> [String: [String]] {
-        if let data = UserDefaults.standard.object(forKey: key) as? Data {
-            if let dictionary = NSKeyedUnarchiver.unarchiveObject(with: data) as? [String: [String]] {
+            if let dictionary = NSKeyedUnarchiver.unarchiveObject(with: data) as? [String: Any] {
                 return dictionary
             }
         }

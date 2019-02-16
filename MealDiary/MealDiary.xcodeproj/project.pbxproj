@@ -19,7 +19,6 @@
 		04821FC02205F0E1002001B9 /* HomeCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04821FBE2205F0E1002001B9 /* HomeCardTableViewCell.swift */; };
 		04821FC12205F0E1002001B9 /* HomeCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04821FBF2205F0E1002001B9 /* HomeCardTableViewCell.xib */; };
 		04821FC32206A1FE002001B9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04821FC22206A1FE002001B9 /* DetailViewController.swift */; };
-		04821FC52206C043002001B9 /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04821FC42206C043002001B9 /* MapManager.swift */; };
 		04821FC72206CD6A002001B9 /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04821FC62206CD6A002001B9 /* View+Ext.swift */; };
 		04821FCB220847B1002001B9 /* RateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04821FCA220847B1002001B9 /* RateViewController.swift */; };
 		04821FD7220857E2002001B9 /* RateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04821FD5220857E2002001B9 /* RateCollectionViewCell.swift */; };
@@ -80,7 +79,6 @@
 		04821FBE2205F0E1002001B9 /* HomeCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCardTableViewCell.swift; sourceTree = "<group>"; };
 		04821FBF2205F0E1002001B9 /* HomeCardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCardTableViewCell.xib; sourceTree = "<group>"; };
 		04821FC22206A1FE002001B9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		04821FC42206C043002001B9 /* MapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
 		04821FC62206CD6A002001B9 /* View+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Ext.swift"; sourceTree = "<group>"; };
 		04821FCA220847B1002001B9 /* RateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateViewController.swift; sourceTree = "<group>"; };
 		04821FD5220857E2002001B9 /* RateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -177,7 +175,6 @@
 			isa = PBXGroup;
 			children = (
 				04821FB621FC268C002001B9 /* AssetManager.swift */,
-				04821FC42206C043002001B9 /* MapManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -521,7 +518,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				04821FBB2205E338002001B9 /* Label+Ext.swift in Sources */,
-				04821FC52206C043002001B9 /* MapManager.swift in Sources */,
 				04821FC72206CD6A002001B9 /* View+Ext.swift in Sources */,
 				CE15BABC21F5FC2D00FD69F7 /* DetailCardTableViewCell.swift in Sources */,
 				CE15BA9B21F5EB0B00FD69F7 /* MainViewController.swift in Sources */,

@@ -95,7 +95,19 @@ class SelectPhotoViewController: UIViewController {
     }
     
     @objc func completeSelect() {
-        
+        var datas: [Data] = []
+        for index in selectedIndexPaths.value {
+            if let cell = collectionView.cellForItem(at: index) as? SelectPhotoCollectionViewCell {
+                if let data = cell.imageView.image?.pngData() {
+                    datas.append(data)
+                    
+                }
+            }
+        }
+        let id = UUID().uuidString
+        let contentCard = ContentCard(id: id, photoDatas: datas, titleText: "asdf", detailText: "", hashTagList: [], restaurantName: "", restaurantLocation: "", restaurantLatitude: 0, restaurantLongitude: 0, score: 100)
+//        AssetManager.save(data: contentCard.getDict(), for: "card")
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
     public var topDistance : CGFloat{
