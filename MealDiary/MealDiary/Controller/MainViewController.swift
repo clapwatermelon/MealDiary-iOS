@@ -19,7 +19,9 @@ public enum filterType: String {
 class MainViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    var headerView: MainHeaderView = MainHeaderView()
+    @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var writeButton: UIButton!
+    
     var filterView: FilterView = FilterView()
     var cards: BehaviorRelay<[Card]> = BehaviorRelay<[Card]>(value: sample.cards)
     var selectedIndex: Set<Int> = []
@@ -30,6 +32,15 @@ class MainViewController: UIViewController {
     var beforeOffsetY: CGFloat = 0
     var height: CGFloat = 0
     let disposeBag = DisposeBag()
+    
+    @IBAction func tabWriteButton(_ sender: Any) {
+        let storyBoard = UIStoryboard(name: "Rate", bundle: nil)
+        guard let vc = storyBoard.instantiateViewController(withIdentifier: "SelectPhotoViewController") as? SelectPhotoViewController else {
+            return
+        }
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     
     func setFilterView() {
         guard let filterView = FilterView.instanceFromNib() else { return }
@@ -78,18 +89,12 @@ class MainViewController: UIViewController {
     }
     
     func setInitialView() {
-        guard let headerView = MainHeaderView.instanceFromNib() else { return }
         guard let `navigationController` = navigationController else { return }
         
         height = UIApplication.shared.statusBarFrame.height + navigationController.navigationBar.frame.height
-        self.headerView = headerView
-        
-        headerView.writeButton.addTarget(self, action: #selector(tabWriteButton), for: .touchUpInside)
-        let origin = CGPoint(x: 0, y: height)
-        let headerFrame = CGRect(origin: origin, size: CGSize(width: self.view.frame.width, height: 94))
-        headerView.setUp(frame: headerFrame)
-        
-        self.view.addSubview(headerView)
+        print(headerView.frame)
+        writeButton.clipsToBounds = true
+        writeButton.layer.cornerRadius = writeButton.frame.height / 2
         self.view.sendSubviewToBack(headerView)
         self.view.bringSubviewToFront(tableView)
     }
@@ -137,17 +142,6 @@ class MainViewController: UIViewController {
     @objc func goSearchView() {
         let storyBoard = UIStoryboard(name: "Search", bundle: nil)
         let vc = storyBoard.instantiateViewController(withIdentifier: "SearchViewController") as! SearchViewController
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    @objc func tabWriteButton(sender: UIButton) {
-//        let storyBoard = UIStoryboard(name: "Rate", bundle: nil)
-//        let vc = storyBoard.instantiateViewController(withIdentifier: "RateViewController") as! RateViewController
-        let storyBoard = UIStoryboard(name: "Rate", bundle: nil)
-        guard let vc = storyBoard.instantiateViewController(withIdentifier: "SelectPhotoViewController") as? SelectPhotoViewController else {
-            return
-        }
-        
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

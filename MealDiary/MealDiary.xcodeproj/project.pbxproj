@@ -49,8 +49,6 @@
 		CE15BA9E21F5EB0B00FD69F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE15BA9C21F5EB0B00FD69F7 /* Main.storyboard */; };
 		CE15BAA021F5EB0F00FD69F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE15BA9F21F5EB0F00FD69F7 /* Assets.xcassets */; };
 		CE15BAA321F5EB0F00FD69F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE15BAA121F5EB0F00FD69F7 /* LaunchScreen.storyboard */; };
-		CE15BAB321F5EEAF00FD69F7 /* MainHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE15BAB221F5EEAF00FD69F7 /* MainHeaderView.xib */; };
-		CE15BAB521F5EFCA00FD69F7 /* MainHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15BAB421F5EFCA00FD69F7 /* MainHeaderView.swift */; };
 		CE15BABC21F5FC2D00FD69F7 /* DetailCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15BABA21F5FC2D00FD69F7 /* DetailCardTableViewCell.swift */; };
 		CE15BABD21F5FC2D00FD69F7 /* DetailCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE15BABB21F5FC2D00FD69F7 /* DetailCardTableViewCell.xib */; };
 		CE15BABF21F5FFC100FD69F7 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15BABE21F5FFC100FD69F7 /* Card.swift */; };
@@ -119,8 +117,6 @@
 		CE15BA9F21F5EB0F00FD69F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE15BAA221F5EB0F00FD69F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE15BAA421F5EB0F00FD69F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CE15BAB221F5EEAF00FD69F7 /* MainHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainHeaderView.xib; sourceTree = "<group>"; };
-		CE15BAB421F5EFCA00FD69F7 /* MainHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHeaderView.swift; sourceTree = "<group>"; };
 		CE15BABA21F5FC2D00FD69F7 /* DetailCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCardTableViewCell.swift; sourceTree = "<group>"; };
 		CE15BABB21F5FC2D00FD69F7 /* DetailCardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailCardTableViewCell.xib; sourceTree = "<group>"; };
 		CE15BABE21F5FFC100FD69F7 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
@@ -290,7 +286,6 @@
 			isa = PBXGroup;
 			children = (
 				CE15BAB921F5FB7C00FD69F7 /* Cell */,
-				CE15BAB421F5EFCA00FD69F7 /* MainHeaderView.swift */,
 				CE15BAC021F6070000FD69F7 /* FilterView.swift */,
 				CE15BAB121F5EE9400FD69F7 /* xib */,
 			);
@@ -326,7 +321,6 @@
 		CE15BAB121F5EE9400FD69F7 /* xib */ = {
 			isa = PBXGroup;
 			children = (
-				CE15BAB221F5EEAF00FD69F7 /* MainHeaderView.xib */,
 				CE15BAC221F6073100FD69F7 /* FilterView.xib */,
 			);
 			path = xib;
@@ -464,7 +458,6 @@
 				04CE88E72218000A009CDAD9 /* 3.gif in Resources */,
 				04CE88E62218000A009CDAD9 /* 2.gif in Resources */,
 				04CE88E22218000A009CDAD9 /* 4.gif in Resources */,
-				CE15BAB321F5EEAF00FD69F7 /* MainHeaderView.xib in Resources */,
 				CE15BAA321F5EB0F00FD69F7 /* LaunchScreen.storyboard in Resources */,
 				9E6BF15C2217D375002B8CD7 /* Write.storyboard in Resources */,
 				CE15BAC321F6073100FD69F7 /* FilterView.xib in Resources */,
@@ -558,7 +551,6 @@
 				CE15BABF21F5FFC100FD69F7 /* Card.swift in Sources */,
 				CE443D0F21F76FBE00CB52B0 /* PhotoCollectionViewCell.swift in Sources */,
 				048C520122192DD80058C5D9 /* WriteDiaryViewController.swift in Sources */,
-				CE15BAB521F5EFCA00FD69F7 /* MainHeaderView.swift in Sources */,
 				04821FB121FC2087002001B9 /* SelectPhotoCollectionViewCell.swift in Sources */,
 				04821FCB220847B1002001B9 /* RateViewController.swift in Sources */,
 				04821FB421FC23A4002001B9 /* SelectPhotoViewController.swift in Sources */,
