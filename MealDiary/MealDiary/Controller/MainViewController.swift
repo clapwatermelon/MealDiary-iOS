@@ -95,7 +95,7 @@ class MainViewController: UIViewController {
         
         emptyImageView.contentMode = .scaleAspectFit
         emptyImageView.image = UIImage(named: "empty.png")
-        emptyImageView.frame = CGRect(x: 10, y: headerView.frame.origin.y + headerView.frame.height + 30, width: view.frame.width - 20, height: 285)
+        emptyImageView.frame = CGRect(x: 70, y: headerView.frame.origin.y + headerView.frame.height + 30, width: view.frame.width - 140, height: 285)
         
         self.view.addSubview(emptyImageView)
         self.view.sendSubviewToBack(headerView)
@@ -115,9 +115,11 @@ class MainViewController: UIViewController {
             if cards.isEmpty {
                 self?.emptyImageView.isHidden = false
                 self?.tableView.isHidden = true
+                self?.filterView.isHidden = true
             } else {
                 self?.emptyImageView.isHidden = true
                 self?.tableView.isHidden = false
+                self?.filterView.isHidden = false
             }
         }).disposed(by: disposeBag)
         
