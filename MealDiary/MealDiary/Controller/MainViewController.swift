@@ -22,15 +22,16 @@ class MainViewController: UIViewController {
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var writeButton: UIButton!
     
-    var filterView: FilterView = FilterView()
-    var cards: BehaviorRelay<[Card]> = BehaviorRelay<[Card]>(value: sample.cards)
+    lazy var filterView: FilterView = FilterView()
+    lazy var emptyImageView: UIImageView = UIImageView()
+    
+    var cards: BehaviorRelay<[Card]> = BehaviorRelay<[Card]>(value: [])
     var selectedIndex: Set<Int> = []
     var tableFrame: CGRect?
     var filterFrame: CGRect?
     
     var scrollViewStartOffsetY: CGFloat = 0
     var beforeOffsetY: CGFloat = 0
-    var height: CGFloat = 0
     let disposeBag = DisposeBag()
     
     @IBAction func tabWriteButton(_ sender: Any) {
@@ -46,7 +47,7 @@ class MainViewController: UIViewController {
         guard let filterView = FilterView.instanceFromNib() else { return }
         self.filterView = filterView
       
-        let origin = CGPoint(x: 0, y: height + headerView.frame.height)
+        let origin = CGPoint(x: 0, y: headerView.frame.origin.y + headerView.frame.height)
         let filterFrame = CGRect(origin: origin, size: CGSize(width: self.view.frame.width, height: 55))
         filterView.setUp(frame: filterFrame)
         
@@ -89,14 +90,17 @@ class MainViewController: UIViewController {
     }
     
     func setInitialView() {
-        guard let `navigationController` = navigationController else { return }
-        
-        height = UIApplication.shared.statusBarFrame.height + navigationController.navigationBar.frame.height
-        print(headerView.frame)
         writeButton.clipsToBounds = true
         writeButton.layer.cornerRadius = writeButton.frame.height / 2
+        
+        emptyImageView.contentMode = .scaleAspectFit
+        emptyImageView.image = UIImage(named: "empty.png")
+        emptyImageView.frame = CGRect(x: 10, y: headerView.frame.origin.y + headerView.frame.height + 30, width: view.frame.width - 20, height: 285)
+        
+        self.view.addSubview(emptyImageView)
         self.view.sendSubviewToBack(headerView)
         self.view.bringSubviewToFront(tableView)
+        self.view.bringSubviewToFront(emptyImageView)
     }
     
     func setTableView() {
@@ -106,6 +110,16 @@ class MainViewController: UIViewController {
         tableFrame = CGRect(origin: origin, size: size)
         tableView.frame = tableFrame ?? CGRect(origin: .zero, size: .zero)
         tableView.rx.setDelegate(self).disposed(by: disposeBag)
+        
+        cards.subscribe(onNext: { [weak self] (cards) in
+            if cards.isEmpty {
+                self?.emptyImageView.isHidden = false
+                self?.tableView.isHidden = true
+            } else {
+                self?.emptyImageView.isHidden = true
+                self?.tableView.isHidden = false
+            }
+        }).disposed(by: disposeBag)
         
         cards.asObservable().bind(to: tableView.rx.items(cellIdentifier: HomeCardTableViewCell.identifier, cellType: HomeCardTableViewCell.self)){
             (row, card, cell) in
@@ -169,6 +183,8 @@ extension MainViewController {
 
 extension MainViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard cards.value.count != 0 else { return }
+        
         let offsetY: CGFloat = {
             let firstOffset = scrollViewStartOffsetY < 0 ? scrollViewStartOffsetY * -1 : scrollViewStartOffsetY
             return scrollView.contentOffset.y + firstOffset
