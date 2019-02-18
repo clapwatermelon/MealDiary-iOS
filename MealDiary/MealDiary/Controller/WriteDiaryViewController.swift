@@ -128,6 +128,14 @@ class WriteDiaryViewController: UIViewController {
         scrollView.contentSize = CGSize(width: view.frame.width, height: bottomView4.frame.origin.y + 40)
         
         adjustForKeyboard()
+        
+        titleTextField.rx.text.subscribe(onNext: { [weak self] (text) in
+            if !(text?.isEmpty ?? true) && !(self?.textView.text.isEmpty ?? true) {
+                self?.enableCompletionButton()
+            } else {
+                self?.disableCompletionButton()
+            }
+        }).disposed(by: disposeBag)
     }
     
     func setTextView() {
@@ -156,6 +164,12 @@ class WriteDiaryViewController: UIViewController {
                     self.textViewPlaceHolder.isHidden = false
                 }
                 
+                if !(self.titleTextField.text?.isEmpty ?? true) && !(text?.isEmpty ?? true) {
+                    self.enableCompletionButton()
+                } else {
+                    self.disableCompletionButton()
+                }
+                
         }).disposed(by: disposeBag)
     }
     
@@ -167,11 +181,20 @@ class WriteDiaryViewController: UIViewController {
         view.endEditing(true)
     }
     
+    func enableCompletionButton() {
+        self.completeButton.tintColor = .black
+        self.completeButton.isEnabled = true
+    }
+    
+    func disableCompletionButton() {
+        self.completeButton.tintColor = UIColor(red: 159/255, green: 164/255, blue: 165/255, alpha: 1)
+        self.completeButton.isEnabled = false
+    }
+    
     func setNavigationBar() {
         self.completeButton.setTitle("다음", for: .normal)
         self.completeButton.titleLabel?.font = UIFont(name: "SpoqaHanSans-Bold", size: 16)
-        self.completeButton.tintColor = UIColor(red: 159/255, green: 164/255, blue: 165/255, alpha: 1)
-//        self.completeButton.isEnabled = false
+        disableCompletionButton()
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: completeButton)
         
