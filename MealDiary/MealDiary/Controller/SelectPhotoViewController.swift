@@ -107,7 +107,13 @@ class SelectPhotoViewController: UIViewController {
         let id = UUID().uuidString
         let contentCard = ContentCard(id: id, photoDatas: datas, titleText: "asdf", detailText: "", hashTagList: [], restaurantName: "", restaurantLocation: "", restaurantLatitude: 0, restaurantLongitude: 0, score: 100)
 //        AssetManager.save(data: contentCard.getDict(), for: "card")
-        self.navigationController?.popToRootViewController(animated: true)
+        
+        let storyBoard = UIStoryboard(name: "Write", bundle: nil)
+        guard let vc = storyBoard.instantiateViewController(withIdentifier: "WriteDiaryViewController") as? WriteDiaryViewController else {
+            return
+        }
+        
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     public var topDistance : CGFloat{
@@ -135,6 +141,11 @@ extension SelectPhotoViewController {
                 self.getImages()
             }
         })
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
 }
 

@@ -23,6 +23,7 @@
 		04821FCB220847B1002001B9 /* RateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04821FCA220847B1002001B9 /* RateViewController.swift */; };
 		04821FD7220857E2002001B9 /* RateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04821FD5220857E2002001B9 /* RateCollectionViewCell.swift */; };
 		04821FD8220857E2002001B9 /* RateCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04821FD6220857E2002001B9 /* RateCollectionViewCell.xib */; };
+		048C520122192DD80058C5D9 /* WriteDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048C520022192DD80058C5D9 /* WriteDiaryViewController.swift */; };
 		04CE88E22218000A009CDAD9 /* 4.gif in Resources */ = {isa = PBXBuildFile; fileRef = 04CE88DC22180009009CDAD9 /* 4.gif */; };
 		04CE88E32218000A009CDAD9 /* 0.gif in Resources */ = {isa = PBXBuildFile; fileRef = 04CE88DD22180009009CDAD9 /* 0.gif */; };
 		04CE88E42218000A009CDAD9 /* 5.gif in Resources */ = {isa = PBXBuildFile; fileRef = 04CE88DE2218000A009CDAD9 /* 5.gif */; };
@@ -42,16 +43,7 @@
 		04CE88FE22182421009CDAD9 /* TagHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04CE88FC22182421009CDAD9 /* TagHistoryTableViewCell.xib */; };
 		04CE890622184898009CDAD9 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04CE890522184898009CDAD9 /* Splash.storyboard */; };
 		6D026A0B20BDC27574ACFFCA /* Pods_MealDiary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCFB69D9552636CD9D743323 /* Pods_MealDiary.framework */; };
-		9E6BF15A2217D360002B8CD7 /* WriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6BF1592217D360002B8CD7 /* WriteViewController.swift */; };
 		9E6BF15C2217D375002B8CD7 /* Write.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E6BF15B2217D375002B8CD7 /* Write.storyboard */; };
-		9E6BF1632217EA45002B8CD7 /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6BF1612217EA45002B8CD7 /* TitleTableViewCell.swift */; };
-		9E6BF1642217EA45002B8CD7 /* TitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E6BF1622217EA45002B8CD7 /* TitleTableViewCell.xib */; };
-		9E6BF1672217EB4A002B8CD7 /* DiaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6BF1652217EB4A002B8CD7 /* DiaryTableViewCell.swift */; };
-		9E6BF1682217EB4A002B8CD7 /* DiaryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E6BF1662217EB4A002B8CD7 /* DiaryTableViewCell.xib */; };
-		9E6BF16B2217ECEE002B8CD7 /* TagTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6BF1692217ECEE002B8CD7 /* TagTableViewCell.swift */; };
-		9E6BF16C2217ECEE002B8CD7 /* TagTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E6BF16A2217ECEE002B8CD7 /* TagTableViewCell.xib */; };
-		9E6BF1742217EE7A002B8CD7 /* PlaceNameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6BF1722217EE7A002B8CD7 /* PlaceNameTableViewCell.swift */; };
-		9E6BF1752217EE7A002B8CD7 /* PlaceNameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E6BF1732217EE7A002B8CD7 /* PlaceNameTableViewCell.xib */; };
 		CE15BA9921F5EB0B00FD69F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15BA9821F5EB0B00FD69F7 /* AppDelegate.swift */; };
 		CE15BA9B21F5EB0B00FD69F7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15BA9A21F5EB0B00FD69F7 /* MainViewController.swift */; };
 		CE15BA9E21F5EB0B00FD69F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE15BA9C21F5EB0B00FD69F7 /* Main.storyboard */; };
@@ -93,6 +85,7 @@
 		04821FCA220847B1002001B9 /* RateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateViewController.swift; sourceTree = "<group>"; };
 		04821FD5220857E2002001B9 /* RateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateCollectionViewCell.swift; sourceTree = "<group>"; };
 		04821FD6220857E2002001B9 /* RateCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RateCollectionViewCell.xib; sourceTree = "<group>"; };
+		048C520022192DD80058C5D9 /* WriteDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteDiaryViewController.swift; sourceTree = "<group>"; };
 		04CE88DC22180009009CDAD9 /* 4.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 4.gif; sourceTree = "<group>"; };
 		04CE88DD22180009009CDAD9 /* 0.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 0.gif; sourceTree = "<group>"; };
 		04CE88DE2218000A009CDAD9 /* 5.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 5.gif; sourceTree = "<group>"; };
@@ -113,20 +106,11 @@
 		04CE890522184898009CDAD9 /* Splash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Splash.storyboard; path = MealDiary/Splash/Splash.storyboard; sourceTree = SOURCE_ROOT; };
 		38679EB5624B80F2BB6818CD /* Pods-MealDiary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealDiary.release.xcconfig"; path = "Pods/Target Support Files/Pods-MealDiary/Pods-MealDiary.release.xcconfig"; sourceTree = "<group>"; };
 		4558CCC9DA378A8DBF81E8CB /* Pods-MealDiary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealDiary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MealDiary/Pods-MealDiary.debug.xcconfig"; sourceTree = "<group>"; };
-		9E6BF1592217D360002B8CD7 /* WriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteViewController.swift; sourceTree = "<group>"; };
 		9E6BF15B2217D375002B8CD7 /* Write.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Write.storyboard; sourceTree = "<group>"; };
-		9E6BF1612217EA45002B8CD7 /* TitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
-		9E6BF1622217EA45002B8CD7 /* TitleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleTableViewCell.xib; sourceTree = "<group>"; };
-		9E6BF1652217EB4A002B8CD7 /* DiaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTableViewCell.swift; sourceTree = "<group>"; };
-		9E6BF1662217EB4A002B8CD7 /* DiaryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiaryTableViewCell.xib; sourceTree = "<group>"; };
-		9E6BF1692217ECEE002B8CD7 /* TagTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagTableViewCell.swift; sourceTree = "<group>"; };
-		9E6BF16A2217ECEE002B8CD7 /* TagTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagTableViewCell.xib; sourceTree = "<group>"; };
 		9E6BF16E2217EDF1002B8CD7 /* Spoqa Han Sans Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Bold.ttf"; sourceTree = "<group>"; };
 		9E6BF16F2217EDF2002B8CD7 /* Spoqa Han Sans Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Thin.ttf"; sourceTree = "<group>"; };
 		9E6BF1702217EDF3002B8CD7 /* Spoqa Han Sans Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Regular.ttf"; sourceTree = "<group>"; };
 		9E6BF1712217EDF4002B8CD7 /* Spoqa Han Sans Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Light.ttf"; sourceTree = "<group>"; };
-		9E6BF1722217EE7A002B8CD7 /* PlaceNameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceNameTableViewCell.swift; sourceTree = "<group>"; };
-		9E6BF1732217EE7A002B8CD7 /* PlaceNameTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceNameTableViewCell.xib; sourceTree = "<group>"; };
 		BCFB69D9552636CD9D743323 /* Pods_MealDiary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MealDiary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE15BA9521F5EB0B00FD69F7 /* MealDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MealDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE15BA9821F5EB0B00FD69F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -321,7 +305,7 @@
 				04821FCA220847B1002001B9 /* RateViewController.swift */,
 				04821FB321FC23A4002001B9 /* SelectPhotoViewController.swift */,
 				04CE88F522180896009CDAD9 /* SearchViewController.swift */,
-				9E6BF1592217D360002B8CD7 /* WriteViewController.swift */,
+				048C520022192DD80058C5D9 /* WriteDiaryViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -365,14 +349,6 @@
 				04CE88F8221812FF009CDAD9 /* SearchTableViewCell.xib */,
 				04CE88FB22182421009CDAD9 /* TagHistoryTableViewCell.swift */,
 				04CE88FC22182421009CDAD9 /* TagHistoryTableViewCell.xib */,
-				9E6BF1612217EA45002B8CD7 /* TitleTableViewCell.swift */,
-				9E6BF1622217EA45002B8CD7 /* TitleTableViewCell.xib */,
-				9E6BF1652217EB4A002B8CD7 /* DiaryTableViewCell.swift */,
-				9E6BF1662217EB4A002B8CD7 /* DiaryTableViewCell.xib */,
-				9E6BF1692217ECEE002B8CD7 /* TagTableViewCell.swift */,
-				9E6BF16A2217ECEE002B8CD7 /* TagTableViewCell.xib */,
-				9E6BF1722217EE7A002B8CD7 /* PlaceNameTableViewCell.swift */,
-				9E6BF1732217EE7A002B8CD7 /* PlaceNameTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -489,12 +465,10 @@
 				04CE88E62218000A009CDAD9 /* 2.gif in Resources */,
 				04CE88E22218000A009CDAD9 /* 4.gif in Resources */,
 				CE15BAB321F5EEAF00FD69F7 /* MainHeaderView.xib in Resources */,
-				9E6BF1752217EE7A002B8CD7 /* PlaceNameTableViewCell.xib in Resources */,
 				CE15BAA321F5EB0F00FD69F7 /* LaunchScreen.storyboard in Resources */,
 				9E6BF15C2217D375002B8CD7 /* Write.storyboard in Resources */,
 				CE15BAC321F6073100FD69F7 /* FilterView.xib in Resources */,
 				CE15BAA021F5EB0F00FD69F7 /* Assets.xcassets in Resources */,
-				9E6BF1642217EA45002B8CD7 /* TitleTableViewCell.xib in Resources */,
 				CE443D1021F76FBE00CB52B0 /* PhotoCollectionViewCell.xib in Resources */,
 				04CE88F422180854009CDAD9 /* Search.storyboard in Resources */,
 				04CE88FE22182421009CDAD9 /* TagHistoryTableViewCell.xib in Resources */,
@@ -503,8 +477,6 @@
 				04821FAE21FC04DD002001B9 /* Rate.storyboard in Resources */,
 				04821FC12205F0E1002001B9 /* HomeCardTableViewCell.xib in Resources */,
 				04CE88E32218000A009CDAD9 /* 0.gif in Resources */,
-				9E6BF1682217EB4A002B8CD7 /* DiaryTableViewCell.xib in Resources */,
-				9E6BF16C2217ECEE002B8CD7 /* TagTableViewCell.xib in Resources */,
 				CE15BABD21F5FC2D00FD69F7 /* DetailCardTableViewCell.xib in Resources */,
 				04821FD8220857E2002001B9 /* RateCollectionViewCell.xib in Resources */,
 				04821FB221FC2087002001B9 /* SelectPhotoCollectionViewCell.xib in Resources */,
@@ -574,21 +546,18 @@
 				CE15BA9B21F5EB0B00FD69F7 /* MainViewController.swift in Sources */,
 				04CE88EA22180286009CDAD9 /* SplashViewController1.swift in Sources */,
 				04821F9921FBFDEF002001B9 /* Color+Ext.swift in Sources */,
-				9E6BF15A2217D360002B8CD7 /* WriteViewController.swift in Sources */,
 				CE15BAC121F6070000FD69F7 /* FilterView.swift in Sources */,
 				04CE88F622180896009CDAD9 /* SearchViewController.swift in Sources */,
 				04CE88F9221812FF009CDAD9 /* SearchTableViewCell.swift in Sources */,
 				04CE88F022180402009CDAD9 /* SplashViewController0.swift in Sources */,
-				9E6BF16B2217ECEE002B8CD7 /* TagTableViewCell.swift in Sources */,
 				04821FC02205F0E1002001B9 /* HomeCardTableViewCell.swift in Sources */,
 				04821FB721FC268C002001B9 /* AssetManager.swift in Sources */,
-				9E6BF1742217EE7A002B8CD7 /* PlaceNameTableViewCell.swift in Sources */,
 				04821FC32206A1FE002001B9 /* DetailViewController.swift in Sources */,
 				04CE88EE221802BD009CDAD9 /* SplashViewController3.swift in Sources */,
 				04821FB921FC27F8002001B9 /* Image+Ext.swift in Sources */,
 				CE15BABF21F5FFC100FD69F7 /* Card.swift in Sources */,
 				CE443D0F21F76FBE00CB52B0 /* PhotoCollectionViewCell.swift in Sources */,
-				9E6BF1632217EA45002B8CD7 /* TitleTableViewCell.swift in Sources */,
+				048C520122192DD80058C5D9 /* WriteDiaryViewController.swift in Sources */,
 				CE15BAB521F5EFCA00FD69F7 /* MainHeaderView.swift in Sources */,
 				04821FB121FC2087002001B9 /* SelectPhotoCollectionViewCell.swift in Sources */,
 				04821FCB220847B1002001B9 /* RateViewController.swift in Sources */,
@@ -598,7 +567,6 @@
 				04821FD7220857E2002001B9 /* RateCollectionViewCell.swift in Sources */,
 				04CE88FD22182421009CDAD9 /* TagHistoryTableViewCell.swift in Sources */,
 				04CE88EC22180299009CDAD9 /* SplashViewController2.swift in Sources */,
-				9E6BF1672217EB4A002B8CD7 /* DiaryTableViewCell.swift in Sources */,
 				CE15BA9921F5EB0B00FD69F7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

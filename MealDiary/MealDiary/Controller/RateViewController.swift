@@ -28,6 +28,9 @@ class RateViewController: UIViewController {
             }
         }
     }
+    @IBAction func tabCompletRateButton(_ sender: Any) {
+        navigationController?.popToRootViewController(animated: true)
+    }
     
     let rates = Rate.rates
     var currentPage = 0
