@@ -18,7 +18,7 @@ class SelectPhotoViewController: UIViewController {
     var selectedIndexPaths: BehaviorRelay<[IndexPath]> = BehaviorRelay<[IndexPath]>(value: [])
     var dictionary: [Int: Int] = [:]
     let nextButton = UIButton(type: .system)
-    let disposeBag = DisposeBag()
+    var disposeBag = DisposeBag()
     
     func setCollectionView() {
         collectionView.rx.setDelegate(self).disposed(by: disposeBag)
@@ -46,7 +46,6 @@ class SelectPhotoViewController: UIViewController {
                 if selectedIndexPaths.count != 0 {
                     self.nextButton.isEnabled = true
                 }
-                
             }).disposed(by: disposeBag)
         
         collectionView.rx.itemDeselected
@@ -67,7 +66,7 @@ class SelectPhotoViewController: UIViewController {
                 
             }).disposed(by: disposeBag)
 
-        selectedIndexPaths.asObservable().subscribe(onNext: { indexPaths in
+        selectedIndexPaths.asObservable().subscribe(onNext: { [weak self] indexPaths in
             indexPaths.forEach({ [weak self] (indexPath) in
                 guard let `self` = self else { return }
                 guard let index = indexPaths.firstIndex(of: indexPath) else { return }
@@ -80,7 +79,6 @@ class SelectPhotoViewController: UIViewController {
     }
     
     func getImages (){
-        PHPhotoLibrary.shared().register(self)
         photos.accept(AssetManager.fetchImages(by: nil))
     }
     
@@ -104,37 +102,32 @@ class SelectPhotoViewController: UIViewController {
                 }
             }
         }
-        let id = UUID().uuidString
-        let contentCard = ContentCard(id: id, photoDatas: datas, titleText: "asdf", detailText: "", hashTagList: [], restaurantName: "", restaurantLocation: "", restaurantLatitude: 0, restaurantLongitude: 0, date: Date(), score: 100)
-//        AssetManager.save(data: contentCard.getDict(), for: "card")
         
-        let encoder = JSONEncoder()
-        let a = try? encoder.encode(contentCard)
-        print(a)
-        
-        let decoder = JSONDecoder()
-        if let data = a, let card = try? decoder.decode(ContentCard.self, from: data) {
-            
-        }
+        Global.shared.photoDatas = datas
         
         let storyBoard = UIStoryboard(name: "Write", bundle: nil)
         guard let vc = storyBoard.instantiateViewController(withIdentifier: "WriteDiaryViewController") as? WriteDiaryViewController else {
             return
         }
         
-        self.navigationController?.pushViewController(vc, animated: true)
+        navigationController?.pushViewController(vc, animated: true)
     }
     
-    public var topDistance : CGFloat{
-        get{
-            if self.navigationController != nil && !self.navigationController!.navigationBar.isTranslucent{
-                return 0
-            }else{
-                let barHeight=self.navigationController?.navigationBar.frame.height ?? 0
-                let statusBarHeight = UIApplication.shared.isStatusBarHidden ? CGFloat(0) : UIApplication.shared.statusBarFrame.height
-                return barHeight + statusBarHeight
-            }
-        }
+//    public var topDistance : CGFloat{
+//        get{
+//            if navigationController != nil && !navigationController!.navigationBar.isTranslucent{
+//                return 0
+//            }else{
+//                let barHeight = navigationController?.navigationBar.frame.height ?? 0
+//                let statusBarHeight = UIApplication.shared.isStatusBarHidden ? CGFloat(0) : UIApplication.shared.statusBarFrame.height
+//                return barHeight + statusBarHeight
+//            }
+//        }
+//    }
+    
+    deinit {
+        print("VC deinit")
+        disposeBag = DisposeBag()
     }
 }
 
@@ -144,17 +137,23 @@ extension SelectPhotoViewController {
         setCollectionView()
         setNavigationBar()
         titleLabel.setOrangeUnderLine()
-        PHPhotoLibrary.requestAuthorization({
+        PHPhotoLibrary.requestAuthorization({ [weak self]
             (newStatus) in
             if newStatus ==  PHAuthorizationStatus.authorized {
-                self.getImages()
+                self?.getImages()
             }
         })
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        PHPhotoLibrary.shared().register(self)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        PHPhotoLibrary.shared().unregisterChangeObserver(self)
     }
 }
 

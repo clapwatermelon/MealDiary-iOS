@@ -16,6 +16,16 @@ class Global {
     let decoder = JSONDecoder()
     var cards: BehaviorRelay<[ContentCard]> = BehaviorRelay<[ContentCard]>(value: [])
     
+    var photoDatas: [Data?] = []
+    var titleText: String = ""
+    var detailText: String = ""
+    var hashTagList: [String] = []
+    var restaurantName: String = ""
+    var restaurantLocation: String = ""
+    var restaurantLatitude: Double = 0
+    var restaurantLongitude: Double = 0
+    var score: Int = 0
+    
     init() {
         let cardDict = AssetManager.getDictData(for: DictKeyword.card.rawValue)
         var cardArray: [ContentCard] = []
@@ -26,6 +36,18 @@ class Global {
             }
         }
         cards.accept(cardArray)
+    }
+    
+    func refresh() {
+        photoDatas = []
+        titleText = ""
+        detailText = ""
+        hashTagList = []
+        restaurantName = ""
+        restaurantLocation = ""
+        restaurantLatitude = 0
+        restaurantLongitude = 0
+        score = 0
     }
     
     func save(card: ContentCard) {

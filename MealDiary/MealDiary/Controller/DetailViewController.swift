@@ -63,6 +63,10 @@ class DetailViewController: UIViewController {
             cell.setUp(with: card, parentViewSize: self.view.frame.size)
         }.disposed(by: disposeBag)
     }
+    
+    deinit {
+        print("VC deinit")
+    }
 }
 
 extension DetailViewController {

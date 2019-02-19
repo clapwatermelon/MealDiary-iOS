@@ -93,6 +93,10 @@ class RateViewController: UIViewController {
             collectionView.visibleCells.forEach{ $0.contentView.layer.rotateY(degree: 0) }
         }
     }
+    
+    deinit {
+        print("VC deinit")
+    }
 }
 
 extension RateViewController {

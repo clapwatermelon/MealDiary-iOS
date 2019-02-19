@@ -224,6 +224,10 @@ class WriteDiaryViewController: UIViewController {
         hashTagTextField.placeholder = "#태그"
         restaurantTextField.placeholder = "식당이름"
     }
+    
+    deinit {
+        print("VC deinit")
+    }
 }
 
 extension WriteDiaryViewController {

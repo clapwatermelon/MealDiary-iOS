@@ -114,6 +114,10 @@ class SearchViewController: UIViewController {
     @objc private func dismissKeyboard() {
         searchBar.endEditing(true)
     }
+    
+    deinit {
+        print("VC deinit")
+    }
 }
 
 extension SearchViewController {
