@@ -199,7 +199,7 @@ extension MainViewController: UIScrollViewDelegate {
         guard let tableFrame = self.tableFrame else { return }
         guard let filterFrame = self.filterFrame else { return }
         
-        let difference = (offsetY - beforeOffsetY) * 1.5
+        let difference = (offsetY - beforeOffsetY) * 1.1
         
         if offsetY <= 0 {
             headerView.alpha = 1

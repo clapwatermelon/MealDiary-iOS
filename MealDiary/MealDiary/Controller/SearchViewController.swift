@@ -54,7 +54,7 @@ class SearchViewController: UIViewController {
     }
     
     private func setSearchTable() {
-        searchTable.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
+//        searchTable.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
         searchTable.register(UINib(nibName: SearchTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: SearchTableViewCell.identifier)
         searchTable.rx.setDelegate(self).disposed(by: disposeBag)
         
@@ -65,7 +65,11 @@ class SearchViewController: UIViewController {
     }
     
     private func setHistoryTable() {
-        tagHistoryTable.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
+        tagHistoryTable.allowsSelection = true
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        gesture.cancelsTouchesInView = false
+        gesture.numberOfTapsRequired = 1
+        tagHistoryTable.addGestureRecognizer(gesture)
         tagHistoryTable.register(UINib(nibName: TagHistoryTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: TagHistoryTableViewCell.identifier)
         tagHistoryTable.rx.setDelegate(self).disposed(by: disposeBag)
         
@@ -73,6 +77,18 @@ class SearchViewController: UIViewController {
             (row, tag, cell) in
             cell.tagLabel.text = tag
             }.disposed(by: disposeBag)
+        
+        tagHistoryTable.rx.itemSelected.subscribe( onNext: { [weak self] indexPath in
+            guard let `self` = self else { return }
+            if let cell = self.tagHistoryTable.cellForRow(at: indexPath) as? TagHistoryTableViewCell {
+                self.searchBar.text = cell.tagLabel.text
+                self.searchTable.isHidden = false
+                self.tagHistoryTable.isHidden = true
+                self.filterButton.isHidden = false
+                self.headLabel.font = UIFont.systemFont(ofSize: 17.0)
+                self.headLabel.text = self.currentFilter.rawValue
+            }
+        }).disposed(by: disposeBag)
     }
     
     private func setSearchBar(){
@@ -126,6 +142,7 @@ extension SearchViewController {
         setSearchBar()
         setSearchTable()
         setHistoryTable()
+//        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
     }
 }
 
