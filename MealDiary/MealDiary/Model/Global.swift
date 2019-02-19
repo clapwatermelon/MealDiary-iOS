@@ -25,6 +25,33 @@ class Global {
                 cardArray.append(card)
             }
         }
+        cards.accept(cardArray)
+    }
+    
+    func save(card: ContentCard) {
+        guard let data = try? encoder.encode(card) else { return }
+        var cardArray = cards.value
+        cardArray.append(card)
+        cards.accept(cardArray)
+        
+        var cardDict = AssetManager.getDictData(for: DictKeyword.card.rawValue)
+        cardDict[card.id] = data
+        AssetManager.save(data: cardDict, for: DictKeyword.card.rawValue)
+    }
+    
+    func delete(card: ContentCard) {
+        var cardArray = cards.value
+        for i in 0..<cardArray.count {
+            let c = cardArray[i]
+            if c.id == card.id {
+                cardArray.remove(at: i)
+                break
+            }
+        }
+        
+        var cardDict = AssetManager.getDictData(for: DictKeyword.card.rawValue)
+        cardDict.removeValue(forKey: card.id)
+        AssetManager.save(data: cardDict, for: DictKeyword.card.rawValue)
     }
 }
 
