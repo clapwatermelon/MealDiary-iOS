@@ -38,20 +38,20 @@
                                 </connections>
                             </button>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="UF9-WO-IIO">
-                                <rect key="frame" x="38" y="504" width="299" height="31"/>
+                                <rect key="frame" x="38" y="512" width="299" height="31"/>
                                 <color key="tintColor" red="0.99215686270000003" green="0.47058823529999999" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="changeSliderValue:forEvent:" destination="02i-Mn-i6J" eventType="valueChanged" id="Sda-j7-FRn"/>
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘의 식사는" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jho-oJ-5yu">
-                                <rect key="frame" x="20" y="95" width="335" height="21"/>
+                                <rect key="frame" x="20" y="85" width="335" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="m2Y-Bh-eHb">
-                                <rect key="frame" x="50" y="156" width="275" height="278"/>
+                                <rect key="frame" x="50" y="146" width="275" height="306"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pRW-iu-4BJ">
                                     <size key="itemSize" width="50" height="50"/>
@@ -67,13 +67,13 @@
                             <constraint firstItem="m2Y-Bh-eHb" firstAttribute="leading" secondItem="c4P-Px-0IR" secondAttribute="leading" constant="50" id="4m0-Xo-jrX"/>
                             <constraint firstItem="c4P-Px-0IR" firstAttribute="trailing" secondItem="UF9-WO-IIO" secondAttribute="trailing" constant="40" id="ATs-mi-zWW"/>
                             <constraint firstItem="UF9-WO-IIO" firstAttribute="leading" secondItem="c4P-Px-0IR" secondAttribute="leading" constant="40" id="B9V-iW-ZoO"/>
-                            <constraint firstItem="UF9-WO-IIO" firstAttribute="top" secondItem="m2Y-Bh-eHb" secondAttribute="bottom" constant="70" id="BM8-xw-0RE"/>
+                            <constraint firstItem="UF9-WO-IIO" firstAttribute="top" secondItem="m2Y-Bh-eHb" secondAttribute="bottom" constant="60" id="BM8-xw-0RE"/>
                             <constraint firstItem="c4P-Px-0IR" firstAttribute="trailing" secondItem="YoF-Bq-EGM" secondAttribute="trailing" id="GEH-ao-MfW"/>
                             <constraint firstItem="m2Y-Bh-eHb" firstAttribute="top" secondItem="Jho-oJ-5yu" secondAttribute="bottom" constant="40" id="NA7-Cs-yeZ"/>
                             <constraint firstItem="c4P-Px-0IR" firstAttribute="bottom" secondItem="YoF-Bq-EGM" secondAttribute="bottom" id="PD9-bX-bOW"/>
-                            <constraint firstItem="YoF-Bq-EGM" firstAttribute="top" secondItem="UF9-WO-IIO" secondAttribute="bottom" constant="73" id="Xal-hK-eF3"/>
+                            <constraint firstItem="YoF-Bq-EGM" firstAttribute="top" secondItem="UF9-WO-IIO" secondAttribute="bottom" constant="65" id="Xal-hK-eF3"/>
                             <constraint firstItem="YoF-Bq-EGM" firstAttribute="leading" secondItem="c4P-Px-0IR" secondAttribute="leading" id="Zf5-1W-P5b"/>
-                            <constraint firstItem="Jho-oJ-5yu" firstAttribute="top" secondItem="c4P-Px-0IR" secondAttribute="top" constant="75" id="odQ-2X-Hja"/>
+                            <constraint firstItem="Jho-oJ-5yu" firstAttribute="top" secondItem="c4P-Px-0IR" secondAttribute="top" constant="65" id="odQ-2X-Hja"/>
                             <constraint firstItem="c4P-Px-0IR" firstAttribute="trailing" secondItem="m2Y-Bh-eHb" secondAttribute="trailing" constant="50" id="peH-Kw-4pd"/>
                             <constraint firstItem="Jho-oJ-5yu" firstAttribute="leading" secondItem="c4P-Px-0IR" secondAttribute="leading" constant="20" id="sre-Go-iwN"/>
                             <constraint firstItem="c4P-Px-0IR" firstAttribute="trailing" secondItem="Jho-oJ-5yu" secondAttribute="trailing" constant="20" id="uFz-Eg-VL1"/>

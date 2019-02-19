@@ -28,8 +28,11 @@ class DetailViewController: UIViewController {
         }
         actionSheetController.addAction(modifyActionButton)
 
-        let deleteActionButton = UIAlertAction(title: "삭제", style: .destructive) { action -> Void in
-            print("삭제")
+        let deleteActionButton = UIAlertAction(title: "삭제", style: .destructive) { [weak self] action -> Void in
+            if let card = self?.card.value?.first {
+                Global.shared.delete(card: card)
+            }
+            self?.navigationController?.popToRootViewController(animated: true)
         }
         actionSheetController.addAction(deleteActionButton)
         self.present(actionSheetController, animated: true, completion: nil)

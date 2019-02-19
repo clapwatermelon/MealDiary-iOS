@@ -26,11 +26,11 @@
 		048C520122192DD80058C5D9 /* WriteDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048C520022192DD80058C5D9 /* WriteDiaryViewController.swift */; };
 		048C5203221C3C340058C5D9 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048C5202221C3C340058C5D9 /* Global.swift */; };
 		048C5205221C43870058C5D9 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048C5204221C43870058C5D9 /* Date.swift */; };
-		04CE88E22218000A009CDAD9 /* 4.gif in Resources */ = {isa = PBXBuildFile; fileRef = 04CE88DC22180009009CDAD9 /* 4.gif */; };
+		04CE88E22218000A009CDAD9 /* 2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 04CE88DC22180009009CDAD9 /* 2.gif */; };
 		04CE88E32218000A009CDAD9 /* 0.gif in Resources */ = {isa = PBXBuildFile; fileRef = 04CE88DD22180009009CDAD9 /* 0.gif */; };
-		04CE88E42218000A009CDAD9 /* 5.gif in Resources */ = {isa = PBXBuildFile; fileRef = 04CE88DE2218000A009CDAD9 /* 5.gif */; };
-		04CE88E52218000A009CDAD9 /* 1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 04CE88DF2218000A009CDAD9 /* 1.gif */; };
-		04CE88E62218000A009CDAD9 /* 2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 04CE88E02218000A009CDAD9 /* 2.gif */; };
+		04CE88E42218000A009CDAD9 /* 1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 04CE88DE2218000A009CDAD9 /* 1.gif */; };
+		04CE88E52218000A009CDAD9 /* 5.gif in Resources */ = {isa = PBXBuildFile; fileRef = 04CE88DF2218000A009CDAD9 /* 5.gif */; };
+		04CE88E62218000A009CDAD9 /* 4.gif in Resources */ = {isa = PBXBuildFile; fileRef = 04CE88E02218000A009CDAD9 /* 4.gif */; };
 		04CE88E72218000A009CDAD9 /* 3.gif in Resources */ = {isa = PBXBuildFile; fileRef = 04CE88E12218000A009CDAD9 /* 3.gif */; };
 		04CE88EA22180286009CDAD9 /* SplashViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE88E922180286009CDAD9 /* SplashViewController1.swift */; };
 		04CE88EC22180299009CDAD9 /* SplashViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE88EB22180299009CDAD9 /* SplashViewController2.swift */; };
@@ -79,11 +79,11 @@
 		048C520022192DD80058C5D9 /* WriteDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteDiaryViewController.swift; sourceTree = "<group>"; };
 		048C5202221C3C340058C5D9 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		048C5204221C43870058C5D9 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
-		04CE88DC22180009009CDAD9 /* 4.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 4.gif; sourceTree = "<group>"; };
+		04CE88DC22180009009CDAD9 /* 2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 2.gif; sourceTree = "<group>"; };
 		04CE88DD22180009009CDAD9 /* 0.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 0.gif; sourceTree = "<group>"; };
-		04CE88DE2218000A009CDAD9 /* 5.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 5.gif; sourceTree = "<group>"; };
-		04CE88DF2218000A009CDAD9 /* 1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 1.gif; sourceTree = "<group>"; };
-		04CE88E02218000A009CDAD9 /* 2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 2.gif; sourceTree = "<group>"; };
+		04CE88DE2218000A009CDAD9 /* 1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 1.gif; sourceTree = "<group>"; };
+		04CE88DF2218000A009CDAD9 /* 5.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 5.gif; sourceTree = "<group>"; };
+		04CE88E02218000A009CDAD9 /* 4.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 4.gif; sourceTree = "<group>"; };
 		04CE88E12218000A009CDAD9 /* 3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 3.gif; sourceTree = "<group>"; };
 		04CE88E922180286009CDAD9 /* SplashViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController1.swift; sourceTree = "<group>"; };
 		04CE88EB22180299009CDAD9 /* SplashViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController2.swift; sourceTree = "<group>"; };
@@ -156,11 +156,11 @@
 			isa = PBXGroup;
 			children = (
 				04CE88DD22180009009CDAD9 /* 0.gif */,
-				04CE88DF2218000A009CDAD9 /* 1.gif */,
-				04CE88E02218000A009CDAD9 /* 2.gif */,
+				04CE88DF2218000A009CDAD9 /* 5.gif */,
+				04CE88E02218000A009CDAD9 /* 4.gif */,
 				04CE88E12218000A009CDAD9 /* 3.gif */,
-				04CE88DC22180009009CDAD9 /* 4.gif */,
-				04CE88DE2218000A009CDAD9 /* 5.gif */,
+				04CE88DC22180009009CDAD9 /* 2.gif */,
+				04CE88DE2218000A009CDAD9 /* 1.gif */,
 			);
 			path = Gif;
 			sourceTree = "<group>";
@@ -376,8 +376,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				04CE88E72218000A009CDAD9 /* 3.gif in Resources */,
-				04CE88E62218000A009CDAD9 /* 2.gif in Resources */,
-				04CE88E22218000A009CDAD9 /* 4.gif in Resources */,
+				04CE88E62218000A009CDAD9 /* 4.gif in Resources */,
+				04CE88E22218000A009CDAD9 /* 2.gif in Resources */,
 				CE15BAA321F5EB0F00FD69F7 /* LaunchScreen.storyboard in Resources */,
 				9E6BF15C2217D375002B8CD7 /* Write.storyboard in Resources */,
 				CE15BAC321F6073100FD69F7 /* FilterView.xib in Resources */,
@@ -386,7 +386,7 @@
 				04CE88F422180854009CDAD9 /* Search.storyboard in Resources */,
 				04CE88FE22182421009CDAD9 /* TagHistoryTableViewCell.xib in Resources */,
 				04CE88FA221812FF009CDAD9 /* SearchTableViewCell.xib in Resources */,
-				04CE88E42218000A009CDAD9 /* 5.gif in Resources */,
+				04CE88E42218000A009CDAD9 /* 1.gif in Resources */,
 				04821FAE21FC04DD002001B9 /* Rate.storyboard in Resources */,
 				04821FC12205F0E1002001B9 /* HomeCardTableViewCell.xib in Resources */,
 				04CE88E32218000A009CDAD9 /* 0.gif in Resources */,
@@ -394,7 +394,7 @@
 				04821FD8220857E2002001B9 /* RateCollectionViewCell.xib in Resources */,
 				04821FB221FC2087002001B9 /* SelectPhotoCollectionViewCell.xib in Resources */,
 				CE15BA9E21F5EB0B00FD69F7 /* Main.storyboard in Resources */,
-				04CE88E52218000A009CDAD9 /* 1.gif in Resources */,
+				04CE88E52218000A009CDAD9 /* 5.gif in Resources */,
 				04CE890622184898009CDAD9 /* Splash.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

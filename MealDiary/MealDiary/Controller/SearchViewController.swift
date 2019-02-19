@@ -136,6 +136,5 @@ extension SearchViewController: UITableViewDelegate {
         } else {
             return 45
         }
-        
     }
 }

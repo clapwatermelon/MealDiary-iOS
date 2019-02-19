@@ -29,6 +29,8 @@ class RateViewController: UIViewController {
         }
     }
     @IBAction func tabCompletRateButton(_ sender: Any) {
+        Global.shared.score = Int(rateSlider.value * 10)
+        Global.shared.save()
         navigationController?.popToRootViewController(animated: true)
     }
     

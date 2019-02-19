@@ -50,7 +50,13 @@ class Global {
         score = 0
     }
     
-    func save(card: ContentCard) {
+    func save() {
+        let card = ContentCard(id: UUID().uuidString, photoDatas: photoDatas, titleText: titleText, detailText: detailText, hashTagList: hashTagList, restaurantName: restaurantName, restaurantLocation: restaurantLocation, restaurantLatitude: restaurantLatitude, restaurantLongitude: restaurantLongitude, date: Date(), score: score)
+        
+        modify(card: card)
+    }
+    
+    func modify(card: ContentCard) {
         guard let data = try? encoder.encode(card) else { return }
         var cardArray = cards.value
         cardArray.append(card)
@@ -67,6 +73,7 @@ class Global {
             let c = cardArray[i]
             if c.id == card.id {
                 cardArray.remove(at: i)
+                cards.accept(cardArray)
                 break
             }
         }

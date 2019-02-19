@@ -189,7 +189,7 @@ extension MainViewController {
 
 extension MainViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        guard Global.shared.cards.value.count != 0 else { return }
+        guard Global.shared.cards.value.count > 1 else { return }
         
         let offsetY: CGFloat = {
             let firstOffset = scrollViewStartOffsetY < 0 ? scrollViewStartOffsetY * -1 : scrollViewStartOffsetY
@@ -199,8 +199,7 @@ extension MainViewController: UIScrollViewDelegate {
         guard let tableFrame = self.tableFrame else { return }
         guard let filterFrame = self.filterFrame else { return }
         
-        let difference = offsetY - beforeOffsetY
-        let height = UIApplication.shared.statusBarFrame.height + navigationController!.navigationBar.frame.height
+        let difference = (offsetY - beforeOffsetY) * 1.5
         
         if offsetY <= 0 {
             headerView.alpha = 1
@@ -214,13 +213,13 @@ extension MainViewController: UIScrollViewDelegate {
                     headerView.alpha -= (difference / 80)
                 }
                 
-                if tableView.frame.origin.y > height {
+                if tableView.frame.origin.y > headerView.frame.origin.y {
                     filterView.frame.origin.y -= difference
                     tableView.frame = CGRect(x: 0, y: tableView.frame.origin.y - difference, width: tableFrame.width, height: tableView.frame.size.height + difference)
                 } else {
                     headerView.alpha = 0
-                    filterView.frame = CGRect(x: 0, y: height - filterFrame.height, width: filterFrame.width, height: filterFrame.height)
-                    tableView.frame = CGRect(x: 0, y: height, width: tableFrame.width, height: self.view.frame.height - height)
+                    filterView.frame = CGRect(x: 0, y: headerView.frame.origin.y - filterFrame.height, width: filterFrame.width, height: filterFrame.height)
+                    tableView.frame = CGRect(x: 0, y: headerView.frame.origin.y, width: tableFrame.width, height: self.view.frame.height - headerView.frame.origin.y)
                 }
                 
             } else {

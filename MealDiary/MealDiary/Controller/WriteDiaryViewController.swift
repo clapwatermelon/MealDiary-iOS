@@ -199,12 +199,23 @@ class WriteDiaryViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: completeButton)
         
         completeButton.rx.tap.subscribe( onNext: { [weak self] in
+            guard let `self` = self else { return }
             let storyBoard = UIStoryboard(name: "Rate", bundle: nil)
             guard let vc = storyBoard.instantiateViewController(withIdentifier: "RateViewController") as? RateViewController else {
                 return
             }
             
-            self?.navigationController?.pushViewController(vc, animated: true)
+            // To-do : 수현
+            Global.shared.titleText = self.titleTextField.text ?? ""
+            Global.shared.detailText = self.textView.text
+            Global.shared.hashTagList = []
+            Global.shared.restaurantName = self.restaurantTextField.text ?? ""
+            Global.shared.restaurantLocation = ""
+            Global.shared.restaurantLatitude = 0
+            Global.shared.restaurantLongitude = 0
+            //
+            
+            self.navigationController?.pushViewController(vc, animated: true)
         }).disposed(by: disposeBag)
     }
     
