@@ -105,8 +105,17 @@ class SelectPhotoViewController: UIViewController {
             }
         }
         let id = UUID().uuidString
-        let contentCard = ContentCard(id: id, photoDatas: datas, titleText: "asdf", detailText: "", hashTagList: [], restaurantName: "", restaurantLocation: "", restaurantLatitude: 0, restaurantLongitude: 0, score: 100)
+        let contentCard = ContentCard(id: id, photoDatas: datas, titleText: "asdf", detailText: "", hashTagList: [], restaurantName: "", restaurantLocation: "", restaurantLatitude: 0, restaurantLongitude: 0, date: Date(), score: 100)
 //        AssetManager.save(data: contentCard.getDict(), for: "card")
+        
+        let encoder = JSONEncoder()
+        let a = try? encoder.encode(contentCard)
+        print(a)
+        
+        let decoder = JSONDecoder()
+        if let data = a, let card = try? decoder.decode(ContentCard.self, from: data) {
+            
+        }
         
         let storyBoard = UIStoryboard(name: "Write", bundle: nil)
         guard let vc = storyBoard.instantiateViewController(withIdentifier: "WriteDiaryViewController") as? WriteDiaryViewController else {

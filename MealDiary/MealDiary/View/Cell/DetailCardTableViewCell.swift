@@ -18,7 +18,7 @@ class DetailCardTableViewCell: UITableViewCell {
     @IBOutlet weak var hashTagLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
-    var card: Card?
+    var card: ContentCard?
     
     static let identifier = "DetailCardTableViewCell"
 //    let underlineAttributes : [NSAttributedString.Key: Any] = [
@@ -29,26 +29,26 @@ class DetailCardTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    static func getHeight(for card: Card?, parentViewSize: CGSize) -> CGFloat {
+    static func getHeight(for card: ContentCard?, parentViewSize: CGSize) -> CGFloat {
         guard let card = card else { return 0 }
         let detailtextHeight = card.detailText.getHeight(withConstrainedWidth: parentViewSize.width - 40, size: 14)
         return 500 + (detailtextHeight * 1.4)
     }
     
-    func setUp(with card: Card, parentViewSize: CGSize) {
+    func setUp(with card: ContentCard, parentViewSize: CGSize) {
         self.card = card
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: PhotoCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: PhotoCollectionViewCell.identifier)
         cardNumberLabel.clipsToBounds = true
         cardNumberLabel.layer.cornerRadius = 10
-        cardNumberLabel.text = "1/" + card.photos.count.description
-        pointLabel.text = card.point.description
+        cardNumberLabel.text = "1/" + card.photoDatas.count.description
+        pointLabel.text = card.score.description
         restaurantNameLabel.text = card.titleText
         detailLabel.text = card.detailText
-        dateLabel.text = card.date
+        dateLabel.text = card.date.toString()
         var hashTag = ""
-        card.hashtagList.forEach { hashTag += ("#" + $0 + " ") }
+        card.hashTagList.forEach { hashTag += ("#" + $0 + " ") }
         hashTagLabel.text = hashTag
         
         let detailtextHeight = card.detailText.getHeight(withConstrainedWidth: parentViewSize.width - 40, size: 14)
@@ -61,12 +61,14 @@ class DetailCardTableViewCell: UITableViewCell {
 
 extension DetailCardTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return card?.photos.count ?? 0
+        return card?.photoDatas.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.identifier, for: indexPath) as! PhotoCollectionViewCell
-        cell.imageView.image = card?.photos[indexPath.item]
+        if let data = card?.photoDatas[indexPath.item] {
+            cell.imageView.image = UIImage(data: data)
+        }
         return cell
     }
 }

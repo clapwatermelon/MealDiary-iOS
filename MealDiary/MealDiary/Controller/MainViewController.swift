@@ -25,7 +25,6 @@ class MainViewController: UIViewController {
     lazy var filterView: FilterView = FilterView()
     lazy var emptyImageView: UIImageView = UIImageView()
     
-    var cards: BehaviorRelay<[Card]> = BehaviorRelay<[Card]>(value: [])
     var selectedIndex: Set<Int> = []
     var tableFrame: CGRect?
     var filterFrame: CGRect?
@@ -111,7 +110,7 @@ class MainViewController: UIViewController {
         tableView.frame = tableFrame ?? CGRect(origin: .zero, size: .zero)
         tableView.rx.setDelegate(self).disposed(by: disposeBag)
         
-        cards.subscribe(onNext: { [weak self] (cards) in
+        Global.shared.cards.subscribe(onNext: { [weak self] (cards) in
             if cards.isEmpty {
                 self?.emptyImageView.isHidden = false
                 self?.tableView.isHidden = true
@@ -123,14 +122,14 @@ class MainViewController: UIViewController {
             }
         }).disposed(by: disposeBag)
         
-        cards.asObservable().bind(to: tableView.rx.items(cellIdentifier: HomeCardTableViewCell.identifier, cellType: HomeCardTableViewCell.self)){
+        Global.shared.cards.asObservable().bind(to: tableView.rx.items(cellIdentifier: HomeCardTableViewCell.identifier, cellType: HomeCardTableViewCell.self)){
             (row, card, cell) in
             cell.setUp(with: card)
         }.disposed(by: disposeBag)
         
         tableView.rx.itemSelected.subscribe( onNext: { [weak self] (indexPath) in
             guard let `self` = self else { return }
-            let card = self.cards.value[indexPath.item]
+            let card = Global.shared.cards.value[indexPath.item]
             
             let storyBoard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyBoard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
@@ -185,7 +184,7 @@ extension MainViewController {
 
 extension MainViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        guard cards.value.count != 0 else { return }
+        guard Global.shared.cards.value.count != 0 else { return }
         
         let offsetY: CGFloat = {
             let firstOffset = scrollViewStartOffsetY < 0 ? scrollViewStartOffsetY * -1 : scrollViewStartOffsetY

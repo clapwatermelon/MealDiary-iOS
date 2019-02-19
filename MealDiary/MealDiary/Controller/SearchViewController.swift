@@ -15,7 +15,7 @@ class SearchViewController: UIViewController {
     let disposeBag = DisposeBag()
     @IBOutlet weak var searchTable: UITableView!
     @IBOutlet weak var tagHistoryTable: UITableView!
-    var cards: BehaviorRelay<[Card]> = BehaviorRelay<[Card]>(value: sample.cards)
+    var cards: BehaviorRelay<[ContentCard]> = BehaviorRelay<[ContentCard]>(value: [])
     var tagHistory: BehaviorRelay<[String]> = BehaviorRelay<[String]>(value: sample.tagHistory)
     var currentFilter = filterType.date
     

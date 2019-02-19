@@ -13,7 +13,7 @@ import RxSwift
 class DetailViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     let disposeBag = DisposeBag()
-    var card: BehaviorRelay<[Card]?> = BehaviorRelay<[Card]?>(value: nil)
+    var card: BehaviorRelay<[ContentCard]?> = BehaviorRelay<[ContentCard]?>(value: nil)
 
     @objc func tabFeedMoreButton(sender: UIButton) {
         let actionSheetController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
@@ -35,7 +35,7 @@ class DetailViewController: UIViewController {
         self.present(actionSheetController, animated: true, completion: nil)
     }
     
-    func setUp(with card: Card) {
+    func setUp(with card: ContentCard) {
         self.card.accept([card])
     }
     

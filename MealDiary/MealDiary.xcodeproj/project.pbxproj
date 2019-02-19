@@ -24,6 +24,8 @@
 		04821FD7220857E2002001B9 /* RateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04821FD5220857E2002001B9 /* RateCollectionViewCell.swift */; };
 		04821FD8220857E2002001B9 /* RateCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04821FD6220857E2002001B9 /* RateCollectionViewCell.xib */; };
 		048C520122192DD80058C5D9 /* WriteDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048C520022192DD80058C5D9 /* WriteDiaryViewController.swift */; };
+		048C5203221C3C340058C5D9 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048C5202221C3C340058C5D9 /* Global.swift */; };
+		048C5205221C43870058C5D9 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048C5204221C43870058C5D9 /* Date.swift */; };
 		04CE88E22218000A009CDAD9 /* 4.gif in Resources */ = {isa = PBXBuildFile; fileRef = 04CE88DC22180009009CDAD9 /* 4.gif */; };
 		04CE88E32218000A009CDAD9 /* 0.gif in Resources */ = {isa = PBXBuildFile; fileRef = 04CE88DD22180009009CDAD9 /* 0.gif */; };
 		04CE88E42218000A009CDAD9 /* 5.gif in Resources */ = {isa = PBXBuildFile; fileRef = 04CE88DE2218000A009CDAD9 /* 5.gif */; };
@@ -42,7 +44,6 @@
 		04CE88FD22182421009CDAD9 /* TagHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE88FB22182421009CDAD9 /* TagHistoryTableViewCell.swift */; };
 		04CE88FE22182421009CDAD9 /* TagHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04CE88FC22182421009CDAD9 /* TagHistoryTableViewCell.xib */; };
 		04CE890622184898009CDAD9 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04CE890522184898009CDAD9 /* Splash.storyboard */; };
-		6D026A0B20BDC27574ACFFCA /* Pods_MealDiary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCFB69D9552636CD9D743323 /* Pods_MealDiary.framework */; };
 		9E6BF15C2217D375002B8CD7 /* Write.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E6BF15B2217D375002B8CD7 /* Write.storyboard */; };
 		CE15BA9921F5EB0B00FD69F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15BA9821F5EB0B00FD69F7 /* AppDelegate.swift */; };
 		CE15BA9B21F5EB0B00FD69F7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15BA9A21F5EB0B00FD69F7 /* MainViewController.swift */; };
@@ -56,14 +57,6 @@
 		CE15BAC321F6073100FD69F7 /* FilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE15BAC221F6073100FD69F7 /* FilterView.xib */; };
 		CE443D0F21F76FBE00CB52B0 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE443D0D21F76FBE00CB52B0 /* PhotoCollectionViewCell.swift */; };
 		CE443D1021F76FBE00CB52B0 /* PhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE443D0E21F76FBE00CB52B0 /* PhotoCollectionViewCell.xib */; };
-		CE443DB421FA025500CB52B0 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE443DB321FA025500CB52B0 /* OpenGLES.framework */; };
-		CE443DB621FA026200CB52B0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE443DB521FA026200CB52B0 /* SystemConfiguration.framework */; };
-		CE443DB821FA026A00CB52B0 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE443DB721FA026A00CB52B0 /* CoreLocation.framework */; };
-		CE443DBA21FA027100CB52B0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE443DB921FA027100CB52B0 /* QuartzCore.framework */; };
-		CE443DBC21FA02A100CB52B0 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CE443DBB21FA02A100CB52B0 /* libxml2.tbd */; };
-		CE443DBE21FA02B400CB52B0 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CE443DBD21FA02B400CB52B0 /* libsqlite3.tbd */; };
-		CE443DC021FA02D400CB52B0 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CE443DBF21FA02D400CB52B0 /* libc++.tbd */; };
-		CE443DD121FA031300CB52B0 /* DaumMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE443DD021FA031300CB52B0 /* DaumMap.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +77,8 @@
 		04821FD5220857E2002001B9 /* RateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateCollectionViewCell.swift; sourceTree = "<group>"; };
 		04821FD6220857E2002001B9 /* RateCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RateCollectionViewCell.xib; sourceTree = "<group>"; };
 		048C520022192DD80058C5D9 /* WriteDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteDiaryViewController.swift; sourceTree = "<group>"; };
+		048C5202221C3C340058C5D9 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		048C5204221C43870058C5D9 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		04CE88DC22180009009CDAD9 /* 4.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 4.gif; sourceTree = "<group>"; };
 		04CE88DD22180009009CDAD9 /* 0.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 0.gif; sourceTree = "<group>"; };
 		04CE88DE2218000A009CDAD9 /* 5.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 5.gif; sourceTree = "<group>"; };
@@ -109,7 +104,6 @@
 		9E6BF16F2217EDF2002B8CD7 /* Spoqa Han Sans Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Thin.ttf"; sourceTree = "<group>"; };
 		9E6BF1702217EDF3002B8CD7 /* Spoqa Han Sans Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Regular.ttf"; sourceTree = "<group>"; };
 		9E6BF1712217EDF4002B8CD7 /* Spoqa Han Sans Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Light.ttf"; sourceTree = "<group>"; };
-		BCFB69D9552636CD9D743323 /* Pods_MealDiary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MealDiary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE15BA9521F5EB0B00FD69F7 /* MealDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MealDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE15BA9821F5EB0B00FD69F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE15BA9A21F5EB0B00FD69F7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -124,23 +118,6 @@
 		CE15BAC221F6073100FD69F7 /* FilterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterView.xib; sourceTree = "<group>"; };
 		CE443D0D21F76FBE00CB52B0 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		CE443D0E21F76FBE00CB52B0 /* PhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCollectionViewCell.xib; sourceTree = "<group>"; };
-		CE443DB321FA025500CB52B0 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
-		CE443DB521FA026200CB52B0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		CE443DB721FA026A00CB52B0 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		CE443DB921FA027100CB52B0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		CE443DBB21FA02A100CB52B0 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
-		CE443DBD21FA02B400CB52B0 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		CE443DBF21FA02D400CB52B0 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
-		CE443DC821FA031300CB52B0 /* MTMapPOIItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMapPOIItem.h; sourceTree = "<group>"; };
-		CE443DC921FA031300CB52B0 /* MTMapCameraUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMapCameraUpdate.h; sourceTree = "<group>"; };
-		CE443DCA21FA031300CB52B0 /* MTMapReverseGeoCoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMapReverseGeoCoder.h; sourceTree = "<group>"; };
-		CE443DCB21FA031300CB52B0 /* MTMapPolyline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMapPolyline.h; sourceTree = "<group>"; };
-		CE443DCC21FA031300CB52B0 /* MTMapLocationMarkerItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMapLocationMarkerItem.h; sourceTree = "<group>"; };
-		CE443DCD21FA031300CB52B0 /* MTMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMapView.h; sourceTree = "<group>"; };
-		CE443DCE21FA031300CB52B0 /* MTMapGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMapGeometry.h; sourceTree = "<group>"; };
-		CE443DCF21FA031300CB52B0 /* MTMapCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMapCircle.h; sourceTree = "<group>"; };
-		CE443DD021FA031300CB52B0 /* DaumMap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DaumMap.framework; sourceTree = "<group>"; };
-		CE443DD321FA06AF00CB52B0 /* DaumMap-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DaumMap-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,15 +125,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE443DC021FA02D400CB52B0 /* libc++.tbd in Frameworks */,
-				CE443DBE21FA02B400CB52B0 /* libsqlite3.tbd in Frameworks */,
-				CE443DD121FA031300CB52B0 /* DaumMap.framework in Frameworks */,
-				CE443DBC21FA02A100CB52B0 /* libxml2.tbd in Frameworks */,
-				CE443DBA21FA027100CB52B0 /* QuartzCore.framework in Frameworks */,
-				CE443DB821FA026A00CB52B0 /* CoreLocation.framework in Frameworks */,
-				CE443DB621FA026200CB52B0 /* SystemConfiguration.framework in Frameworks */,
-				CE443DB421FA025500CB52B0 /* OpenGLES.framework in Frameworks */,
-				6D026A0B20BDC27574ACFFCA /* Pods_MealDiary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,6 +139,7 @@
 				04821FB821FC27F8002001B9 /* Image+Ext.swift */,
 				04821FBA2205E338002001B9 /* Label+Ext.swift */,
 				04821FC62206CD6A002001B9 /* View+Ext.swift */,
+				048C5204221C43870058C5D9 /* Date.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -233,7 +202,6 @@
 			children = (
 				CE15BA9721F5EB0B00FD69F7 /* MealDiary */,
 				CE15BA9621F5EB0B00FD69F7 /* Products */,
-				CE443DB221FA025400CB52B0 /* Frameworks */,
 				3F35808C6608E9C3C8927523 /* Pods */,
 			);
 			sourceTree = "<group>";
@@ -258,7 +226,6 @@
 				CE15BAAD21F5EBBC00FD69F7 /* Model */,
 				CE15BAAA21F5EB1600FD69F7 /* Etc. */,
 				CE15BAA421F5EB0F00FD69F7 /* Info.plist */,
-				CE443DD321FA06AF00CB52B0 /* DaumMap-Bridging-Header.h */,
 			);
 			path = MealDiary;
 			sourceTree = "<group>";
@@ -278,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				CE15BABE21F5FFC100FD69F7 /* Card.swift */,
+				048C5202221C3C340058C5D9 /* Global.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -345,54 +313,6 @@
 				04CE88FC22182421009CDAD9 /* TagHistoryTableViewCell.xib */,
 			);
 			path = Cell;
-			sourceTree = "<group>";
-		};
-		CE443DB221FA025400CB52B0 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				CE443DC521FA031300CB52B0 /* DaumMap.embeddedframework */,
-				CE443DBF21FA02D400CB52B0 /* libc++.tbd */,
-				CE443DBD21FA02B400CB52B0 /* libsqlite3.tbd */,
-				CE443DBB21FA02A100CB52B0 /* libxml2.tbd */,
-				CE443DB921FA027100CB52B0 /* QuartzCore.framework */,
-				CE443DB721FA026A00CB52B0 /* CoreLocation.framework */,
-				CE443DB521FA026200CB52B0 /* SystemConfiguration.framework */,
-				CE443DB321FA025500CB52B0 /* OpenGLES.framework */,
-				BCFB69D9552636CD9D743323 /* Pods_MealDiary.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		CE443DC521FA031300CB52B0 /* DaumMap.embeddedframework */ = {
-			isa = PBXGroup;
-			children = (
-				CE443DC621FA031300CB52B0 /* Resources */,
-				CE443DD021FA031300CB52B0 /* DaumMap.framework */,
-			);
-			path = DaumMap.embeddedframework;
-			sourceTree = "<group>";
-		};
-		CE443DC621FA031300CB52B0 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				CE443DC721FA031300CB52B0 /* Headers */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		CE443DC721FA031300CB52B0 /* Headers */ = {
-			isa = PBXGroup;
-			children = (
-				CE443DC821FA031300CB52B0 /* MTMapPOIItem.h */,
-				CE443DC921FA031300CB52B0 /* MTMapCameraUpdate.h */,
-				CE443DCA21FA031300CB52B0 /* MTMapReverseGeoCoder.h */,
-				CE443DCB21FA031300CB52B0 /* MTMapPolyline.h */,
-				CE443DCC21FA031300CB52B0 /* MTMapLocationMarkerItem.h */,
-				CE443DCD21FA031300CB52B0 /* MTMapView.h */,
-				CE443DCE21FA031300CB52B0 /* MTMapGeometry.h */,
-				CE443DCF21FA031300CB52B0 /* MTMapCircle.h */,
-			);
-			path = Headers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -538,6 +458,7 @@
 				CE15BABC21F5FC2D00FD69F7 /* DetailCardTableViewCell.swift in Sources */,
 				CE15BA9B21F5EB0B00FD69F7 /* MainViewController.swift in Sources */,
 				04CE88EA22180286009CDAD9 /* SplashViewController1.swift in Sources */,
+				048C5205221C43870058C5D9 /* Date.swift in Sources */,
 				04821F9921FBFDEF002001B9 /* Color+Ext.swift in Sources */,
 				CE15BAC121F6070000FD69F7 /* FilterView.swift in Sources */,
 				04CE88F622180896009CDAD9 /* SearchViewController.swift in Sources */,
@@ -553,6 +474,7 @@
 				048C520122192DD80058C5D9 /* WriteDiaryViewController.swift in Sources */,
 				04821FB121FC2087002001B9 /* SelectPhotoCollectionViewCell.swift in Sources */,
 				04821FCB220847B1002001B9 /* RateViewController.swift in Sources */,
+				048C5203221C3C340058C5D9 /* Global.swift in Sources */,
 				04821FB421FC23A4002001B9 /* SelectPhotoViewController.swift in Sources */,
 				04CE88F22218059A009CDAD9 /* SplashNavigation.swift in Sources */,
 				04821F9721FBF953002001B9 /* String+Ext.swift in Sources */,
@@ -720,7 +642,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = bobbyWhite.MealDiary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "MealDiary/DaumMap-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -745,7 +667,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = bobbyWhite.MealDiary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "MealDiary/DaumMap-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

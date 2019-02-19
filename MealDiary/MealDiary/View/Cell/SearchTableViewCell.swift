@@ -30,12 +30,14 @@ class SearchTableViewCell: UITableViewCell {
 
     }
     
-    func setUp(with card: Card) {
-        foodImage.image = card.photos.first
+    func setUp(with card: ContentCard) {
+        if let data = card.photoDatas.first as? Data {
+            foodImage.image = UIImage(data: data)
+        }
         titleLabel.text = card.titleText
         distanceLabel.text = "km"
         var hashTag = ""
-        card.hashtagList.forEach { hashTag += ("#" + $0 + " ") }
+        card.hashTagList.forEach { hashTag += ("#" + $0 + " ") }
         hashTagLabel.text = hashTag
         
         self.selectionStyle = .none

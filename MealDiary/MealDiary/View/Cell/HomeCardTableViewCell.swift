@@ -18,15 +18,17 @@ class HomeCardTableViewCell: UITableViewCell {
     @IBOutlet weak var underLineView: UIView!
     static let identifier = "HomeCardTableViewCell"
     
-    func setUp(with card: Card) {
+    func setUp(with card: ContentCard) {
+        if let data = card.photoDatas.first as? Data {
+            backgroundImage.image = UIImage(data: data)
+        }
         backgroundImage.layer.cornerRadius = 10
         dimmedView.layer.cornerRadius = 10
-        pointLabel.text = card.point.description
+        pointLabel.text = card.score.description
         titleTextLabel.text = card.titleText
-        backgroundImage.image = card.photos.first
-        dateLabel.text = card.date
+        dateLabel.text = card.date.toString()
         var hashTag = ""
-        card.hashtagList.forEach { hashTag += ("#" + $0 + " ") }
+        card.hashTagList.forEach { hashTag += ("#" + $0 + " ") }
         hashTagLabel.text = hashTag
         
         let width = titleTextLabel.intrinsicContentSize.width

@@ -37,7 +37,6 @@ struct AssetManager {
                 return dictionary
             }
         }
-        
         return [:]
     }
     

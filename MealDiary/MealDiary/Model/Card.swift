@@ -9,7 +9,7 @@
 import UIKit
 import Photos
 
-struct ContentCard {
+struct ContentCard: Codable {
     var id: String
     var photoDatas: [Data?]
     var titleText: String
@@ -19,39 +19,105 @@ struct ContentCard {
     var restaurantLocation: String
     var restaurantLatitude: Double
     var restaurantLongitude: Double
+    var date: Date
     var score: Int
     
-    func getDict() -> [String: Any] {
-        var dict: [String: Any] = [:]
-        var contentDict: [String: Any] = [:]
-        contentDict["photoDatas"] = photoDatas
-        contentDict["titleText"] = titleText
-        contentDict["detailText"] = detailText
-        contentDict["hashTagList"] = hashTagList
-        contentDict["restaurantName"] = restaurantName
-        contentDict["restaurantLocation"] = restaurantLocation
-        contentDict["restaurantLatitude"] = restaurantLatitude
-        contentDict["restaurantLongitude"] = restaurantLongitude
-        contentDict["score"] = score
-        dict[id] = contentDict
-        return dict
+    enum CodingKeys: String, CodingKey {
+        case id
+        case photoDatas
+        case titleText
+        case detailText
+        case hashTagList
+        case restaurantName
+        case restaurantLocation
+        case restaurantLatitude
+        case restaurantLongitude
+        case date
+        case score
     }
+    
+    init(id: String, photoDatas: [Data?], titleText: String, detailText: String, hashTagList: [String], restaurantName: String, restaurantLocation: String, restaurantLatitude: Double, restaurantLongitude: Double, date: Date, score: Int) {
+        self.id = id
+        self.photoDatas = photoDatas
+        self.titleText = titleText
+        self.detailText = detailText
+        self.hashTagList = hashTagList
+        self.restaurantName = restaurantName
+        self.restaurantLocation = restaurantLocation
+        self.restaurantLatitude = restaurantLatitude
+        self.restaurantLongitude = restaurantLongitude
+        self.score = score
+        self.date = date
+    }
+    
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        id = try values.decode(String.self, forKey: .id)
+        photoDatas = try values.decode([Data?].self, forKey: .photoDatas)
+        titleText = try values.decode(String.self, forKey: .titleText)
+        detailText = try values.decode(String.self, forKey: .detailText)
+        hashTagList = try values.decode([String].self, forKey: .hashTagList)
+        restaurantName = try values.decode(String.self, forKey: .restaurantName)
+        restaurantLocation = try values.decode(String.self, forKey: .restaurantLocation)
+        restaurantLatitude = try values.decode(Double.self, forKey: .restaurantLatitude)
+        restaurantLongitude = try values.decode(Double.self, forKey: .restaurantLongitude)
+        date = try values.decode(Date.self, forKey: .date)
+        score = try values.decode(Int.self, forKey: .score)
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(id, forKey: .id)
+        try container.encode(photoDatas, forKey: .photoDatas)
+        try container.encode(titleText, forKey: .titleText)
+        try container.encode(detailText, forKey: .detailText)
+        try container.encode(hashTagList, forKey: .hashTagList)
+        try container.encode(restaurantName, forKey: .restaurantName)
+        try container.encode(restaurantLocation, forKey: .restaurantLocation)
+        try container.encode(restaurantLatitude, forKey: .restaurantLatitude)
+        try container.encode(restaurantLongitude, forKey: .restaurantLongitude)
+        try container.encode(date, forKey: .date)
+        try container.encode(score, forKey: .score)
+    }
+    
+//    func getDict() -> [String: Any] {
+//        var dict: [String: Any] = [:]
+//        var contentDict: [String: Any] = [:]
+//        contentDict["photoDatas"] = photoDatas
+//        contentDict["titleText"] = titleText
+//        contentDict["detailText"] = detailText
+//        contentDict["hashTagList"] = hashTagList
+//        contentDict["restaurantName"] = restaurantName
+//        contentDict["restaurantLocation"] = restaurantLocation
+//        contentDict["restaurantLatitude"] = restaurantLatitude
+//        contentDict["restaurantLongitude"] = restaurantLongitude
+//        contentDict["score"] = score
+//        dict[id] = contentDict
+//        return dict
+//    }
+    
 }
 
-struct HashTag {
+struct HashTag: Codable {
     var value: String
     var cardList: [String]
-}
-
-struct Card {
-    var photos: [UIImage]
-//    var photos: [PHAsset]
-    var titleText: String
-    var point: Int
-    var address: String
-    var hashtagList: [String]
-    var detailText: String
-    var date: String
+    
+    enum CodingKeys: String, CodingKey {
+        case value
+        case cardList
+    }
+    
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        value = try values.decode(String.self, forKey: .value)
+        cardList = try values.decode([String].self, forKey: .cardList)
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(value, forKey: .value)
+        try container.encode(cardList, forKey: .cardList)
+    }
 }
 
 struct RateCard {
@@ -61,11 +127,6 @@ struct RateCard {
 }
 
 class sample {
-    static let card = Card(photos: [UIImage(named: "sample3")!, UIImage(named: "sample2")!, UIImage(named: "sample1")!], titleText: "배네딕트 맛집👍🏻👍🏻", point: 20, address: "서울 강남구 역삼동 819-1 3층", hashtagList: ["한식", "감자탕", "회식", "저렴한"], detailText: "천고에 속에 안고, 우리 밥을 그들의 쓸쓸하랴? 얼음 돋고, 온갖 생의 간에 방황하였으며, 가진 얼마나 아니다. 영락과 아름답고 그들은 하여도 속잎나고, 발휘하기 있는 그들은 가치를 이것이다. 있는 가슴이 인간은 품고 전인 그들에게 기쁘며, 봄바람이다. 할지라도 보배를 따뜻한 있음으로써 반짝이는 칼이다. 소리다.이것은 피고, 가슴이 가치를 품었기 아니한 대중을 보이는 것이다. 우리 하는 놀이 미인을 대고, 이것은 끓는다. 황금시대의 불어 고동을 얼마나 풍부하게 뿐이다. 눈에 아니한 새가 그들을 인생에 것은 이상을 이상의 보라. 소금이라 인생의 이것이야말로 가슴에 소담스러운 역사를 싸인 이상 용감하고 있다. 천고에 속에 안고, 우리 밥을 그들의 쓸쓸하랴? 얼음 돋고, 온갖 생의 간에 방황하였으며, 가진 얼마나 아니다. 영락과 아름답고 그들은 하여도 속잎나고, 발휘하기 있는 그들은 가치를 이것이다. 있는 가슴이 인간은 품고 전인 그들에게 기쁘며, 봄바람이다. 할지라도 보배를 따뜻한 있음으로써 반짝이는 칼이다. 소리다.이것은 피고, 가슴이 가치를 품었기 아니한 대중을 보이는 것이다. 우리 하는 놀이 미인을 대고, 이것은 끓는다. 황금시대의 불어 고동을 얼마나 풍부하게 뿐이다. 눈에 아니한 새가 그들을 인생에 것은 이상을 이상의 보라. 소금이라 인생의 이것이야말로 가슴에 소담스러운 역사를 싸인 이상 용감하고 있다.", date: "2019.01.27")
-    static let card2 = Card(photos: [UIImage(named: "sample2")!, UIImage(named: "sample3")!, UIImage(named: "sample1")!], titleText: "배네딕트 맛집👍🏻👍🏻", point: 20, address: "서울 강남구 역삼동 819-1 3층", hashtagList: ["한식", "감자탕", "회식", "저렴한"], detailText: "안녕", date: "2019.01.27")
-    
-    static let cards: [Card] = [card, card2, card, card2, card, card, card, card]
-    
     static let tagHistory: [String] = ["애그배내딕트", "#카이스트", "#회식", "꼬깔콘"]
 }
 
