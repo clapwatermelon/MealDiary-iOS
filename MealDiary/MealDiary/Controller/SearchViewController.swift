@@ -32,6 +32,8 @@ class SearchViewController: UIViewController {
             guard let `self` = self else { return }
             self.currentFilter = filterType.date
             self.headLabel.text = filterType.date.rawValue
+            Global.shared.searchFilterType = .date
+            self.cards.accept(Global.shared.filter(cards: self.cards.value, by: .date))
         }
         actionSheetController.addAction(dateActionButton)
         
@@ -39,6 +41,8 @@ class SearchViewController: UIViewController {
             guard let `self` = self else { return }
             self.currentFilter = filterType.distance
             self.headLabel.text = filterType.distance.rawValue
+            Global.shared.searchFilterType = .distance
+            self.cards.accept(Global.shared.filter(cards: self.cards.value, by: .distance))
         }
         actionSheetController.addAction(distanceActionButton)
         
@@ -46,6 +50,8 @@ class SearchViewController: UIViewController {
             guard let `self` = self else { return }
             self.currentFilter = filterType.score
             self.headLabel.text = filterType.score.rawValue
+            Global.shared.searchFilterType = .score
+            self.cards.accept(Global.shared.filter(cards: self.cards.value, by: .score))
         }
         actionSheetController.addAction(scoreActionButton)
         

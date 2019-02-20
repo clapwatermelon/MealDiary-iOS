@@ -70,22 +70,39 @@ class MainViewController: UIViewController {
         let dateActionButton = UIAlertAction(title: "최신순", style: .default) { [weak self] action -> Void in
             guard let `self` = self else { return }
             self.filterView.filterLabel.text = filterType.date.rawValue
+            Global.shared.mainFilterType = .date
+            Global.shared.cards.accept(Global.shared.filter(cards: Global.shared.cards.value, by: .date))
+            self.scrollToTop()
         }
         actionSheetController.addAction(dateActionButton)
         
         let distanceActionButton = UIAlertAction(title: "거리순", style: .default) { [weak self] action -> Void in
             guard let `self` = self else { return }
             self.filterView.filterLabel.text = filterType.distance.rawValue
+            Global.shared.mainFilterType = .distance
+            Global.shared.cards.accept(Global.shared.filter(cards: Global.shared.cards.value, by: .distance))
+            self.scrollToTop()
         }
         actionSheetController.addAction(distanceActionButton)
         
         let scoreActionButton = UIAlertAction(title: "평점순",style: .default) { [weak self] action -> Void in
             guard let `self` = self else { return }
             self.filterView.filterLabel.text = filterType.score.rawValue
+            Global.shared.mainFilterType = .score
+            Global.shared.cards.accept(Global.shared.filter(cards: Global.shared.cards.value, by: .score))
+            self.scrollToTop()
         }
         actionSheetController.addAction(scoreActionButton)
         
         self.present(actionSheetController, animated: true, completion: nil)
+    }
+    
+    func scrollToTop() {
+        DispatchQueue.main.async { [weak self] in
+            guard let `self` = self else { return }
+            let indexPath = IndexPath(row: 0, section: 0)
+            self.tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+        }
     }
     
     func setInitialView() {

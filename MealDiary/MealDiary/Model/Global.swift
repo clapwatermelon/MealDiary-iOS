@@ -17,6 +17,8 @@ class Global {
     let decoder = JSONDecoder()
     var cards: BehaviorRelay<[ContentCard]> = BehaviorRelay<[ContentCard]>(value: [])
     var searchHistory: BehaviorRelay<[String]> = BehaviorRelay<[String]>(value: [])
+    var mainFilterType: filterType = .date
+    var searchFilterType: filterType = .date
     
     var photoDatas: [Data?] = []
     var titleText: String = ""
@@ -37,6 +39,7 @@ class Global {
                 cardArray.append(card)
             }
         }
+        cardArray = filter(cards: cardArray, by: mainFilterType)
         cards.accept(cardArray)
         
         var historyArray = AssetManager.getArrayData(for: DictKeyword.searchHistory.rawValue)
@@ -45,6 +48,19 @@ class Global {
         }
         searchHistory.accept(historyArray)
         
+    }
+    
+    func filter(cards: [ContentCard],by type: filterType) -> [ContentCard] {
+        var filteredCards = cards
+        switch type {
+        case .date:
+            filteredCards.sort(by: { $0.date > $1.date })
+        case .distance:
+            ()
+        case .score:
+            filteredCards.sort(by: { $0.score > $1.score })
+        }
+        return filteredCards
     }
     
     func refresh() {
@@ -69,6 +85,7 @@ class Global {
         guard let data = try? encoder.encode(card) else { return }
         var cardArray = cards.value
         cardArray.append(card)
+        cardArray = filter(cards: cardArray, by: mainFilterType)
         cards.accept(cardArray)
         
         var cardDict = AssetManager.getDictData(for: DictKeyword.card.rawValue)
@@ -94,7 +111,7 @@ class Global {
     
     func appendSearch(keyword: String) {
         var historyArray = AssetManager.getArrayData(for: DictKeyword.searchHistory.rawValue)
-        historyArray.append(keyword)
+        historyArray.insert(keyword, at: 0)
         AssetManager.save(data: historyArray, for: DictKeyword.searchHistory.rawValue)
         searchHistory.accept(historyArray)
     }
@@ -108,6 +125,7 @@ class Global {
                 searchResult.append(card)
             }
         }
+        searchResult = filter(cards: searchResult, by: searchFilterType)
         return searchResult
     }
 }
