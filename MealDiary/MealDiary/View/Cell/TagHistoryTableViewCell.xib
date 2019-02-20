@@ -19,6 +19,13 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="44.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Ja-Ff-1NW">
+                        <rect key="frame" x="20" y="43.5" width="280" height="1"/>
+                        <color key="backgroundColor" red="0.87450980392156863" green="0.89411764705882346" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="cfr-jd-SOW"/>
+                        </constraints>
+                    </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yIv-Q4-V2Y">
                         <rect key="frame" x="24" y="0.0" width="272" height="44.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -26,8 +33,12 @@
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <color key="backgroundColor" red="0.95294117647058818" green="0.96862745098039216" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
+                    <constraint firstAttribute="bottom" secondItem="2Ja-Ff-1NW" secondAttribute="bottom" id="LGQ-wY-TBb"/>
+                    <constraint firstAttribute="trailing" secondItem="2Ja-Ff-1NW" secondAttribute="trailing" constant="20" id="NwH-Eq-E6G"/>
                     <constraint firstItem="yIv-Q4-V2Y" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="SOy-Pl-qRT"/>
+                    <constraint firstItem="2Ja-Ff-1NW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="Yi1-ai-vMm"/>
                     <constraint firstItem="yIv-Q4-V2Y" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="eKL-uO-d3e"/>
                     <constraint firstAttribute="trailing" secondItem="yIv-Q4-V2Y" secondAttribute="trailing" constant="24" id="el2-wo-f1q"/>
                     <constraint firstAttribute="bottom" secondItem="yIv-Q4-V2Y" secondAttribute="bottom" id="mhJ-7F-vKF"/>

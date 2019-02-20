@@ -14,6 +14,11 @@ class WriteDiaryViewController: UIViewController {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
+    
+    private var tableView = UITableView()
+    private var searchedTagArray = [String]()
+    private var hashTagArray = [String]()
+    
     lazy var titleTextField = UITextField()
     lazy var textView = UITextView()
     lazy var hashTagTextField = UITextField()
@@ -68,6 +73,16 @@ class WriteDiaryViewController: UIViewController {
             scrollView.isScrollEnabled = true
             scrollView.contentSize = CGSize(width: view.frame.width, height: bottomView4.frame.origin.y + 40)
         }
+    }
+    
+    func setTableView() {
+        tableView = UITableView(frame: CGRect(x: 0, y: 400, width: self.view.frame.width, height: 48 * 5))
+        tableView.separatorStyle = .none
+        tableView.backgroundColor = UIColor(red: 243/255, green: 247/255, blue: 248/255, alpha: 1)
+        tableView.register(UINib(nibName: TagHistoryTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: TagHistoryTableViewCell.identifier)
+        tableView.dataSource = self
+        tableView.delegate = self
+        self.view.addSubview(tableView)
     }
     
     func setScrollView() {
@@ -206,9 +221,11 @@ class WriteDiaryViewController: UIViewController {
             }
             
             // To-do : 수현
+            self.saveTag()
+            
             Global.shared.titleText = self.titleTextField.text ?? ""
             Global.shared.detailText = self.textView.text
-            Global.shared.hashTagList = []
+            Global.shared.hashTagList = self.hashTagArray
             Global.shared.restaurantName = self.restaurantTextField.text ?? ""
             Global.shared.restaurantLocation = ""
             Global.shared.restaurantLatitude = 0
@@ -236,6 +253,54 @@ class WriteDiaryViewController: UIViewController {
         restaurantTextField.placeholder = "식당이름"
     }
     
+    func searchTag(isTagWord: String) {
+        if isTagWord.count < 1 {
+            self.tableView.isHidden = true
+            return
+        }
+        
+        if isTagWord.prefix(1) != "#" {
+            self.tableView.isHidden = true
+        }
+        
+        if let tagArray = UserDefaults.standard.stringArray(forKey: "tag") {
+            let tagWord = isTagWord.dropFirst()
+            let filtered = tagArray.filter { $0.contains(tagWord) }
+            
+            self.searchedTagArray = filtered
+            
+            if filtered.count < 1 {
+                self.tableView.isHidden = true
+            } else {
+                self.tableView.isHidden = false
+            }
+            
+            self.tableView.reloadData()
+        }
+    }
+    
+    func saveTag() {
+        guard let hashTagTextField = self.hashTagTextField.text else {
+            return
+        }
+        
+        let tagWords = hashTagTextField.components(separatedBy: " ")
+        self.hashTagArray = tagWords
+        
+        for tagWord in tagWords {
+            if var tagArray = UserDefaults.standard.stringArray(forKey: "tag") {
+                if !tagArray.contains(tagWord) {
+                    tagArray.append(tagWord)
+                    UserDefaults.standard.set(tagArray, forKey: "tag")
+                }
+            } else {
+                var tagArray = [String]()
+                tagArray.append(tagWord)
+                UserDefaults.standard.set(tagArray, forKey: "tag")
+            }
+        }
+    }
+    
     deinit {
         print("VC deinit")
     }
@@ -247,12 +312,14 @@ extension WriteDiaryViewController {
         titleLabel.setOrangeUnderLine()
         setScrollView()
         setTextView()
+        setTableView()
         setNavigationBar()
+        
         if let card = Global.shared.cardToModify {
             titleTextField.text = card.titleText
             textView.text = card.detailText
             var hashTag = ""
-            card.hashTagList.forEach { hashTag += ("#" + $0 + " ") }
+            card.hashTagList.forEach { hashTag += ($0 + " ") }
             hashTagTextField.text = hashTag
             restaurantTextField.text = card.restaurantName
         }
@@ -292,6 +359,22 @@ extension WriteDiaryViewController: UITextFieldDelegate {
             bottomView4.backgroundColor = UIColor.paleGray
         }
     }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if textField == hashTagTextField {
+            if let text = textField.text,
+                let textRange = Range(range, in: text) {
+                let updatedText = text.replacingCharacters(in: textRange,
+                                                           with: string)
+                let words = updatedText.components(separatedBy: " ")
+                for word in words {
+                    searchTag(isTagWord: word)
+                }
+            }
+        }
+        
+        return true
+    }
 }
 
 extension WriteDiaryViewController: UITextViewDelegate {
@@ -304,4 +387,39 @@ extension WriteDiaryViewController: UITextViewDelegate {
     func textViewDidEndEditing(_ textView: UITextView) {
         bottomView2.backgroundColor = UIColor.paleGray
     }
+}
+
+extension WriteDiaryViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.searchedTagArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: TagHistoryTableViewCell.identifier, for: indexPath) as? TagHistoryTableViewCell else {
+            fatalError("Misconfigured cell type!")
+        }
+        
+        cell.tagLabel.text = searchedTagArray[indexPath.row]
+        
+        return cell
+    }
+}
+
+extension WriteDiaryViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 48
+    }
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        guard let cell = self.tableView.cellForRow(at: indexPath) as? TagHistoryTableViewCell else {
+//            fatalError("Misconfigured cell type!")
+//        }
+//
+//        guard let hashTagTextField = self.hashTagTextField.text else {
+//            return
+//        }
+//
+//        if let selectedTagText = cell.tagLabel.text?.dropFirst() {
+//            self.hashTagTextField.text = hashTagTextField + String(selectedTagText)
+//        }
+//    }
 }

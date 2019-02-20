@@ -44,6 +44,7 @@
 		04CE88FD22182421009CDAD9 /* TagHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE88FB22182421009CDAD9 /* TagHistoryTableViewCell.swift */; };
 		04CE88FE22182421009CDAD9 /* TagHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04CE88FC22182421009CDAD9 /* TagHistoryTableViewCell.xib */; };
 		04CE890622184898009CDAD9 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04CE890522184898009CDAD9 /* Splash.storyboard */; };
+		100F24BFB8F73FB26006FA4E /* Pods_MealDiary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96029C5ADFCCFF251185FD97 /* Pods_MealDiary.framework */; };
 		9E6BF15C2217D375002B8CD7 /* Write.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E6BF15B2217D375002B8CD7 /* Write.storyboard */; };
 		CE15BA9921F5EB0B00FD69F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15BA9821F5EB0B00FD69F7 /* AppDelegate.swift */; };
 		CE15BA9B21F5EB0B00FD69F7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15BA9A21F5EB0B00FD69F7 /* MainViewController.swift */; };
@@ -99,6 +100,7 @@
 		04CE890522184898009CDAD9 /* Splash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Splash.storyboard; path = MealDiary/Splash/Splash.storyboard; sourceTree = SOURCE_ROOT; };
 		38679EB5624B80F2BB6818CD /* Pods-MealDiary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealDiary.release.xcconfig"; path = "Pods/Target Support Files/Pods-MealDiary/Pods-MealDiary.release.xcconfig"; sourceTree = "<group>"; };
 		4558CCC9DA378A8DBF81E8CB /* Pods-MealDiary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealDiary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MealDiary/Pods-MealDiary.debug.xcconfig"; sourceTree = "<group>"; };
+		96029C5ADFCCFF251185FD97 /* Pods_MealDiary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MealDiary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E6BF15B2217D375002B8CD7 /* Write.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Write.storyboard; sourceTree = "<group>"; };
 		9E6BF16E2217EDF1002B8CD7 /* Spoqa Han Sans Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Bold.ttf"; sourceTree = "<group>"; };
 		9E6BF16F2217EDF2002B8CD7 /* Spoqa Han Sans Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Thin.ttf"; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				100F24BFB8F73FB26006FA4E /* Pods_MealDiary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,6 +189,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		94C49F8D18678850B2F9F930 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				96029C5ADFCCFF251185FD97 /* Pods_MealDiary.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9E6BF16D2217EDD2002B8CD7 /* Font */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,6 +214,7 @@
 				CE15BA9721F5EB0B00FD69F7 /* MealDiary */,
 				CE15BA9621F5EB0B00FD69F7 /* Products */,
 				3F35808C6608E9C3C8927523 /* Pods */,
+				94C49F8D18678850B2F9F930 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -426,7 +438,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MealDiary/Pods-MealDiary-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-MealDiary/Pods-MealDiary-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
@@ -443,7 +455,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MealDiary/Pods-MealDiary-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MealDiary/Pods-MealDiary-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -636,10 +648,7 @@
 				);
 				INFOPLIST_FILE = MealDiary/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = bobbyWhite.MealDiary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -661,10 +670,7 @@
 				);
 				INFOPLIST_FILE = MealDiary/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = bobbyWhite.MealDiary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";

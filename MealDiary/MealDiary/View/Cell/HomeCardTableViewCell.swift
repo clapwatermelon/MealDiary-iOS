@@ -28,7 +28,7 @@ class HomeCardTableViewCell: UITableViewCell {
         titleTextLabel.text = card.titleText
         dateLabel.text = card.date.toString()
         var hashTag = ""
-        card.hashTagList.forEach { hashTag += ("#" + $0 + " ") }
+        card.hashTagList.forEach { hashTag += ($0 + " ") }
         hashTagLabel.text = hashTag
         
         let width = titleTextLabel.intrinsicContentSize.width
