@@ -31,6 +31,18 @@ class SelectPhotoCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    func setUp(with photo: Data) {
+        imageView.image = UIImage(data: photo)
+        checkedNumberLabel.clipsToBounds = true
+        checkedNumberLabel.layer.cornerRadius = checkedNumberLabel.frame.size.width / 2
+        
+        if isSelected {
+            checked(index: index)
+        } else {
+            unchecked()
+        }
+    }
+    
     func checked(index: Int) {
         self.index = index
         view.backgroundColor = UIColor.black.withAlphaComponent(0.5)

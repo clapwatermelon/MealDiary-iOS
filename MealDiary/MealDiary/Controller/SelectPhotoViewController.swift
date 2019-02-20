@@ -14,7 +14,7 @@ import RxCocoa
 class SelectPhotoViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
-    var photos: BehaviorRelay<[PHAsset]> = BehaviorRelay<[PHAsset]>(value: [])
+    var photos: BehaviorRelay<[Any]> = BehaviorRelay<[Any]>(value: [])
     var selectedIndexPaths: BehaviorRelay<[IndexPath]> = BehaviorRelay<[IndexPath]>(value: [])
     var dictionary: [Int: Int] = [:]
     let nextButton = UIButton(type: .system)
@@ -27,11 +27,16 @@ class SelectPhotoViewController: UIViewController {
         collectionView.register(UINib(nibName: SelectPhotoCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: SelectPhotoCollectionViewCell.identifier)
         
         photos.asObservable().bind(to: collectionView.rx.items(cellIdentifier: SelectPhotoCollectionViewCell.identifier, cellType: SelectPhotoCollectionViewCell.self)){
-            [weak self] (row, photoAsset, cell) in
+            [weak self] (row, photo, cell) in
             guard let `self` = self else { return }
 
             cell.index = self.dictionary[row] ?? 0
-            cell.setUp(with: photoAsset)
+            
+            if let photoAsset = photo as? PHAsset {
+                cell.setUp(with: photoAsset)
+            } else if let photoData = photo as? Data {
+                cell.setUp(with: photoData)
+            }
             
             }.disposed(by: disposeBag)
         
@@ -79,7 +84,11 @@ class SelectPhotoViewController: UIViewController {
     }
     
     func getImages (){
-        photos.accept(AssetManager.fetchImages(by: nil))
+        var array: [Any] = AssetManager.fetchImages(by: nil)
+        if let card = Global.shared.cardToModify {
+            array = (card.photoDatas as [Any]) + array
+        }
+        photos.accept(array)
     }
     
     func setNavigationBar() {
