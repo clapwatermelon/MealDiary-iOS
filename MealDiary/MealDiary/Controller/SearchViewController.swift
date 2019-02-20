@@ -62,7 +62,27 @@ class SearchViewController: UIViewController {
             (row, card, cell) in
             cell.setUp(with: card)
             }.disposed(by: disposeBag)
+        
+        searchTable.allowsSelection = true
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        gesture.cancelsTouchesInView = false
+        gesture.numberOfTapsRequired = 1
+        searchTable.addGestureRecognizer(gesture)
+
+        searchTable.rx.itemSelected.subscribe( onNext: { indexPath in
+            
+            DispatchQueue.main.async { [weak self] in
+                guard let `self` = self else { return }
+                let card = self.cards.value[indexPath.item]
+                
+                let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyBoard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+                self.navigationController?.pushViewController(vc, animated: true)
+                vc.setUp(with: card)
+            }
+        }).disposed(by: disposeBag)
     }
+    
     
     private func setHistoryTable() {
         tagHistoryTable.allowsSelection = true
@@ -79,15 +99,18 @@ class SearchViewController: UIViewController {
             }.disposed(by: disposeBag)
         
         tagHistoryTable.rx.itemSelected.subscribe( onNext: { [weak self] indexPath in
-            guard let `self` = self else { return }
-            if let cell = self.tagHistoryTable.cellForRow(at: indexPath) as? TagHistoryTableViewCell {
-                self.searchBar.text = cell.tagLabel.text
-                self.searchTable.isHidden = false
-                self.tagHistoryTable.isHidden = true
-                self.filterButton.isHidden = false
-                self.headLabel.font = UIFont.systemFont(ofSize: 17.0)
-                self.headLabel.text = self.currentFilter.rawValue
+            DispatchQueue.main.async { [weak self] in
+                guard let `self` = self else { return }
+                if let cell = self.tagHistoryTable.cellForRow(at: indexPath) as? TagHistoryTableViewCell {
+                    self.searchBar.text = cell.tagLabel.text
+                    self.searchTable.isHidden = false
+                    self.tagHistoryTable.isHidden = true
+                    self.filterButton.isHidden = false
+                    self.headLabel.font = UIFont.systemFont(ofSize: 17.0)
+                    self.headLabel.text = self.currentFilter.rawValue
+                }
             }
+            
         }).disposed(by: disposeBag)
     }
     
@@ -119,6 +142,8 @@ class SearchViewController: UIViewController {
                     self.filterButton.isHidden = false
                     self.headLabel.font = UIFont.systemFont(ofSize: 17.0)
                     self.headLabel.text = self.currentFilter.rawValue
+                    
+                    self.cards.accept(Global.shared.searchBy(query))
                 }
             }).disposed(by: disposeBag)
     }
@@ -143,6 +168,10 @@ extension SearchViewController {
         setSearchTable()
         setHistoryTable()
 //        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
 }
 

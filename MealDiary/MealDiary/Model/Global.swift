@@ -82,6 +82,18 @@ class Global {
         cardDict.removeValue(forKey: card.id)
         AssetManager.save(data: cardDict, for: DictKeyword.card.rawValue)
     }
+    
+    func searchBy(_ query: String) -> [ContentCard] {
+        var searchResult: [ContentCard] = []
+        for card in cards.value {
+            if card.titleText.contains(query) {
+                searchResult.append(card)
+            } else if card.hashTagList.contains(query) {
+                searchResult.append(card)
+            }
+        }
+        return searchResult
+    }
 }
 
 enum DictKeyword: String {
