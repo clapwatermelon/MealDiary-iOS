@@ -128,6 +128,7 @@ class MainViewController: UIViewController {
         tableView.rx.setDelegate(self).disposed(by: disposeBag)
         
         Global.shared.cards.subscribe(onNext: { [weak self] (cards) in
+            self?.scrollToTop()
             if cards.isEmpty {
                 self?.emptyImageView.isHidden = false
                 self?.tableView.isHidden = true

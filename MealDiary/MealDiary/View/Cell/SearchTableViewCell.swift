@@ -39,7 +39,7 @@ class SearchTableViewCell: UITableViewCell {
         var hashTag = ""
         card.hashTagList.forEach { hashTag += ("#" + $0 + " ") }
         hashTagLabel.text = hashTag
-        
+        restaurantNameLabel.text = card.restaurantName
         self.selectionStyle = .none
     }
 }
