@@ -40,6 +40,15 @@ struct AssetManager {
         return [:]
     }
     
+    static func getArrayData(for key: String) -> [String] {
+        if let data = UserDefaults.standard.object(forKey: key) as? Data {
+            if let array = NSKeyedUnarchiver.unarchiveObject(with: data) as? [String] {
+                return array
+            }
+        }
+        return []
+    }
+    
     static func save(data:Any, for key: String) {
         let userDefaults = UserDefaults.standard
         let encodedData: Data = NSKeyedArchiver.archivedData(withRootObject: data)

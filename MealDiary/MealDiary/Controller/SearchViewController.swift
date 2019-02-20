@@ -16,7 +16,6 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var searchTable: UITableView!
     @IBOutlet weak var tagHistoryTable: UITableView!
     var cards: BehaviorRelay<[ContentCard]> = BehaviorRelay<[ContentCard]>(value: [])
-    var tagHistory: BehaviorRelay<[String]> = BehaviorRelay<[String]>(value: sample.tagHistory)
     var currentFilter = filterType.date
     
     @IBOutlet weak var filterButton: UIButton!
@@ -69,7 +68,7 @@ class SearchViewController: UIViewController {
         gesture.numberOfTapsRequired = 1
         searchTable.addGestureRecognizer(gesture)
 
-        searchTable.rx.itemSelected.subscribe( onNext: { indexPath in
+        searchTable.rx.itemSelected.subscribe( onNext: { [weak self] indexPath in
             
             DispatchQueue.main.async { [weak self] in
                 guard let `self` = self else { return }
@@ -80,6 +79,11 @@ class SearchViewController: UIViewController {
                 self.navigationController?.pushViewController(vc, animated: true)
                 vc.setUp(with: card)
             }
+            
+            if let text = self?.searchBar.text {
+                Global.shared.appendSearch(keyword: text)
+            }
+            
         }).disposed(by: disposeBag)
     }
     
@@ -93,7 +97,7 @@ class SearchViewController: UIViewController {
         tagHistoryTable.register(UINib(nibName: TagHistoryTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: TagHistoryTableViewCell.identifier)
         tagHistoryTable.rx.setDelegate(self).disposed(by: disposeBag)
         
-        tagHistory.asObservable().bind(to: tagHistoryTable.rx.items(cellIdentifier: TagHistoryTableViewCell.identifier, cellType: TagHistoryTableViewCell.self)){
+        Global.shared.searchHistory.asObservable().bind(to: tagHistoryTable.rx.items(cellIdentifier: TagHistoryTableViewCell.identifier, cellType: TagHistoryTableViewCell.self)){
             (row, tag, cell) in
             cell.tagLabel.text = tag
             }.disposed(by: disposeBag)
@@ -108,6 +112,8 @@ class SearchViewController: UIViewController {
                     self.filterButton.isHidden = false
                     self.headLabel.font = UIFont.systemFont(ofSize: 17.0)
                     self.headLabel.text = self.currentFilter.rawValue
+                    
+                    self.cards.accept(Global.shared.searchBy(cell.tagLabel.text ?? ""))
                 }
             }
             

@@ -9,12 +9,14 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import CoreLocation
 
 class Global {
     static let shared: Global = Global()
     let encoder = JSONEncoder()
     let decoder = JSONDecoder()
     var cards: BehaviorRelay<[ContentCard]> = BehaviorRelay<[ContentCard]>(value: [])
+    var searchHistory: BehaviorRelay<[String]> = BehaviorRelay<[String]>(value: [])
     
     var photoDatas: [Data?] = []
     var titleText: String = ""
@@ -36,6 +38,13 @@ class Global {
             }
         }
         cards.accept(cardArray)
+        
+        var historyArray = AssetManager.getArrayData(for: DictKeyword.searchHistory.rawValue)
+        if historyArray.isEmpty {
+            historyArray.append("검색 기록이 없습니다.")
+        }
+        searchHistory.accept(historyArray)
+        
     }
     
     func refresh() {
@@ -83,6 +92,13 @@ class Global {
         AssetManager.save(data: cardDict, for: DictKeyword.card.rawValue)
     }
     
+    func appendSearch(keyword: String) {
+        var historyArray = AssetManager.getArrayData(for: DictKeyword.searchHistory.rawValue)
+        historyArray.append(keyword)
+        AssetManager.save(data: historyArray, for: DictKeyword.searchHistory.rawValue)
+        searchHistory.accept(historyArray)
+    }
+    
     func searchBy(_ query: String) -> [ContentCard] {
         var searchResult: [ContentCard] = []
         for card in cards.value {
@@ -100,4 +116,5 @@ enum DictKeyword: String {
     case card
     case hashTag
     case firstVist
+    case searchHistory
 }
