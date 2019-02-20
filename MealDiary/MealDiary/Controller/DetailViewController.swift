@@ -28,7 +28,9 @@ class DetailViewController: UIViewController {
             guard let vc = storyBoard.instantiateViewController(withIdentifier: "SelectPhotoViewController") as? SelectPhotoViewController else {
                 return
             }
-            
+            if let card = self?.card.value?.first {
+                Global.shared.cardToModify = card
+            }
             self?.navigationController?.pushViewController(vc, animated: true)
         }
         actionSheetController.addAction(modifyActionButton)
@@ -82,6 +84,11 @@ extension DetailViewController {
         super.viewDidLoad()
         setNavigationBar()
         setTableView()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
 }
 

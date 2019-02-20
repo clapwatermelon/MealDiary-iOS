@@ -15,6 +15,7 @@ class Global {
     static let shared: Global = Global()
     let encoder = JSONEncoder()
     let decoder = JSONDecoder()
+    var cardToModify: ContentCard? = nil
     var cards: BehaviorRelay<[ContentCard]> = BehaviorRelay<[ContentCard]>(value: [])
     var searchHistory: BehaviorRelay<[String]> = BehaviorRelay<[String]>(value: [])
     var mainFilterType: filterType = .date
@@ -73,6 +74,8 @@ class Global {
         restaurantLatitude = 0
         restaurantLongitude = 0
         score = 0
+        
+        cardToModify = nil
     }
     
     func save() {

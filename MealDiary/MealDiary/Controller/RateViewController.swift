@@ -106,6 +106,10 @@ extension RateViewController {
         super.viewDidLoad()
         setCollectionView()
         setSlider()
+        if let card = Global.shared.cardToModify {
+            let page = card.score / 10
+            scrollPage(to: page)
+        }
     }
 }
 

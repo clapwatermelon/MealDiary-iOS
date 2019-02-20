@@ -248,6 +248,14 @@ extension WriteDiaryViewController {
         setScrollView()
         setTextView()
         setNavigationBar()
+        if let card = Global.shared.cardToModify {
+            titleTextField.text = card.titleText
+            textView.text = card.detailText
+            var hashTag = ""
+            card.hashTagList.forEach { hashTag += ("#" + $0 + " ") }
+            hashTagTextField.text = hashTag
+            restaurantTextField.text = card.restaurantName
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
