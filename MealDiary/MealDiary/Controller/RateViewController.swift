@@ -53,6 +53,7 @@ class RateViewController: UIViewController {
     func setCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.isPagingEnabled = true
         collectionView.register(UINib(nibName: RateCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: RateCollectionViewCell.identifier)
     }
     
@@ -74,11 +75,11 @@ class RateViewController: UIViewController {
         let currentX = scrollView.contentOffset.x
         var degree = (currentX.truncatingRemainder(dividingBy: base)) / base * 90
         if degree == 0 { degree = 90 }
-    
+
         if collectionView.visibleCells.count == 2 {
             guard let first = collectionView.visibleCells.first?.contentView else { return }
             guard let last = collectionView.visibleCells.last?.contentView else { return }
-            
+
             if (Int((currentX) / base) == 4) {
                 first.layer.rotateY(degree: degree)
                 last.layer.rotateY(degree: (90 - degree) * -1)
@@ -90,7 +91,7 @@ class RateViewController: UIViewController {
                 last.layer.rotateY(degree: degree)
             }
         }
-        
+
         if currentX.truncatingRemainder(dividingBy: base) == 0 {
             collectionView.visibleCells.forEach{ $0.contentView.layer.rotateY(degree: 0) }
         }
@@ -99,6 +100,24 @@ class RateViewController: UIViewController {
     deinit {
         print("VC deinit")
     }
+    
+    var viewDidLayoutSubviewsForTheFirstTime = true
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        // Make sure this is the first time, else return
+        guard viewDidLayoutSubviewsForTheFirstTime == true else {return}
+        viewDidLayoutSubviewsForTheFirstTime = false
+        
+        // Create the layout
+        if let card = Global.shared.cardToModify {
+            let page = card.score / 10
+            rateSlider.value = Float(page)
+            currentPage = page
+            collectionView.contentOffset.x += collectionView.frame.width * CGFloat(page)
+        }
+    }
 }
 
 extension RateViewController {
@@ -106,10 +125,6 @@ extension RateViewController {
         super.viewDidLoad()
         setCollectionView()
         setSlider()
-        if let card = Global.shared.cardToModify {
-            let page = card.score / 10
-            scrollPage(to: page)
-        }
     }
 }
 
