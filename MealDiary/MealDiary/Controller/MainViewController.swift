@@ -179,9 +179,12 @@ class MainViewController: UIViewController {
     }
     
     func popUpSplash() {
-        let storyBoard = UIStoryboard(name: "Splash", bundle: nil)
-        let vc = storyBoard.instantiateViewController(withIdentifier: "SplashNavigation") as! SplashNavigation
-        self.present(vc, animated: true, completion: nil)
+        let first = AssetManager.getBoolData(for: DictKeyword.firstVist.rawValue)
+        if first {
+            let storyBoard = UIStoryboard(name: "Splash", bundle: nil)
+            let vc = storyBoard.instantiateViewController(withIdentifier: "SplashNavigation") as! SplashNavigation
+            self.present(vc, animated: true, completion: nil)
+        }
     }
 }
 
@@ -192,6 +195,7 @@ extension MainViewController {
         setFilterView()
         setTableView()
         setNavigationBar()
+        popUpSplash()
     }
     
     override func viewWillAppear(_ animated: Bool) {

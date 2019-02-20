@@ -12,6 +12,8 @@ class SplashViewController2: UIViewController {
 
     @IBOutlet weak var nextButton: UIButton!
     @IBAction func tabSkipButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+        AssetManager.save(data: false, for: DictKeyword.firstVist.rawValue)
     }
     override func viewDidLoad() {
         super.viewDidLoad()

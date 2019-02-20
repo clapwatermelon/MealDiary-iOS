@@ -12,6 +12,7 @@ class SplashViewController3: UIViewController {
 
     @IBAction func tabDoneButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+        AssetManager.save(data: false, for: DictKeyword.firstVist.rawValue)
     }
     override func viewDidLoad() {
         super.viewDidLoad()

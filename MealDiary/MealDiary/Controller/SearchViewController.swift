@@ -185,6 +185,11 @@ extension SearchViewController {
         super.viewWillDisappear(animated)
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        Global.shared.refresh()
+    }
 }
 
 extension SearchViewController: UITableViewDelegate {

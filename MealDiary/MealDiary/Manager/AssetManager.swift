@@ -49,6 +49,15 @@ struct AssetManager {
         return []
     }
     
+    static func getBoolData(for key: String) -> Bool {
+        if let data = UserDefaults.standard.object(forKey: key) as? Data {
+            if let array = NSKeyedUnarchiver.unarchiveObject(with: data) as? Bool {
+                return array
+            }
+        }
+        return true
+    }
+    
     static func save(data:Any, for key: String) {
         let userDefaults = UserDefaults.standard
         let encodedData: Data = NSKeyedArchiver.archivedData(withRootObject: data)

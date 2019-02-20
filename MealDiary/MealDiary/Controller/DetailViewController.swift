@@ -23,8 +23,13 @@ class DetailViewController: UIViewController {
         }
         actionSheetController.addAction(cancelActionButton)
 
-        let modifyActionButton = UIAlertAction(title: "수정", style: .default) { action -> Void in
-            print("수정")
+        let modifyActionButton = UIAlertAction(title: "수정", style: .default) { [weak self] action -> Void in
+            let storyBoard = UIStoryboard(name: "Rate", bundle: nil)
+            guard let vc = storyBoard.instantiateViewController(withIdentifier: "SelectPhotoViewController") as? SelectPhotoViewController else {
+                return
+            }
+            
+            self?.navigationController?.pushViewController(vc, animated: true)
         }
         actionSheetController.addAction(modifyActionButton)
 
