@@ -20,7 +20,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="oAP-QH-skh">
-                        <rect key="frame" x="265" y="295.5" width="43" height="33"/>
+                        <rect key="frame" x="285" y="295.5" width="43" height="33"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="43" id="Aaf-4Y-w6Y"/>
                             <constraint firstAttribute="height" constant="33" id="CRy-q7-3we"/>
@@ -30,7 +30,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="점" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uvr-uy-rfa">
-                        <rect key="frame" x="313" y="304.5" width="13" height="23"/>
+                        <rect key="frame" x="333" y="304.5" width="13" height="23"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="13" id="EXR-X4-LKe"/>
                             <constraint firstAttribute="height" constant="23" id="Sie-EN-Bh5"/>
@@ -39,8 +39,8 @@
                         <color key="textColor" red="1" green="0.45882352939999999" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="빈브라더스 강남점" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="0pa-ZK-1nw">
-                        <rect key="frame" x="20" y="295.5" width="235" height="34"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="빈브라더스 강남점" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="0pa-ZK-1nw">
+                        <rect key="frame" x="20" y="298.5" width="255" height="34"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="34" id="QBu-Wz-XK1"/>
                         </constraints>
@@ -57,7 +57,10 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#대전 #배네딕트 #카이스트" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qlZ-oF-5b0">
-                        <rect key="frame" x="20" y="333.5" width="322" height="15"/>
+                        <rect key="frame" x="20" y="336.5" width="322" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="35" id="ak9-PI-Vzp"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" red="0.62352941179999999" green="0.64313725489999995" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
@@ -87,13 +90,20 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QnP-N8-cTr">
-                        <rect key="frame" x="19" y="368" width="323" height="235"/>
+                        <rect key="frame" x="19" y="399" width="323" height="204"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <string key="text">@David You wouldn't be "replacing" anything, but it really depends on the desired behavior... If you want to use estimated rows height and just reload the indexes below the current visible portion of the table, you can do that like I said using reloadRowsAtIndexPaths</string>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ej8-gB-xTz">
+                        <rect key="frame" x="20" y="376.5" width="322" height="1"/>
+                        <color key="backgroundColor" red="0.87450980389999999" green="0.89411764709999997" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="JI6-IU-SfV"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="3W8-eT-3Xg" secondAttribute="trailing" constant="19" id="0gQ-Si-IG3"/>
@@ -104,14 +114,17 @@
                     <constraint firstItem="3W8-eT-3Xg" firstAttribute="top" secondItem="urh-b1-YuP" secondAttribute="bottom" constant="15" id="Hph-K4-Yj3"/>
                     <constraint firstItem="uvr-uy-rfa" firstAttribute="leading" secondItem="oAP-QH-skh" secondAttribute="trailing" constant="5" id="Jg4-iu-G38"/>
                     <constraint firstAttribute="trailing" secondItem="dzj-Y5-cOi" secondAttribute="trailing" constant="12" id="LIY-Qw-gTE"/>
+                    <constraint firstItem="Ej8-gB-xTz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="OB1-8N-0cL"/>
                     <constraint firstAttribute="trailing" secondItem="urh-b1-YuP" secondAttribute="trailing" id="PLz-Br-fAr"/>
                     <constraint firstItem="0pa-ZK-1nw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="Q8v-Uz-Itw"/>
                     <constraint firstAttribute="trailing" secondItem="qlZ-oF-5b0" secondAttribute="trailing" constant="20" id="aTM-wd-5DW"/>
+                    <constraint firstItem="Ej8-gB-xTz" firstAttribute="top" secondItem="qlZ-oF-5b0" secondAttribute="bottom" constant="5" id="bVz-ds-Nj0"/>
                     <constraint firstItem="oAP-QH-skh" firstAttribute="leading" secondItem="0pa-ZK-1nw" secondAttribute="trailing" constant="10" id="cne-cM-dDk"/>
                     <constraint firstItem="qlZ-oF-5b0" firstAttribute="top" secondItem="0pa-ZK-1nw" secondAttribute="bottom" constant="4" id="dFL-9m-BrH"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="uvr-uy-rfa" secondAttribute="trailing" constant="20" id="dQr-3X-Sty"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="uvr-uy-rfa" secondAttribute="trailing" id="dQr-3X-Sty"/>
+                    <constraint firstAttribute="trailing" secondItem="Ej8-gB-xTz" secondAttribute="trailing" constant="20" id="hvY-3W-E6E"/>
                     <constraint firstItem="oAP-QH-skh" firstAttribute="top" secondItem="3W8-eT-3Xg" secondAttribute="bottom" constant="5" id="lXR-OZ-L2f"/>
-                    <constraint firstItem="0pa-ZK-1nw" firstAttribute="top" secondItem="3W8-eT-3Xg" secondAttribute="bottom" constant="5" id="rF0-QT-Zit"/>
+                    <constraint firstItem="0pa-ZK-1nw" firstAttribute="top" secondItem="3W8-eT-3Xg" secondAttribute="bottom" constant="8" id="rF0-QT-Zit"/>
                     <constraint firstItem="uvr-uy-rfa" firstAttribute="top" secondItem="3W8-eT-3Xg" secondAttribute="bottom" constant="14" id="rOe-0W-DDT"/>
                     <constraint firstItem="urh-b1-YuP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="y4M-p4-HgZ"/>
                 </constraints>

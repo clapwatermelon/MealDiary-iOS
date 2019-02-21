@@ -53,9 +53,17 @@ class DetailCardTableViewCell: UITableViewCell {
         
         let detailtextHeight = card.detailText.getHeight(withConstrainedWidth: parentViewSize.width - 40, size: 14)
         detailLabel.changeLineSpacing(5)
-        detailLabel.frame = CGRect(x: 20, y: 440, width: parentViewSize.width - 40, height: detailtextHeight * 1.4)
+        detailLabel.frame = CGRect(x: 20, y: 450, width: parentViewSize.width - 40, height: detailtextHeight * 1.4)
 
         //        addressLabel.attributedText = NSAttributedString(string: addressLabel.text ?? "", attributes: underlineAttributes)
+    }
+    
+    var currentPage = 1
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let pageWidth = scrollView.frame.size.width
+        let page = Int(floor((scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1) + 1
+        currentPage = page
+        cardNumberLabel.text = currentPage.description + "/" + (card?.photoDatas.count.description ?? "1")
     }
 }
 
