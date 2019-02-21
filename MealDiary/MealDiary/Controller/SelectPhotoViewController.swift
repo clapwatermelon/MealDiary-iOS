@@ -20,6 +20,34 @@ class SelectPhotoViewController: UIViewController {
     let nextButton = UIButton(type: .system)
     var disposeBag = DisposeBag()
     
+//    func checkUncheckCell(for indexPath: IndexPath) {
+//        if let cell = collectionView.cellForItem(at: indexPath) as? SelectPhotoCollectionViewCell {
+//            if cell.checked {
+//
+//                var selectedIndexPathsValue = self.selectedIndexPaths.value
+//                selectedIndexPathsValue.append(indexPath)
+//                selectedIndexPaths.accept(selectedIndexPathsValue)
+//
+//                if selectedIndexPathsValue.count != 0 {
+//                    nextButton.isEnabled = true
+//                }
+//
+//            } else {
+//                var selectedIndexPathsValue = self.selectedIndexPaths.value
+//
+//                guard let index = selectedIndexPathsValue.firstIndex(of: indexPath) else { return }
+//                selectedIndexPathsValue.remove(at: index)
+//                self.selectedIndexPaths.accept(selectedIndexPathsValue)
+//
+//                if selectedIndexPathsValue.count == 0 {
+//                    self.nextButton.isEnabled = false
+//                }
+//
+//                cell.uncheck()
+//            }
+//        }
+//    }
+    
     func setCollectionView() {
         collectionView.rx.setDelegate(self).disposed(by: disposeBag)
         collectionView.allowsSelection = true
@@ -27,15 +55,23 @@ class SelectPhotoViewController: UIViewController {
         collectionView.register(UINib(nibName: SelectPhotoCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: SelectPhotoCollectionViewCell.identifier)
         
         photos.asObservable().bind(to: collectionView.rx.items(cellIdentifier: SelectPhotoCollectionViewCell.identifier, cellType: SelectPhotoCollectionViewCell.self)){
-            [weak self] (row, photo, cell) in
+            [weak self] (item, photo, cell) in
             guard let `self` = self else { return }
 
-            cell.index = self.dictionary[row] ?? 0
+            cell.index = self.dictionary[item] ?? 0
             
             if let photoAsset = photo as? PHAsset {
                 cell.setUp(with: photoAsset)
             } else if let photoData = photo as? Data {
                 cell.setUp(with: photoData)
+                let indexPath = IndexPath(item: item, section: 0)
+                var paths = self.selectedIndexPaths.value
+                paths.append(indexPath)
+                self.selectedIndexPaths.accept(paths)
+                
+                let index = paths.firstIndex(of: indexPath) ?? 0
+                self.dictionary[indexPath.item] = index + 1
+                cell.check(index: index + 1)
             }
             
             }.disposed(by: disposeBag)
@@ -43,31 +79,60 @@ class SelectPhotoViewController: UIViewController {
         collectionView.rx.itemSelected
             .subscribe(onNext: { [weak self] indexPath in
                 guard let `self` = self else { return }
+                guard let cell = self.collectionView.cellForItem(at: indexPath) as? SelectPhotoCollectionViewCell else { return }
                 
-                var selectedIndexPaths = self.selectedIndexPaths.value
-                selectedIndexPaths.append(indexPath)
-                self.selectedIndexPaths.accept(selectedIndexPaths)
-                
-                if selectedIndexPaths.count != 0 {
-                    self.nextButton.isEnabled = true
+                if cell.checked {
+                    var selectedIndexPaths = self.selectedIndexPaths.value
+                    
+                    guard let index = selectedIndexPaths.firstIndex(of: indexPath) else { return }
+                    selectedIndexPaths.remove(at: index)
+                    self.selectedIndexPaths.accept(selectedIndexPaths)
+                    
+                    if selectedIndexPaths.count == 0 {
+                        self.nextButton.isEnabled = false
+                    }
+                    
+                    cell.uncheck()
+                } else {
+                    var selectedIndexPaths = self.selectedIndexPaths.value
+                    selectedIndexPaths.append(indexPath)
+                    self.selectedIndexPaths.accept(selectedIndexPaths)
+                    
+                    if selectedIndexPaths.count != 0 {
+                        self.nextButton.isEnabled = true
+                    }
                 }
+                
+                
             }).disposed(by: disposeBag)
         
         collectionView.rx.itemDeselected
             .subscribe(onNext: { [weak self] indexPath in
                 guard let `self` = self else { return }
                 guard let cell = self.collectionView.cellForItem(at: indexPath) as? SelectPhotoCollectionViewCell else { return }
-                var selectedIndexPaths = self.selectedIndexPaths.value
                 
-                guard let index = selectedIndexPaths.firstIndex(of: indexPath) else { return }
-                selectedIndexPaths.remove(at: index)
-                self.selectedIndexPaths.accept(selectedIndexPaths)
-                
-                if selectedIndexPaths.count == 0 {
-                    self.nextButton.isEnabled = false
+                if cell.checked {
+                    var selectedIndexPaths = self.selectedIndexPaths.value
+                    
+                    guard let index = selectedIndexPaths.firstIndex(of: indexPath) else { return }
+                    selectedIndexPaths.remove(at: index)
+                    self.selectedIndexPaths.accept(selectedIndexPaths)
+                    
+                    if selectedIndexPaths.count == 0 {
+                        self.nextButton.isEnabled = false
+                    }
+                    
+                    cell.uncheck()
+                } else {
+                    var selectedIndexPaths = self.selectedIndexPaths.value
+                    selectedIndexPaths.append(indexPath)
+                    self.selectedIndexPaths.accept(selectedIndexPaths)
+                    
+                    if selectedIndexPaths.count != 0 {
+                        self.nextButton.isEnabled = true
+                    }
                 }
                 
-                cell.unchecked()
                 
             }).disposed(by: disposeBag)
 
@@ -78,7 +143,7 @@ class SelectPhotoViewController: UIViewController {
                 guard let cell = self.collectionView.cellForItem(at: indexPath) as? SelectPhotoCollectionViewCell else { return }
                 
                 self.dictionary[indexPath.item] = index + 1
-                cell.checked(index: index + 1)
+                cell.check(index: index + 1)
             })
         }).disposed(by: disposeBag)
     }
@@ -89,6 +154,12 @@ class SelectPhotoViewController: UIViewController {
             array = (card.photoDatas as [Any]) + array
         }
         photos.accept(array)
+        
+//        DispatchQueue.main.async { [weak self] in
+//            self?.collectionView.selectItem(at: IndexPath(item: 0, section: 0), animated: false, scrollPosition: .top)
+//            self?.collectionView.selectItem(at: IndexPath(item: 1, section: 0), animated: false, scrollPosition: .top)
+//        }
+        
     }
     
     func setNavigationBar() {

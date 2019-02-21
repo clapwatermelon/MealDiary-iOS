@@ -13,21 +13,22 @@ class SelectPhotoCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var checkedNumberLabel: UILabel!
     @IBOutlet weak var view: UIView!
     @IBOutlet weak var imageView: UIImageView!
-    var photo = PHAsset()
+//    var photo = PHAsset()
     var index: Int = 0
+    var checked: Bool = false
     
     static let identifier = "SelectPhotoCollectionViewCell"
     
     func setUp(with photo: PHAsset) {
-        self.photo = photo
+//        self.photo = photo
         imageView.fetchImage(asset: photo, contentMode: .aspectFill, targetSize: imageView.frame.size)
         checkedNumberLabel.clipsToBounds = true
         checkedNumberLabel.layer.cornerRadius = checkedNumberLabel.frame.size.width / 2
         
         if isSelected {
-            checked(index: index)
+            check(index: index)
         } else {
-            unchecked()
+            uncheck()
         }
     }
     
@@ -37,14 +38,15 @@ class SelectPhotoCollectionViewCell: UICollectionViewCell {
         checkedNumberLabel.layer.cornerRadius = checkedNumberLabel.frame.size.width / 2
         
         if isSelected {
-            checked(index: index)
+            check(index: index)
         } else {
-            unchecked()
+            uncheck()
         }
     }
     
-    func checked(index: Int) {
+    func check(index: Int) {
         self.index = index
+        checked = true
         view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         view.layer.borderColor = UIColor.primaryOrange.cgColor
         view.layer.borderWidth = 3
@@ -53,7 +55,8 @@ class SelectPhotoCollectionViewCell: UICollectionViewCell {
         checkedNumberLabel.text = (index).description
     }
     
-    func unchecked() {
+    func uncheck() {
+        checked = false
         view.layer.borderWidth = 0
         view.backgroundColor = .clear
         checkedNumberLabel.text = ""
