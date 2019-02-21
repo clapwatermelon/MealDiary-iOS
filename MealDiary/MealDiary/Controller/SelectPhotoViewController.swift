@@ -176,7 +176,9 @@ class SelectPhotoViewController: UIViewController {
         var datas: [Data] = []
         for index in selectedIndexPaths.value {
             if let cell = collectionView.cellForItem(at: index) as? SelectPhotoCollectionViewCell {
-                if let data = cell.imageView.image?.pngData() {
+                if let data = cell.data {
+                    datas.append(data)
+                } else if let data = cell.imageView.image?.pngData() {
                     datas.append(data)
                     
                 }

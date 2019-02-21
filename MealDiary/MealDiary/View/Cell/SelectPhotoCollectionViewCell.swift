@@ -16,6 +16,7 @@ class SelectPhotoCollectionViewCell: UICollectionViewCell {
 //    var photo = PHAsset()
     var index: Int = 0
     var checked: Bool = false
+    var data: Data?
     
     static let identifier = "SelectPhotoCollectionViewCell"
     
@@ -33,6 +34,7 @@ class SelectPhotoCollectionViewCell: UICollectionViewCell {
     }
     
     func setUp(with photo: Data) {
+        data = photo
         imageView.image = UIImage(data: photo)
         checkedNumberLabel.clipsToBounds = true
         checkedNumberLabel.layer.cornerRadius = checkedNumberLabel.frame.size.width / 2
