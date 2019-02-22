@@ -46,6 +46,8 @@
 		04CE890622184898009CDAD9 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04CE890522184898009CDAD9 /* Splash.storyboard */; };
 		100F24BFB8F73FB26006FA4E /* Pods_MealDiary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96029C5ADFCCFF251185FD97 /* Pods_MealDiary.framework */; };
 		9E6BF15C2217D375002B8CD7 /* Write.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E6BF15B2217D375002B8CD7 /* Write.storyboard */; };
+		9EF9B6A322202129002E6D8C /* SearchRestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF9B6A122202129002E6D8C /* SearchRestaurantTableViewCell.swift */; };
+		9EF9B6A422202129002E6D8C /* SearchRestaurantTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EF9B6A222202129002E6D8C /* SearchRestaurantTableViewCell.xib */; };
 		CE15BA9921F5EB0B00FD69F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15BA9821F5EB0B00FD69F7 /* AppDelegate.swift */; };
 		CE15BA9B21F5EB0B00FD69F7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15BA9A21F5EB0B00FD69F7 /* MainViewController.swift */; };
 		CE15BA9E21F5EB0B00FD69F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE15BA9C21F5EB0B00FD69F7 /* Main.storyboard */; };
@@ -106,6 +108,8 @@
 		9E6BF16F2217EDF2002B8CD7 /* Spoqa Han Sans Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Thin.ttf"; sourceTree = "<group>"; };
 		9E6BF1702217EDF3002B8CD7 /* Spoqa Han Sans Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Regular.ttf"; sourceTree = "<group>"; };
 		9E6BF1712217EDF4002B8CD7 /* Spoqa Han Sans Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Light.ttf"; sourceTree = "<group>"; };
+		9EF9B6A122202129002E6D8C /* SearchRestaurantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRestaurantTableViewCell.swift; sourceTree = "<group>"; };
+		9EF9B6A222202129002E6D8C /* SearchRestaurantTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchRestaurantTableViewCell.xib; sourceTree = "<group>"; };
 		CE15BA9521F5EB0B00FD69F7 /* MealDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MealDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE15BA9821F5EB0B00FD69F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE15BA9A21F5EB0B00FD69F7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -309,9 +313,9 @@
 		CE15BAB921F5FB7C00FD69F7 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				CE15BABA21F5FC2D00FD69F7 /* DetailCardTableViewCell.swift */,
 				04821FBE2205F0E1002001B9 /* HomeCardTableViewCell.swift */,
 				04821FBF2205F0E1002001B9 /* HomeCardTableViewCell.xib */,
-				CE15BABA21F5FC2D00FD69F7 /* DetailCardTableViewCell.swift */,
 				CE15BABB21F5FC2D00FD69F7 /* DetailCardTableViewCell.xib */,
 				CE443D0D21F76FBE00CB52B0 /* PhotoCollectionViewCell.swift */,
 				CE443D0E21F76FBE00CB52B0 /* PhotoCollectionViewCell.xib */,
@@ -323,6 +327,8 @@
 				04CE88F8221812FF009CDAD9 /* SearchTableViewCell.xib */,
 				04CE88FB22182421009CDAD9 /* TagHistoryTableViewCell.swift */,
 				04CE88FC22182421009CDAD9 /* TagHistoryTableViewCell.xib */,
+				9EF9B6A122202129002E6D8C /* SearchRestaurantTableViewCell.swift */,
+				9EF9B6A222202129002E6D8C /* SearchRestaurantTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -387,6 +393,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EF9B6A422202129002E6D8C /* SearchRestaurantTableViewCell.xib in Resources */,
 				04CE88E72218000A009CDAD9 /* 3.gif in Resources */,
 				04CE88E62218000A009CDAD9 /* 4.gif in Resources */,
 				04CE88E22218000A009CDAD9 /* 2.gif in Resources */,
@@ -444,6 +451,7 @@
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyGif/SwiftyGif.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -452,6 +460,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyGif.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -467,6 +476,7 @@
 			files = (
 				04821FBB2205E338002001B9 /* Label+Ext.swift in Sources */,
 				04821FC72206CD6A002001B9 /* View+Ext.swift in Sources */,
+				9EF9B6A322202129002E6D8C /* SearchRestaurantTableViewCell.swift in Sources */,
 				CE15BABC21F5FC2D00FD69F7 /* DetailCardTableViewCell.swift in Sources */,
 				CE15BA9B21F5EB0B00FD69F7 /* MainViewController.swift in Sources */,
 				04CE88EA22180286009CDAD9 /* SplashViewController1.swift in Sources */,
@@ -648,7 +658,10 @@
 				);
 				INFOPLIST_FILE = MealDiary/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = bobbyWhite.MealDiary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -670,7 +683,10 @@
 				);
 				INFOPLIST_FILE = MealDiary/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = bobbyWhite.MealDiary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";

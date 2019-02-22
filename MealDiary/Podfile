@@ -8,6 +8,7 @@ target 'MealDiary' do
   pod 'RxCocoa'
   pod 'Alamofire'
   pod 'SwiftyGif'
+  pod 'SwiftyJSON'
   # Pods for MealDiary
 
 end

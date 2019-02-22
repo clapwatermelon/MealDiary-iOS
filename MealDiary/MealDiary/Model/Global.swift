@@ -27,9 +27,12 @@ class Global {
     var hashTagList: [String] = []
     var restaurantName: String = ""
     var restaurantLocation: String = ""
+    var restaurantTotalCount: Int = 0
     var restaurantLatitude: Double = 0
     var restaurantLongitude: Double = 0
     var score: Int = 0
+    var restaurantNameArray: [String] = []
+    var restaurantLocationArray: [String] = []
     
     init() {
         let cardDict = AssetManager.getDictData(for: DictKeyword.card.rawValue)

@@ -9,15 +9,20 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import Alamofire
+import SwiftyJSON
 
 class WriteDiaryViewController: UIViewController {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
     
-    private var tableView = UITableView()
+    private var tagTableView = UITableView()
+    private var restaurantTableView = UITableView()
     private var searchedTagArray = [String]()
     private var hashTagArray = [String]()
+    private let host = "http://dapi.kakao.com/v2/local/search/keyword.json"
+    private let authorization = "KakaoAK b8a02da2a8a5887d84233e61a6a1994b"
     
     lazy var titleTextField = UITextField()
     lazy var textView = UITextView()
@@ -76,13 +81,25 @@ class WriteDiaryViewController: UIViewController {
     }
     
     func setTableView() {
-        tableView = UITableView(frame: CGRect(x: 0, y: 400, width: self.view.frame.width, height: 48 * 5))
-        tableView.separatorStyle = .none
-        tableView.backgroundColor = UIColor(red: 243/255, green: 247/255, blue: 248/255, alpha: 1)
-        tableView.register(UINib(nibName: TagHistoryTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: TagHistoryTableViewCell.identifier)
-        tableView.dataSource = self
-        tableView.delegate = self
-        self.view.addSubview(tableView)
+        //tag tableView
+        tagTableView = UITableView(frame: CGRect(x: 0, y: 400, width: self.view.frame.width, height: 48 * 5))
+        tagTableView.separatorStyle = .none
+        tagTableView.backgroundColor = UIColor(red: 243/255, green: 247/255, blue: 248/255, alpha: 1)
+        tagTableView.register(UINib(nibName: TagHistoryTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: TagHistoryTableViewCell.identifier)
+        
+        //restaurant tableView
+        restaurantTableView = UITableView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 48 * 5))
+        restaurantTableView.separatorStyle = .none
+        restaurantTableView.backgroundColor = UIColor(red: 243/255, green: 247/255, blue: 248/255, alpha: 1)
+        restaurantTableView.register(UINib(nibName: SearchRestaurantTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: SearchRestaurantTableViewCell.identifier)
+        
+        tagTableView.dataSource = self
+        tagTableView.delegate = self
+        restaurantTableView.dataSource = self
+        restaurantTableView.delegate = self
+        
+        self.view.addSubview(tagTableView)
+        self.view.addSubview(restaurantTableView)
     }
     
     func setScrollView() {
@@ -107,6 +124,9 @@ class WriteDiaryViewController: UIViewController {
         restaurantTextField.font = UIFont.systemFont(ofSize: 16.0)
         textViewPlaceHolder.font = UIFont.systemFont(ofSize: 16.0)
         textViewPlaceHolder.textColor = UIColor(red: 155/255, green: 155/255, blue: 155/255, alpha: 0.6)
+        
+        hashTagTextField.addTarget(self, action: #selector(hashTagTextFieldDidChange(_:)), for: .editingChanged)
+        restaurantTextField.addTarget(self, action: #selector(restaurantTextFieldDidChange(_:)), for: .editingChanged)
         
         titleTextField.clearButtonMode = .whileEditing
         hashTagTextField.clearButtonMode = .whileEditing
@@ -226,8 +246,8 @@ class WriteDiaryViewController: UIViewController {
             Global.shared.titleText = self.titleTextField.text ?? ""
             Global.shared.detailText = self.textView.text
             Global.shared.hashTagList = self.hashTagArray
-            Global.shared.restaurantName = self.restaurantTextField.text ?? ""
-            Global.shared.restaurantLocation = ""
+            //Global.shared.restaurantName = self.restaurantTextField.text ?? ""
+           // Global.shared.restaurantLocation = ""
             Global.shared.restaurantLatitude = 0
             Global.shared.restaurantLongitude = 0
             //
@@ -253,14 +273,25 @@ class WriteDiaryViewController: UIViewController {
         restaurantTextField.placeholder = "식당이름"
     }
     
+    @objc func hashTagTextFieldDidChange(_ textField: UITextField) {
+        let words = textField.text?.components(separatedBy: " ")
+        for word in words ?? [] {
+            searchTag(isTagWord: word)
+        }
+    }
+    
+    @objc func restaurantTextFieldDidChange(_ textField: UITextField) {
+        self.searchPlace(keyword: textField.text ?? "")
+    }
+    
     func searchTag(isTagWord: String) {
         if isTagWord.count < 1 {
-            self.tableView.isHidden = true
+            self.tagTableView.isHidden = true
             return
         }
         
         if isTagWord.prefix(1) != "#" {
-            self.tableView.isHidden = true
+            self.tagTableView.isHidden = true
         }
         
         if let tagArray = UserDefaults.standard.stringArray(forKey: "tag") {
@@ -270,12 +301,12 @@ class WriteDiaryViewController: UIViewController {
             self.searchedTagArray = filtered
             
             if filtered.count < 1 {
-                self.tableView.isHidden = true
+                self.tagTableView.isHidden = true
             } else {
-                self.tableView.isHidden = false
+                self.tagTableView.isHidden = false
             }
             
-            self.tableView.reloadData()
+            self.tagTableView.reloadData()
         }
     }
     
@@ -298,6 +329,43 @@ class WriteDiaryViewController: UIViewController {
                 tagArray.append(tagWord)
                 UserDefaults.standard.set(tagArray, forKey: "tag")
             }
+        }
+    }
+    
+    func searchPlace(keyword: String) {
+        Alamofire.request(
+            host,
+            method: .get,
+            parameters: ["query": keyword],
+            encoding: URLEncoding.default,
+            headers: ["Authorization": authorization]
+            ).responseJSON { response in
+                guard response.result.isSuccess else {
+                    print("Error: \(String(describing: response.result.error))")
+                    return
+                }
+                
+                let data = response.data
+                let dataJSON = JSON(data as Any)
+                let dataCount = dataJSON["documents"].count
+                
+                Global.shared.restaurantTotalCount = dataCount
+                
+                var placeArray = [String]()
+                var addressArray = [String]()
+                
+                for i in 0..<dataCount {
+                    guard let place = dataJSON["documents"][i]["place_name"].string else { return }
+                    guard let address = dataJSON["documents"][i]["address_name"].string else { return }
+                    
+                    placeArray.append(place)
+                    addressArray.append(address)
+                }
+                
+                Global.shared.restaurantNameArray = placeArray
+                Global.shared.restaurantLocationArray = addressArray
+                
+               self.restaurantTableView.reloadData()
         }
     }
     
@@ -359,22 +427,6 @@ extension WriteDiaryViewController: UITextFieldDelegate {
             bottomView4.backgroundColor = UIColor.paleGray
         }
     }
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if textField == hashTagTextField {
-            if let text = textField.text,
-                let textRange = Range(range, in: text) {
-                let updatedText = text.replacingCharacters(in: textRange,
-                                                           with: string)
-                let words = updatedText.components(separatedBy: " ")
-                for word in words {
-                    searchTag(isTagWord: word)
-                }
-            }
-        }
-        
-        return true
-    }
 }
 
 extension WriteDiaryViewController: UITextViewDelegate {
@@ -391,23 +443,34 @@ extension WriteDiaryViewController: UITextViewDelegate {
 
 extension WriteDiaryViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.searchedTagArray.count
+        if tableView == tagTableView {
+            return self.searchedTagArray.count < 6 ? self.searchedTagArray.count : 5
+        } else {
+            return Global.shared.restaurantTotalCount
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: TagHistoryTableViewCell.identifier, for: indexPath) as? TagHistoryTableViewCell else {
-            fatalError("Misconfigured cell type!")
+        if tableView == tagTableView {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: TagHistoryTableViewCell.identifier, for: indexPath) as? TagHistoryTableViewCell else {
+                fatalError()
+            }
+            cell.tagLabel.text = searchedTagArray[indexPath.row]
+            return cell
         }
         
-        cell.tagLabel.text = searchedTagArray[indexPath.row]
-        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "SearchRestaurantTableViewCell", for: indexPath) as? SearchRestaurantTableViewCell else {
+            fatalError()
+        }
+        cell.placeLabel.text = Global.shared.restaurantNameArray[indexPath.row]
+        cell.locationLabel.text = Global.shared.restaurantLocationArray[indexPath.row]
         return cell
     }
 }
 
 extension WriteDiaryViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 48
+        return tableView == tagTableView ? 48 : 74
     }
 //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        guard let cell = self.tableView.cellForRow(at: indexPath) as? TagHistoryTableViewCell else {
@@ -423,3 +486,7 @@ extension WriteDiaryViewController: UITableViewDelegate {
 //        }
 //    }
 }
+
+//extension WriteDiaryViewController: MTMapViewDelegate {
+//
+//}
