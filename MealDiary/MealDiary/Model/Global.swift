@@ -84,6 +84,13 @@ class Global {
         modify(card: card)
     }
     
+    func modify() {
+        let id = cardToModify?.id ?? UUID().uuidString
+        let card = ContentCard(id: id, photoDatas: photoDatas, titleText: titleText, detailText: detailText, hashTagList: hashTagList, restaurantName: restaurantName, restaurantLocation: restaurantLocation, restaurantLatitude: restaurantLatitude, restaurantLongitude: restaurantLongitude, date: Date(), score: score)
+        
+        modify(card: card)
+    }
+    
     func modify(card: ContentCard) {
         guard let data = try? encoder.encode(card) else { return }
         var cardArray = cards.value
