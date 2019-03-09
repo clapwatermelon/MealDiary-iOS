@@ -56,11 +56,7 @@ class DetailViewController: UIViewController {
         feedMoreButton.setImage(UIImage(named: "iconIcFeedMoreDefault")?.withRenderingMode(.alwaysOriginal), for: .normal)
         feedMoreButton.imageView?.contentMode = .scaleAspectFit
         feedMoreButton.addTarget(self, action: #selector(tabFeedMoreButton), for: .touchUpInside)
-        
-        let widthConstraint = feedMoreButton.widthAnchor.constraint(equalToConstant: size)
-        let heightConstraint = feedMoreButton.heightAnchor.constraint(equalToConstant: size)
-        widthConstraint.isActive = true
-        heightConstraint.isActive = true
+        feedMoreButton.frame = CGRect(origin: .zero, size: CGSize(width: size, height: size))
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: feedMoreButton)
     }
     

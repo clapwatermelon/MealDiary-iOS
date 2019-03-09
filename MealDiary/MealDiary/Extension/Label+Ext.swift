@@ -10,17 +10,17 @@ import UIKit
 
 extension UILabel {
     
-    func setOrangeUnderLine(alpha: CGFloat = 0.4) {
+    func setOrangeUnderLine(alpha: CGFloat = 0.6) {
         let width = self.intrinsicContentSize.width + 5.0
-        let underline = CALayer()
-        underline.backgroundColor = UIColor.primaryOrange.withAlphaComponent(alpha).cgColor
+        let underlineView = CALayer()
+        underlineView.backgroundColor = UIColor.primaryOrange.withAlphaComponent(alpha).cgColor
         
         guard let superView = self.superview else { return }
         
-        superView.layer.addSublayer(underline)
-        underline.frame = CGRect(x: self.frame.origin.x, y: self.frame.origin.y + self.frame.size.height / 2, width: width, height: self.frame.size.height / 2)
-        
+        superView.layer.addSublayer(underlineView)
         superView.bringSubviewToFront(self)
+        
+        underlineView.frame = CGRect(x: self.frame.origin.x, y: self.frame.origin.y + self.frame.size.height / 2, width: width, height: self.frame.size.height / 2)
     }
     
     func changeLineSpacing(_ space: CGFloat) {

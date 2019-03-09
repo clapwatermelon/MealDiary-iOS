@@ -19,7 +19,7 @@ class RateCollectionViewCell: UICollectionViewCell {
     
     func setUp(with rate: RateCard) {
         imageView.setGifImage(rate.rateImage)
-        rateNumLabel.text = rate.rateNum.description
+        rateNumLabel.text = rate.rateNum.description + "점"
         rateTextLabel.text = rate.rateText
         cardView.dropShadow(color: .black, offSet: CGSize(width: 0, height: 1), scale: true)
     }

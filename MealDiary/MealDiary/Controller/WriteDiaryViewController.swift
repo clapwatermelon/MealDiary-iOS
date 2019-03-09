@@ -98,8 +98,8 @@ class WriteDiaryViewController: UIViewController {
         restaurantTableView.dataSource = self
         restaurantTableView.delegate = self
         
-        self.view.addSubview(tagTableView)
-        self.view.addSubview(restaurantTableView)
+//        self.view.addSubview(tagTableView)
+//        self.view.addSubview(restaurantTableView)
     }
     
     func setScrollView() {
@@ -227,10 +227,13 @@ class WriteDiaryViewController: UIViewController {
     }
     
     func setNavigationBar() {
-        self.completeButton.setTitle("다음", for: .normal)
-        self.completeButton.titleLabel?.font = UIFont(name: "SpoqaHanSans-Bold", size: 16)
-        disableCompletionButton()
         
+        let size = navigationController!.navigationBar.frame.height
+        
+        self.completeButton.setTitle("다음", for: .normal)
+        self.completeButton.titleLabel?.font = UIFont(name: "SpoqaHanSans-Bold", size: 17)
+        disableCompletionButton()
+        completeButton.frame = CGRect(origin: .zero, size: CGSize(width: size, height: size))
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: completeButton)
         
         completeButton.rx.tap.subscribe( onNext: { [weak self] in
@@ -377,7 +380,6 @@ class WriteDiaryViewController: UIViewController {
 extension WriteDiaryViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        titleLabel.setOrangeUnderLine()
         setScrollView()
         setTextView()
         setTableView()
@@ -391,6 +393,11 @@ extension WriteDiaryViewController {
             hashTagTextField.text = hashTag
             restaurantTextField.text = card.restaurantName
         }
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        titleLabel.setOrangeUnderLine()
     }
     
     override func viewWillDisappear(_ animated: Bool) {

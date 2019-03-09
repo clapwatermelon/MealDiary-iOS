@@ -127,11 +127,11 @@ class SearchViewController: UIViewController {
     }
     
     private func setSearchBar(){
-        searchBar.sizeToFit()
         searchBar.clipsToBounds = true
         searchBar.layer.cornerRadius = 8
         searchBar.placeholder = "태그, 제목 검색"
         navigationItem.titleView = searchBar
+        searchBar.sizeToFit()
         searchBar.subviews.forEach{
             $0.subviews.forEach{
                 if let textField = $0 as? UITextField {
@@ -181,6 +181,7 @@ extension SearchViewController {
         setHistoryTable()
 //        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
     }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)

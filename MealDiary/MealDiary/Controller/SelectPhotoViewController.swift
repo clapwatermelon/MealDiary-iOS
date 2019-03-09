@@ -163,11 +163,11 @@ class SelectPhotoViewController: UIViewController {
     }
     
     func setNavigationBar() {
+        let size = navigationController!.navigationBar.frame.height
         nextButton.setTitle("다음", for: .normal)
-        if let font = UIFont(name: "Helvetica", size: 18.0) {
-            nextButton.titleLabel?.font = font
-        }
+        self.nextButton.titleLabel?.font = UIFont(name: "SpoqaHanSans-Bold", size: 17)
         nextButton.addTarget(self, action: #selector(completeSelect), for: .touchUpInside)
+        nextButton.frame = CGRect(origin: .zero, size: CGSize(width: size, height: size))
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: nextButton)
         nextButton.isEnabled = false
     }
@@ -218,6 +218,7 @@ extension SelectPhotoViewController {
         super.viewDidLoad()
         setCollectionView()
         setNavigationBar()
+        
         PHPhotoLibrary.requestAuthorization({ [weak self]
             (newStatus) in
             if newStatus ==  PHAuthorizationStatus.authorized {
@@ -227,7 +228,8 @@ extension SelectPhotoViewController {
     }
     
     override func viewDidLayoutSubviews() {
-        titleLabel.setOrangeUnderLine()
+        super.viewDidLayoutSubviews()
+        titleLabel.setOrangeUnderLine(alpha: 0.4)
     }
     
     override func viewWillAppear(_ animated: Bool) {
