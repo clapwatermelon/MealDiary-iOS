@@ -218,13 +218,16 @@ extension SelectPhotoViewController {
         super.viewDidLoad()
         setCollectionView()
         setNavigationBar()
-        titleLabel.setOrangeUnderLine()
         PHPhotoLibrary.requestAuthorization({ [weak self]
             (newStatus) in
             if newStatus ==  PHAuthorizationStatus.authorized {
                 self?.getImages()
             }
         })
+    }
+    
+    override func viewDidLayoutSubviews() {
+        titleLabel.setOrangeUnderLine()
     }
     
     override func viewWillAppear(_ animated: Bool) {

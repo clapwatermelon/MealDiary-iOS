@@ -111,7 +111,7 @@ class MainViewController: UIViewController {
         
         emptyImageView.contentMode = .scaleAspectFit
         emptyImageView.image = UIImage(named: "empty.png")
-        emptyImageView.frame = CGRect(x: 70, y: headerView.frame.origin.y + headerView.frame.height + 30, width: view.frame.width - 140, height: 285)
+        emptyImageView.frame = CGRect(x: 70, y: headerView.frame.origin.y + headerView.frame.height + 30, width: view.frame.width - 140, height: view.frame.height / 2)
         
         self.view.addSubview(emptyImageView)
         self.view.sendSubviewToBack(headerView)
@@ -163,17 +163,13 @@ class MainViewController: UIViewController {
     }
     
     func setNavigationBar() {
-        let size = navigationController!.navigationBar.frame.height
+        let size = navigationController?.navigationBar.frame.height ?? 32
     
-        let searchButton = UIButton(type: .system)
-        searchButton.setImage(UIImage(named: "iconIcSearchDefault")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        let searchButton = UIButton(type: .custom)
+        searchButton.setImage(UIImage(named: "iconIcSearchDefault"), for: .normal)
         searchButton.imageView?.contentMode = .scaleAspectFit
         searchButton.addTarget(self, action: #selector(goSearchView), for: .touchUpInside)
-        
-        let widthConstraint = searchButton.widthAnchor.constraint(equalToConstant: size)
-        let heightConstraint = searchButton.heightAnchor.constraint(equalToConstant: size)
-        widthConstraint.isActive = true
-        heightConstraint.isActive = true
+        searchButton.frame = CGRect(origin: .zero, size: CGSize(width: size, height: size))
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: searchButton)
     }
     
