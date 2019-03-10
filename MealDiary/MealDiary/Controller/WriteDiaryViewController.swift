@@ -47,11 +47,21 @@ class WriteDiaryViewController: UIViewController {
         } else if textView.isFirstResponder {
             adjustFirstResponder(view: textView)
         } else if hashTagTextField.isFirstResponder {
-            adjustFirstResponder(view: hashTagTextField)
+            scrollToFirstResponder(view: hashTagTextField)
         } else if restaurantTextField.isFirstResponder {
-            adjustFirstResponder(view: restaurantTextField)
+            scrollToFirstResponder(view: restaurantTextField)
         }
         scrollView.isScrollEnabled = true
+    }
+    
+    func scrollToFirstResponder(view: UIView) {
+        let viewStartY = view.frame.origin.y + 10
+        scrollView.contentSize.height -= viewStartY
+        scrollView.contentOffset.y += viewStartY
+        
+        restaurantTableView.frame = CGRect(x: 0, y: restaurantTextField.frame.origin.y + restaurantTextField.frame.size.height + 5, width: scrollView.frame.size.width, height: scrollView.frame.height - keyboardFrame.height - view.frame.height)
+        
+        tagTableView.frame = CGRect(x: 0, y: hashTagTextField.frame.origin.y + hashTagTextField.frame.size.height + 5, width: scrollView.frame.size.width, height: scrollView.frame.height - keyboardFrame.height - view.frame.height)
     }
     
     func adjustFirstResponder(view: UIView) {
@@ -98,8 +108,11 @@ class WriteDiaryViewController: UIViewController {
         restaurantTableView.dataSource = self
         restaurantTableView.delegate = self
         
-//        self.view.addSubview(tagTableView)
-//        self.view.addSubview(restaurantTableView)
+        scrollView.addSubview(tagTableView)
+        scrollView.addSubview(restaurantTableView)
+        
+        tagTableView.isHidden = true
+        restaurantTableView.isHidden = true
     }
     
     func setScrollView() {
@@ -398,6 +411,9 @@ extension WriteDiaryViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         titleLabel.setOrangeUnderLine()
+        restaurantTableView.frame = CGRect(x: 0, y: restaurantTextField.frame.origin.y + restaurantTextField.frame.size.height + 5, width: scrollView.frame.size.width, height: 50)
+        
+        tagTableView.frame = CGRect(x: 0, y: hashTagTextField.frame.origin.y + hashTagTextField.frame.size.height + 5, width: scrollView.frame.size.width, height: 50)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -418,14 +434,18 @@ extension WriteDiaryViewController: UITextFieldDelegate {
             bottomView1.backgroundColor = UIColor.darkGray
         } else if textField == hashTagTextField {
             bottomView3.backgroundColor = UIColor.darkGray
+            tagTableView.isHidden = false
         } else {
             bottomView4.backgroundColor = UIColor.darkGray
+            restaurantTableView.isHidden = false
         }
         
         adjustForKeyboard()
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
+        tagTableView.isHidden = true
+        restaurantTableView.isHidden = true
         if textField == titleTextField {
             bottomView1.backgroundColor = UIColor.paleGray
         } else if textField == hashTagTextField {
@@ -493,7 +513,3 @@ extension WriteDiaryViewController: UITableViewDelegate {
 //        }
 //    }
 }
-
-//extension WriteDiaryViewController: MTMapViewDelegate {
-//
-//}
