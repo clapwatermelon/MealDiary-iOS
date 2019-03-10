@@ -107,6 +107,7 @@ class SearchViewController: UIViewController {
         Global.shared.searchHistory.asObservable().bind(to: tagHistoryTable.rx.items(cellIdentifier: TagHistoryTableViewCell.identifier, cellType: TagHistoryTableViewCell.self)){
             (row, tag, cell) in
             cell.tagLabel.text = tag
+            cell.setWhite()
             }.disposed(by: disposeBag)
         
         tagHistoryTable.rx.itemSelected.subscribe( onNext: { [weak self] indexPath in

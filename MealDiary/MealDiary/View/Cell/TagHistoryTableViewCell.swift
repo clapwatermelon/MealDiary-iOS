@@ -10,6 +10,7 @@ import UIKit
 
 class TagHistoryTableViewCell: UITableViewCell {
     @IBOutlet weak var tagLabel: UILabel!
+    @IBOutlet weak var separatorView: UIView!
     
     static let identifier = "TagHistoryTableViewCell"
     
@@ -20,6 +21,11 @@ class TagHistoryTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+    
+    func setWhite() {
+        contentView.backgroundColor = .white
+        separatorView.isHidden = true
     }
     
 }

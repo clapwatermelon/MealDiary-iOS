@@ -49,7 +49,6 @@ class Global {
         var historyArray = AssetManager.getArrayData(for: DictKeyword.searchHistory.rawValue)
         if historyArray.isEmpty {
             historyArray.append("검색 기록이 없습니다.")
-            historyArray.append("검색 기록이 없습니다.")
         }
         searchHistory.accept(historyArray)
         
