@@ -41,16 +41,16 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="JXF-yH-vqz"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="SpoqaHanSans-Regular" family="SpoqaHanSans" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="SpoqaHanSans-Regular" family="SpoqaHanSans" pointSize="15"/>
                                 <color key="textColor" red="0.99215686270000003" green="0.47058823529999999" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="70 점" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="Ywy-oo-tJM">
-                                <rect key="frame" x="20" y="30" width="237" height="40"/>
+                                <rect key="frame" x="20" y="35" width="237" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="2UD-2A-WyM"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="SpoqaHanSans-Bold" family="SpoqaHanSans" pointSize="33"/>
+                                <fontDescription key="fontDescription" name="SpoqaHanSans-Bold" family="SpoqaHanSans" pointSize="30"/>
                                 <color key="textColor" red="0.99215686270000003" green="0.47058823529999999" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -61,8 +61,8 @@
                             <constraint firstItem="Ywy-oo-tJM" firstAttribute="leading" secondItem="mnh-2v-Sso" secondAttribute="leading" constant="20" id="9gb-DG-hIt"/>
                             <constraint firstAttribute="trailing" secondItem="9IT-ed-juo" secondAttribute="trailing" id="DyM-Xn-Xrv"/>
                             <constraint firstItem="9IT-ed-juo" firstAttribute="leading" secondItem="mnh-2v-Sso" secondAttribute="leading" id="EKW-sv-ikA"/>
-                            <constraint firstItem="9IT-ed-juo" firstAttribute="top" secondItem="Ywy-oo-tJM" secondAttribute="bottom" constant="5" id="IhR-jM-tW5"/>
-                            <constraint firstItem="Ywy-oo-tJM" firstAttribute="centerY" secondItem="mnh-2v-Sso" secondAttribute="centerY" constant="-20" id="qj8-oF-ltU"/>
+                            <constraint firstItem="9IT-ed-juo" firstAttribute="top" secondItem="Ywy-oo-tJM" secondAttribute="bottom" id="IhR-jM-tW5"/>
+                            <constraint firstItem="Ywy-oo-tJM" firstAttribute="centerY" secondItem="mnh-2v-Sso" secondAttribute="centerY" constant="-15" id="qj8-oF-ltU"/>
                         </constraints>
                     </view>
                 </subviews>

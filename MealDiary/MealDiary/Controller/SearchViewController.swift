@@ -96,6 +96,7 @@ class SearchViewController: UIViewController {
     
     private func setHistoryTable() {
         tagHistoryTable.allowsSelection = true
+        tagHistoryTable.separatorStyle = .none
         let gesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
         gesture.cancelsTouchesInView = false
         gesture.numberOfTapsRequired = 1
@@ -184,12 +185,19 @@ extension SearchViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        searchBar.isHidden = true
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        searchBar.isHidden = false
         Global.shared.refresh()
+        if Global.shared.searchHistory.value.first == "검색 기록이 없습니다." {
+            tagHistoryTable.allowsSelection = false
+        } else {
+            tagHistoryTable.allowsSelection = true
+        }
     }
 }
 

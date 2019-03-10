@@ -9,6 +9,7 @@
 import UIKit
 
 class HomeCardTableViewCell: UITableViewCell {
+    @IBOutlet weak var widthConstraint: NSLayoutConstraint!
     @IBOutlet weak var pointLabel: UILabel!
     @IBOutlet weak var dimmedView: UIView!
     @IBOutlet weak var titleTextLabel: UILabel!
@@ -32,7 +33,8 @@ class HomeCardTableViewCell: UITableViewCell {
         hashTagLabel.text = hashTag
         
         let width = titleTextLabel.intrinsicContentSize.width
-        underLineView.frame = CGRect(x: 40, y: 55, width: width + 10, height: 19)
+        widthConstraint.constant = width + 9
+        
         self.selectionStyle = .none
     }
 }

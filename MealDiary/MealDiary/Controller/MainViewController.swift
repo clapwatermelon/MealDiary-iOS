@@ -199,6 +199,10 @@ extension MainViewController {
         popUpSplash()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         Global.shared.refresh()

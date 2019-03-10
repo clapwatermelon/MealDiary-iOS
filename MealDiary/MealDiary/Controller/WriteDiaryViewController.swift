@@ -271,7 +271,7 @@ class WriteDiaryViewController: UIViewController {
             self.navigationController?.pushViewController(vc, animated: true)
         }).disposed(by: disposeBag)
     }
-    
+
     func setUpPlaceHolder() {
         let attachment = NSTextAttachment()
         attachment.image = UIImage(named: "iconStar")
